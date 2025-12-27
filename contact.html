@@ -82,36 +82,158 @@
         </div>
 
         <div class="contact-form">
-          <form id="contactForm">
-            <div class="form-group">
-              <label for="name">Your Name *</label>
-              <input type="text" id="name" name="name" required placeholder="John Smith">
+          <!-- Multi-Step Quiz Form -->
+          <div id="quizForm" style="background: white; border-radius: var(--radius-lg); padding: var(--spacing-xl); box-shadow: var(--shadow-lg);">
+            <!-- Progress Bar -->
+            <div style="display: flex; justify-content: center; gap: var(--spacing-sm); margin-bottom: var(--spacing-xl);">
+              <div class="progress-dot active" data-step="1" style="width: 12px; height: 12px; border-radius: 50%; background: var(--color-primary); transition: all 0.3s;"></div>
+              <div class="progress-dot" data-step="2" style="width: 12px; height: 12px; border-radius: 50%; background: var(--color-gray-300); transition: all 0.3s;"></div>
+              <div class="progress-dot" data-step="3" style="width: 12px; height: 12px; border-radius: 50%; background: var(--color-gray-300); transition: all 0.3s;"></div>
             </div>
-            <div class="form-group">
-              <label for="email">Email Address *</label>
-              <input type="email" id="email" name="email" required placeholder="john@example.com">
+
+            <!-- Step 1: Goal -->
+            <div class="quiz-step" data-step="1">
+              <h3 style="text-align: center; margin-bottom: var(--spacing-lg); font-size: var(--font-size-xl);">What is your goal?</h3>
+              <div style="display: grid; gap: var(--spacing-md);">
+                <button type="button" class="goal-btn" data-value="new-website" style="padding: var(--spacing-lg); border: 2px solid var(--color-gray-200); border-radius: var(--radius-md); background: white; cursor: pointer; font-size: var(--font-size-md); font-weight: 500; transition: all 0.3s; text-align: left;">
+                  🚀 I need a new website
+                </button>
+                <button type="button" class="goal-btn" data-value="redesign" style="padding: var(--spacing-lg); border: 2px solid var(--color-gray-200); border-radius: var(--radius-md); background: white; cursor: pointer; font-size: var(--font-size-md); font-weight: 500; transition: all 0.3s; text-align: left;">
+                  🔄 I want to redesign my existing site
+                </button>
+                <button type="button" class="goal-btn" data-value="seo" style="padding: var(--spacing-lg); border: 2px solid var(--color-gray-200); border-radius: var(--radius-md); background: white; cursor: pointer; font-size: var(--font-size-md); font-weight: 500; transition: all 0.3s; text-align: left;">
+                  📈 I want better SEO / more traffic
+                </button>
+                <button type="button" class="goal-btn" data-value="other" style="padding: var(--spacing-lg); border: 2px solid var(--color-gray-200); border-radius: var(--radius-md); background: white; cursor: pointer; font-size: var(--font-size-md); font-weight: 500; transition: all 0.3s; text-align: left;">
+                  💬 Something else
+                </button>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" placeholder="(203) 555-1234">
+
+            <!-- Step 2: Budget -->
+            <div class="quiz-step" data-step="2" style="display: none;">
+              <h3 style="text-align: center; margin-bottom: var(--spacing-lg); font-size: var(--font-size-xl);">What's your budget?</h3>
+              <div style="padding: var(--spacing-xl) var(--spacing-md);">
+                <input type="range" id="budgetSlider" min="0" max="7" value="0" style="width: 100%; height: 8px; border-radius: 4px; appearance: none; background: linear-gradient(to right, var(--color-primary), var(--color-secondary)); cursor: pointer;">
+                <div style="display: flex; justify-content: space-between; margin-top: var(--spacing-md); font-size: var(--font-size-sm); color: var(--color-text-light);">
+                  <span>$1,500</span>
+                  <span>$2,500</span>
+                  <span>$3,500</span>
+                  <span>$5,000+</span>
+                </div>
+                <p id="budgetDisplay" style="text-align: center; font-size: var(--font-size-2xl); font-weight: 700; color: var(--color-primary); margin-top: var(--spacing-lg);">$1,500</p>
+              </div>
+              <div style="display: flex; gap: var(--spacing-md); margin-top: var(--spacing-xl);">
+                <button type="button" id="backToStep1" class="btn btn-secondary" style="flex: 1;">Back</button>
+                <button type="button" id="toStep3" class="btn btn-primary" style="flex: 1;">Continue</button>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="service">What can we help you with?</label>
-              <select id="service" name="service">
-                <option value="">Select a service...</option>
-                <option value="new-website">New Website</option>
-                <option value="redesign">Website Redesign</option>
-                <option value="seo">SEO Services</option>
-                <option value="maintenance">Website Maintenance</option>
-                <option value="other">Other</option>
-              </select>
+
+            <!-- Step 3: Email -->
+            <div class="quiz-step" data-step="3" style="display: none;">
+              <h3 style="text-align: center; margin-bottom: var(--spacing-lg); font-size: var(--font-size-xl);">Where should we send your estimate?</h3>
+              <form id="contactForm" style="margin-top: var(--spacing-lg);">
+                <div class="form-group">
+                  <input type="text" id="name" name="name" required placeholder="Your name" style="width: 100%; padding: var(--spacing-md); border: 2px solid var(--color-gray-200); border-radius: var(--radius-md); font-size: var(--font-size-md); margin-bottom: var(--spacing-md);">
+                </div>
+                <div class="form-group">
+                  <input type="email" id="email" name="email" required placeholder="your@email.com" style="width: 100%; padding: var(--spacing-md); border: 2px solid var(--color-gray-200); border-radius: var(--radius-md); font-size: var(--font-size-md);">
+                </div>
+                <input type="hidden" id="selectedGoal" name="goal">
+                <input type="hidden" id="selectedBudget" name="budget">
+                <div style="display: flex; gap: var(--spacing-md); margin-top: var(--spacing-xl);">
+                  <button type="button" id="backToStep2" class="btn btn-secondary" style="flex: 1;">Back</button>
+                  <button type="submit" class="btn btn-primary" style="flex: 1;">Get My Estimate</button>
+                </div>
+              </form>
             </div>
-            <div class="form-group">
-              <label for="message">Your Message *</label>
-              <textarea id="message" name="message" required placeholder="Tell us about your project..."></textarea>
+
+            <!-- Success Message -->
+            <div id="successMessage" style="display: none; text-align: center; padding: var(--spacing-xl);">
+              <div style="font-size: 4rem; margin-bottom: var(--spacing-md);">🎉</div>
+              <h3 style="margin-bottom: var(--spacing-md);">Thanks! We'll be in touch soon.</h3>
+              <p style="color: var(--color-text-light);">We typically respond within 24 hours.</p>
             </div>
-            <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">Send Message</button>
-          </form>
+          </div>
+
+          <style>
+            .goal-btn:hover {
+              border-color: var(--color-primary);
+              background: #fff5f2;
+            }
+            .goal-btn.selected {
+              border-color: var(--color-primary);
+              background: #fff5f2;
+            }
+            #budgetSlider::-webkit-slider-thumb {
+              appearance: none;
+              width: 24px;
+              height: 24px;
+              border-radius: 50%;
+              background: var(--color-primary);
+              cursor: pointer;
+              box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            }
+            #budgetSlider::-moz-range-thumb {
+              width: 24px;
+              height: 24px;
+              border-radius: 50%;
+              background: var(--color-primary);
+              cursor: pointer;
+              border: none;
+            }
+          </style>
+
+          <script>
+            (function() {
+              const budgetValues = ['$1,500', '$2,000', '$2,500', '$3,000', '$3,500', '$4,000', '$4,500', '$5,000+'];
+              let selectedGoal = '';
+              let selectedBudget = '$1,500';
+
+              // Goal buttons
+              document.querySelectorAll('.goal-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                  selectedGoal = this.dataset.value;
+                  document.getElementById('selectedGoal').value = selectedGoal;
+                  document.querySelectorAll('.goal-btn').forEach(b => b.classList.remove('selected'));
+                  this.classList.add('selected');
+                  setTimeout(() => goToStep(2), 300);
+                });
+              });
+
+              // Budget slider
+              const slider = document.getElementById('budgetSlider');
+              const budgetDisplay = document.getElementById('budgetDisplay');
+              slider.addEventListener('input', function() {
+                selectedBudget = budgetValues[this.value];
+                budgetDisplay.textContent = selectedBudget;
+                document.getElementById('selectedBudget').value = selectedBudget;
+              });
+
+              // Navigation
+              document.getElementById('backToStep1').addEventListener('click', () => goToStep(1));
+              document.getElementById('toStep3').addEventListener('click', () => goToStep(3));
+              document.getElementById('backToStep2').addEventListener('click', () => goToStep(2));
+
+              function goToStep(step) {
+                document.querySelectorAll('.quiz-step').forEach(s => s.style.display = 'none');
+                document.querySelector(`.quiz-step[data-step="${step}"]`).style.display = 'block';
+                document.querySelectorAll('.progress-dot').forEach(dot => {
+                  dot.style.background = parseInt(dot.dataset.step) <= step ? 'var(--color-primary)' : 'var(--color-gray-300)';
+                });
+              }
+
+              // Form submit
+              document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.quiz-step').forEach(s => s.style.display = 'none');
+                document.getElementById('successMessage').style.display = 'block';
+                document.querySelectorAll('.progress-dot').forEach(dot => {
+                  dot.style.background = 'var(--color-primary)';
+                });
+              });
+            })();
+          </script>
         </div>
       </div>
     </div>
@@ -122,11 +244,10 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="logo">
-            <div class="logo-icon">W</div>
-            Webber<span>saurus</span>
+          <a href="index.html">
+            <img src="images/dinowords.png" alt="Webbersaurus" style="max-width: 200px; margin-bottom: var(--spacing-md);">
           </a>
-          <p>We design user-friendly websites that help Connecticut businesses grow. Proudly serving the Shoreline community since 2007.</p>
+          <p>We design user-friendly websites that help businesses grow. Proudly serving the Shoreline community since 2007.</p>
         </div>
         <div class="footer-links">
           <h4>Quick Links</h4>
