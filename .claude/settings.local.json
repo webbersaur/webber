@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git init:*)"
+      "Bash(git init:*)",
+      "mcp__devtools__navigate_page",
+      "mcp__devtools__take_screenshot"
     ]
   }
 }
