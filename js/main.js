@@ -24,8 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Header scroll effect
   if (header) {
-    let lastScroll = 0;
-
     window.addEventListener('scroll', function() {
       const currentScroll = window.pageYOffset;
 
@@ -34,8 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
       } else {
         header.classList.remove('scrolled');
       }
-
-      lastScroll = currentScroll;
     });
   }
 
