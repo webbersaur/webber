@@ -94,7 +94,9 @@
 
   <!-- Critical CSS inlined for faster FCP/LCP -->
   <style>
-    :root{--color-primary:#FF6B35;--color-primary-dark:#E55A2B;--color-dark:#1a1a2e;--color-text:#333340;--color-text-light:#6b6b80;--color-white:#fff;--color-gray-50:#f9fafb;--color-gray-200:#e5e7eb;--font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;--font-size-sm:0.875rem;--font-size-base:1rem;--font-size-lg:1.125rem;--font-size-xl:1.25rem;--font-size-5xl:3.5rem;--spacing-sm:0.5rem;--spacing-md:1rem;--spacing-lg:1.5rem;--spacing-xl:2rem;--spacing-2xl:3rem;--header-height:80px;--radius-full:9999px;--radius-md:0.5rem;--radius-lg:1rem;--shadow-lg:0 10px 25px rgba(0,0,0,0.1);--transition:all 0.3s ease}
+    /* Fallback font with size-adjust to minimize CLS during font swap */
+    @font-face{font-family:'Inter Fallback';src:local('Arial');size-adjust:107%;ascent-override:90%;descent-override:22%;line-gap-override:0%}
+    :root{--color-primary:#FF6B35;--color-primary-dark:#E55A2B;--color-dark:#1a1a2e;--color-text:#333340;--color-text-light:#6b6b80;--color-white:#fff;--color-gray-50:#f9fafb;--color-gray-200:#e5e7eb;--font-family:'Inter','Inter Fallback',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;--font-size-sm:0.875rem;--font-size-base:1rem;--font-size-lg:1.125rem;--font-size-xl:1.25rem;--font-size-5xl:3.5rem;--spacing-sm:0.5rem;--spacing-md:1rem;--spacing-lg:1.5rem;--spacing-xl:2rem;--spacing-2xl:3rem;--header-height:80px;--radius-full:9999px;--radius-md:0.5rem;--radius-lg:1rem;--shadow-lg:0 10px 25px rgba(0,0,0,0.1);--transition:all 0.3s ease}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{font-family:var(--font-family);font-size:var(--font-size-base);line-height:1.6;color:var(--color-text);background-color:var(--color-white);-webkit-font-smoothing:antialiased}
@@ -143,7 +145,7 @@
   <header class="header" id="header">
     <div class="container header-inner">
       <a href="index.html" class="logo">
-        <img src="images/WebbersaurusW.png" alt="Webbersaurus" class="logo-img">
+        <img src="images/WebbersaurusW.png" alt="Webbersaurus" class="logo-img" width="200" height="200">
       </a>
       <nav class="nav" id="nav">
         <a href="index.html" class="nav-link active">Home</a>
@@ -271,7 +273,7 @@
       <div class="portfolio-grid">
         <div class="portfolio-item">
           <a href="https://ozoriamoving.com/" target="_blank">
-            <img loading="lazy" decoding="async" src="images/ozoria-moving.png" alt="Ozoria Moving website">
+            <img loading="lazy" decoding="async" src="images/ozoria-moving.png" alt="Ozoria Moving website" width="600" height="375">
             <div class="portfolio-overlay">
               <h3>Ozoria Moving</h3>
               <p>Moving Services</p>
@@ -280,7 +282,7 @@
         </div>
         <div class="portfolio-item">
           <a href="https://salernoheatingandairconditioning.com/" target="_blank">
-            <img loading="lazy" decoding="async" src="images/salerno-hvac.png" alt="Salerno HVAC website">
+            <img loading="lazy" decoding="async" src="images/salerno-hvac.png" alt="Salerno HVAC website" width="600" height="375">
             <div class="portfolio-overlay">
               <h3>Salerno HVAC</h3>
               <p>Heating & Cooling Services</p>
@@ -289,7 +291,7 @@
         </div>
         <div class="portfolio-item">
           <a href="https://theblackharp.com/" target="_blank">
-            <img loading="lazy" decoding="async" src="images/the-black-harp.png" alt="The Black Harp website">
+            <img loading="lazy" decoding="async" src="images/the-black-harp.png" alt="The Black Harp website" width="700" height="339">
             <div class="portfolio-overlay">
               <h3>The Black Harp</h3>
               <p>Irish Pub & Restaurant</p>
@@ -336,7 +338,7 @@
         <div class="footer-brand">
           <div style="display: flex; align-items: center; gap: var(--spacing-md);">
             <a href="index.html" style="flex-shrink: 0;">
-              <img loading="lazy" decoding="async" src="images/dinowords.png" alt="Webbersaurus" style="max-width: 160px;">
+              <img loading="lazy" decoding="async" src="images/dinowords.png" alt="Webbersaurus" width="160" height="123" style="max-width: 160px;">
             </a>
             <p style="margin: 0;">Proudly serving the Shoreline community and beyond since 2007.</p>
           </div>
