@@ -32,8 +32,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://webbersaurus.com">
   <link rel="preload" href="images/WebbersaurusW.png" as="image">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Critical CSS for faster FCP -->
+  <style>
+    :root{--color-primary:#FF6B35;--color-dark:#1a1a2e;--color-text:#333340;--color-white:#fff;--font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;--font-size-sm:0.875rem;--font-size-base:1rem;--spacing-sm:0.5rem;--spacing-lg:1.5rem;--spacing-xl:2rem;--header-height:80px;--radius-full:9999px;--transition:all 0.3s ease}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:var(--font-family);font-size:var(--font-size-base);line-height:1.6;color:var(--color-text);background:var(--color-white)}
+    .header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:transparent;z-index:1000}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;height:100%;max-width:1200px;margin:0 auto;padding:0 var(--spacing-lg)}
+    .logo{display:flex;align-items:center}
+    .logo-img{height:200px;width:auto;margin-top:var(--spacing-lg)}
+    .nav{display:flex;align-items:center;gap:var(--spacing-xl);background:rgba(255,255,255,0.85);backdrop-filter:blur(12px);padding:var(--spacing-sm) var(--spacing-lg);border-radius:var(--radius-full)}
+    .nav-link{color:var(--color-text);font-weight:400;font-size:var(--font-size-sm)}
+    .menu-toggle{display:none}
+    .page-header{padding:120px 0 60px;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);color:white;text-align:center}
+    @media(max-width:768px){.nav{position:fixed;top:var(--header-height);left:0;right:0;flex-direction:column;transform:translateY(-100%);opacity:0}.menu-toggle{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer}.menu-toggle span{width:24px;height:2px;background:var(--color-white)}}
+  </style>
+
+  <link rel="preload" href="css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="css/styles.css"></noscript>
 </head>
 <body class="inner-page">
   <!-- Header -->

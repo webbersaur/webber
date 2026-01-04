@@ -320,7 +320,7 @@ p {
 
 .nav-link {
   color: var(--color-text);
-  font-weight: 500;
+  font-weight: 400;
   font-size: var(--font-size-sm);
   padding: var(--spacing-sm) 0;
   position: relative;
@@ -370,7 +370,7 @@ p {
   gap: var(--spacing-sm);
   padding: var(--spacing-md) var(--spacing-xl);
   font-size: var(--font-size-sm);
-  font-weight: 600;
+  font-weight: 700;
   border-radius: var(--radius-md);
   transition: var(--transition);
   cursor: pointer;
@@ -668,7 +668,7 @@ p {
   color: var(--color-primary);
   border-radius: var(--radius-full);
   font-size: var(--font-size-sm);
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: var(--spacing-lg);
 }
 
@@ -999,7 +999,7 @@ p {
 
 .form-group label {
   display: block;
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: var(--spacing-sm);
   color: var(--color-dark);
 }
