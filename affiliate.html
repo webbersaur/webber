@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join the Webbersaurus Affiliate Program. Earn commissions by referring businesses that need professional web development services.">
+  <title>Affiliate Program | Webbersaurus</title>
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://webbersaurus.com/affiliate">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://webbersaurus.com/affiliate">
+  <meta property="og:title" content="Affiliate Program | Webbersaurus">
+  <meta property="og:description" content="Earn commissions by referring businesses that need professional web development services.">
+  <meta property="og:image" content="https://webbersaurus.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Webbersaurus">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://webbersaurus.com/affiliate">
+  <meta name="twitter:title" content="Affiliate Program | Webbersaurus">
+  <meta name="twitter:description" content="Earn commissions by referring businesses that need professional web development services.">
+  <meta name="twitter:image" content="https://webbersaurus.com/images/og-image.png">
+
+  <!-- Additional SEO -->
+  <meta name="robots" content="index, follow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Accordion Styles */
+    .accordion {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .accordion-item {
+      background: var(--color-white);
+      border-radius: var(--radius-md);
+      margin-bottom: var(--spacing-md);
+      border: 1px solid var(--color-gray-200);
+      overflow: hidden;
+    }
+    .accordion-header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--spacing-lg) var(--spacing-xl);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: var(--font-size-base);
+      font-weight: 600;
+      color: var(--color-dark);
+      text-align: left;
+      transition: var(--transition);
+    }
+    .accordion-header:hover {
+      background: var(--color-gray-50);
+    }
+    .accordion-icon {
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+      color: var(--color-primary);
+    }
+    .accordion-item.active .accordion-icon {
+      transform: rotate(180deg);
+    }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    .accordion-item.active .accordion-content {
+      max-height: 200px;
+    }
+    .accordion-content p {
+      padding: 0 var(--spacing-xl) var(--spacing-lg);
+      margin: 0;
+      color: var(--color-text-light);
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body class="inner-page">
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/WebbersaurusW.png" alt="Webbersaurus" class="logo-img" width="200" height="200">
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about-us.html" class="nav-link">About</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="reviews.html" class="nav-link">Reviews</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Affiliate Program</h1>
+      <p>No fee to sign up, just refer and get paid!</p>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Earn Big by Referring New Clients</h2>
+        <p>Our affiliate program is designed to reward you for spreading the word about our top-tier web services.</p>
+      </div>
+      <div class="values-grid" style="max-width: 800px; margin: 0 auto;">
+        <div class="value-card" style="text-align: center;">
+          <h3 style="color: var(--color-primary); font-size: var(--font-size-3xl); text-align: center; margin: 0 auto var(--spacing-md);">Up to 10%</h3>
+          <p style="font-size: var(--font-size-lg); color: var(--color-dark); margin-bottom: var(--spacing-sm); text-align: center;">Commission on each new website sale</p>
+          <p style="font-size: var(--font-size-sm); text-align: center;">Up to $300 per sale*</p>
+        </div>
+        <div class="value-card" style="text-align: center;">
+          <h3 style="color: var(--color-primary); font-size: var(--font-size-3xl); text-align: center; margin: 0 auto var(--spacing-md);">Up to 10%</h3>
+          <p style="font-size: var(--font-size-lg); color: var(--color-dark); margin-bottom: var(--spacing-sm); text-align: center;">Commission on any monthly program</p>
+          <p style="font-size: var(--font-size-sm);">Client must remain active for at least 3 months**</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Join -->
+  <section class="section" style="background: var(--color-gray-50);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Join?</h2>
+        <p>Partner with a trusted web development agency and earn rewards.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">&#128176;</div>
+          <h3>Generous Commissions</h3>
+          <p>Earn a solid income for every client you refer that becomes a client.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">&#128279;</div>
+          <h3>Simple Referral Process</h3>
+          <p>Share your unique affiliate link and track your earnings effortlessly.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">&#11088;</div>
+          <h3>Top-Quality Services</h3>
+          <p>Feel confident promoting our expert web solutions with 18+ years of experience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Getting Started -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Getting Started</h2>
+        <p>Three simple steps to start earning.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">1</div>
+          <h3>Sign Up</h3>
+          <p>Join the affiliate program by registering on our website. It's free!</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">2</div>
+          <h3>Get Your Unique Link</h3>
+          <p>Receive a custom affiliate link to share with potential clients.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">3</div>
+          <h3>Start Earning</h3>
+          <p>When your referral purchases a website or signs up for a monthly program, you get paid!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client/Charity Program -->
+  <section class="section" style="background: var(--color-gray-50);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Client or Charity Affiliate Program</h2>
+        <p>Same terms as above but with choices of how funds are distributed.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <h3>&#128178; Credit Your Account</h3>
+          <p>Already a client? Instead of earning a commission, we'll credit your account in months for the same dollar amount. Save on your monthly services with us!</p>
+        </div>
+        <div class="value-card">
+          <h3>&#10084;&#65039; Support a Charity</h3>
+          <p>Have a charity near and dear to your heart? We'll make a donation in your name that you can write off on your taxes while supporting your favorite organization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Details (Accordion) -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Payouts & Terms</h2>
+        <p>Everything you need to know about our affiliate program.</p>
+      </div>
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>How do I get paid?</span>
+            <svg class="accordion-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-content">
+            <p>Payments are made monthly via PayPal, Cash App, or Venmo. Just provide your preferred payment handle when you sign up.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>When do I receive monthly program commissions?</span>
+            <svg class="accordion-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-content">
+            <p>Monthly program commissions are paid after the client has remained active for 3 months. This ensures the referral is a genuine, long-term client.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>How do I earn 10% instead of 5%?</span>
+            <svg class="accordion-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-content">
+            <p>You start at 5% on your first 2 successful sales, then go up to 10%. To qualify for 10%, you need a Gmail account and leave us a positive Google review if you feel it's appropriate.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>Is there a limit to how much I can earn?</span>
+            <svg class="accordion-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-content">
+            <p>There's no limit to how much you can earn! The more clients you refer, the more you make.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>What programs are included?</span>
+            <svg class="accordion-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-content">
+            <p>Commissions apply to all website sales and monthly programs. Note: Hosting plans are not included in the affiliate program, but all other monthly programs are eligible.</p>
+          </div>
+        </div>
+      </div>
+      <p style="text-align: center; margin-top: var(--spacing-xl); font-size: var(--font-size-sm); color: var(--color-text-light);">
+        *5% on first 2 successful completed website sales, then up to 10%<br>
+        **5% on first 2 successful monthly plan sales, then up to 10% of 3-month total
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta">
+    <div class="container">
+      <h2>Ready to Start Earning?</h2>
+      <p>Join our affiliate program today. Sign up takes less than a minute.</p>
+      <a href="https://webber.orangedino.site/affiliate-registration-form/" class="btn btn-large" target="_blank">Become an Affiliate</a>
+      <p style="margin-top: var(--spacing-lg); font-size: var(--font-size-sm); opacity: 0.8;">Already an affiliate? <a href="https://webber.orangedino.site/affiliate-area/" style="color: var(--color-white); text-decoration: underline;" target="_blank">Login to your dashboard</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: var(--spacing-md);">
+            <a href="index.html" style="flex-shrink: 0;">
+              <img loading="lazy" decoding="async" src="images/dinowords.png" alt="Webbersaurus" width="160" height="123" style="max-width: 160px;">
+            </a>
+            <p style="margin: 0;">Proudly serving the Shoreline community and beyond since 2007.</p>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">SEO</a></li>
+            <li><a href="#">Website Maintenance</a></li>
+            <li><a href="#">Consulting</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:203-530-7396">203.530.7396</a></li>
+            <li><a href="mailto:chris@webbersaur.us">chris@webbersaur.us</a></li>
+            <li>Branford, CT</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Webbersaurus. All rights reserved.</p>
+              </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Accordion functionality
+    document.querySelectorAll('.accordion-header').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        const isActive = item.classList.contains('active');
+
+        // Close all other items
+        document.querySelectorAll('.accordion-item').forEach(i => {
+          i.classList.remove('active');
+          i.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+        });
+
+        // Toggle current item
+        if (!isActive) {
+          item.classList.add('active');
+          button.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
