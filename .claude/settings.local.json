@@ -3,7 +3,16 @@
     "allow": [
       "Bash(git init:*)",
       "mcp__devtools__navigate_page",
-      "mcp__devtools__take_screenshot"
+      "mcp__devtools__take_screenshot",
+      "mcp__chrome-devtools__new_page",
+      "mcp__chrome-devtools__list_network_requests",
+      "mcp__chrome-devtools__get_network_request",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push)",
+      "WebFetch(domain:webber.orangedino.site)",
+      "mcp__chrome-devtools__navigate_page",
+      "mcp__chrome-devtools__take_snapshot"
     ]
   }
 }
