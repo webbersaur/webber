@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Rate your experience with Webbersaurus. We value your feedback and appreciate you taking the time to share your thoughts.">
-  <title>Rate Your Experience | Webbersaurus</title>
+  <meta name="description" content="Rate Your Experience - A simple, powerful online review system to turn customer feedback into growth. Boost your online reputation and enhance customer satisfaction.">
+  <title>Online Review System | Rate Your Experience | Webbersaurus</title>
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://webbersaurus.com/rate-your-experience">
@@ -12,8 +12,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://webbersaurus.com/rate-your-experience">
-  <meta property="og:title" content="Rate Your Experience | Webbersaurus">
-  <meta property="og:description" content="Rate your experience with Webbersaurus. We value your feedback.">
+  <meta property="og:title" content="Online Review System | Rate Your Experience | Webbersaurus">
+  <meta property="og:description" content="Turn customer feedback into growth with our simple, powerful online review system.">
   <meta property="og:image" content="https://webbersaurus.com/images/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -23,12 +23,12 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://webbersaurus.com/rate-your-experience">
-  <meta name="twitter:title" content="Rate Your Experience | Webbersaurus">
-  <meta name="twitter:description" content="Rate your experience with Webbersaurus. We value your feedback.">
+  <meta name="twitter:title" content="Online Review System | Rate Your Experience | Webbersaurus">
+  <meta name="twitter:description" content="Turn customer feedback into growth with our simple, powerful online review system.">
   <meta name="twitter:image" content="https://webbersaurus.com/images/og-image.png">
 
   <!-- Additional SEO -->
-  <meta name="robots" content="noindex, nofollow">
+  <meta name="robots" content="index, follow">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,7 +46,11 @@
     .header-inner{display:flex;align-items:center;justify-content:space-between;height:100%;max-width:1200px;margin:0 auto;padding:0 var(--spacing-lg)}
     .logo{display:flex;align-items:center}
     .logo-img{height:200px;width:auto;margin-top:var(--spacing-lg)}
+    .nav{display:flex;align-items:center;gap:var(--spacing-xl);background:rgba(255,255,255,0.85);backdrop-filter:blur(12px);padding:var(--spacing-sm) var(--spacing-lg);border-radius:var(--radius-full)}
+    .nav-link{color:var(--color-text);font-weight:400;font-size:var(--font-size-sm)}
+    .menu-toggle{display:none}
     .page-header{padding:120px 0 60px;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);color:white;text-align:center}
+    @media(max-width:768px){.nav{position:fixed;top:var(--header-height);left:0;right:0;flex-direction:column;transform:translateY(-100%);opacity:0}.menu-toggle{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer}.menu-toggle span{width:24px;height:2px;background:var(--color-white)}}
   </style>
 
   <link rel="stylesheet" href="css/styles.css">
@@ -55,72 +59,135 @@
   <!-- Header -->
   <header class="header" id="header">
     <div class="container header-inner">
-      <a href="https://webbersaurus.com" class="logo">
+      <a href="index.html" class="logo">
         <img src="images/WebbersaurusW.png" alt="Webbersaurus" class="logo-img" width="200" height="200">
       </a>
+      <nav class="nav" id="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about-us.html" class="nav-link">About</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="reviews.html" class="nav-link">Reviews</a>
+        <a href="seo.html" class="nav-link">SEO</a>
+        <a href="gbp-management.html" class="nav-link">GBP</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
   <!-- Page Header -->
-  <section class="page-header">
+  <section class="page-header" style="padding: 140px 0 80px;">
     <div class="container">
-      <h1>Rate Your Experience</h1>
-      <p>We'd love to hear about your experience working with Webbersaurus!</p>
-    </div>
-  </section>
-
-  <!-- Rating Options -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Share Your Feedback</h2>
-        <p>Your reviews help us improve and help other businesses find quality web services.</p>
-      </div>
-
-      <div class="review-options" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 900px; margin: 0 auto;">
-
-        <!-- Google Review -->
-        <div class="review-card" style="background: var(--color-white); border-radius: 16px; padding: 2.5rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #eee;">
-          <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-            </svg>
-          </div>
-          <h3 style="margin-bottom: 0.75rem; color: var(--color-dark);">Google Review</h3>
-          <p style="color: #666; margin-bottom: 1.5rem; font-size: 0.95rem;">Leave a review on Google to help other businesses find us.</p>
-          <a href="https://g.page/r/CQvt3cHeqdUHEBM/review" target="_blank" rel="noopener noreferrer" class="btn" style="display: inline-block; background: var(--color-primary); color: white; padding: 0.875rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s;">
-            Leave a Google Review
-          </a>
-        </div>
-
-        <!-- Facebook Review -->
-        <div class="review-card" style="background: var(--color-white); border-radius: 16px; padding: 2.5rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #eee;">
-          <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: #1877F2; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-            </svg>
-          </div>
-          <h3 style="margin-bottom: 0.75rem; color: var(--color-dark);">Facebook Review</h3>
-          <p style="color: #666; margin-bottom: 1.5rem; font-size: 0.95rem;">Share your experience on our Facebook page.</p>
-          <a href="https://www.facebook.com/webbersaurus/reviews" target="_blank" rel="noopener noreferrer" class="btn" style="display: inline-block; background: #1877F2; color: white; padding: 0.875rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s;">
-            Leave a Facebook Review
-          </a>
-        </div>
-
+      <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Online Review System</h1>
+      <div style="display: inline-block; background: var(--color-primary); color: white; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600;">
+        Rate Your Experience
       </div>
     </div>
   </section>
 
-  <!-- Thank You Message -->
-  <section class="section" style="background: var(--color-gray-50); text-align: center;">
+  <!-- Video Section -->
+  <section class="section" style="padding: 4rem 0;">
     <div class="container">
-      <h2 style="margin-bottom: 1rem;">Thank You!</h2>
-      <p style="max-width: 600px; margin: 0 auto; color: #666; font-size: 1.1rem;">
-        We truly appreciate you taking the time to share your feedback. Your support means the world to us and helps other Connecticut businesses discover quality web services.
-      </p>
+      <div style="max-width: 800px; margin: 0 auto;">
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.15);">
+          <iframe
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+            src="https://www.youtube.com/embed/0JMpPX5Bl2o?feature=oembed"
+            title="Rate Your Experience"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="section" style="padding: 3rem 0 4rem;">
+    <div class="container">
+      <div style="max-width: 800px; margin: 0 auto;">
+        <h2 style="font-size: 2rem; color: var(--color-dark); margin-bottom: 0.75rem;">Rate Your Experience: Turn Feedback into Growth</h2>
+        <h3 style="font-size: 1.25rem; color: var(--color-primary); font-weight: 500; margin-bottom: 1.5rem;">Empower your customers, enhance your reputation.</h3>
+
+        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2.5rem; color: #555;">
+          "Rate Your Experience" is a simple, powerful online review system designed to seamlessly integrate into your website. It's more than just a star rating – it's a tool to build trust, improve your services, and turn customer feedback into actionable insights.
+        </p>
+
+        <!-- How It Works -->
+        <h3 style="font-size: 1.5rem; color: var(--color-dark); margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--color-primary); display: inline-block;">How it Works:</h3>
+
+        <ul style="list-style: none; margin-bottom: 2.5rem;">
+          <li style="padding: 1rem 0; border-bottom: 1px solid #eee;">
+            <strong style="color: var(--color-dark);">Effortless Integration</strong>: Add "Rate Your Experience" to dedicated feedback sections.
+          </li>
+          <li style="padding: 1rem 0; border-bottom: 1px solid #eee;">
+            <strong style="color: var(--color-dark);">Simple & Intuitive</strong>: Customers can quickly rate their experience with a clear star rating and optional text feedback.
+          </li>
+          <li style="padding: 1rem 0; border-bottom: 1px solid #eee;">
+            <strong style="color: var(--color-dark);">Positive Review Encouragement</strong>: For positive ratings, the system automatically prompts customers to share their feedback on popular review platforms like Google, Yelp, or Facebook. This streamlined process makes it easy for happy customers to spread the word.
+          </li>
+          <li style="padding: 1rem 0; border-bottom: 1px solid #eee;">
+            <strong style="color: var(--color-dark);">Proactive Negative Feedback Management</strong>: For lower ratings, the system directs the customer to a private feedback form, that is sent to you via text or email. This gives you the opportunity to resolve issues, prevent public negative reviews, and improve customer satisfaction.
+          </li>
+          <li style="padding: 1rem 0;">
+            <strong style="color: var(--color-dark);">Customizable Design</strong>: Match the look and feel of "Rate Your Experience" to your website's branding for a seamless user experience.
+          </li>
+        </ul>
+
+        <!-- Benefits -->
+        <h3 style="font-size: 1.5rem; color: var(--color-dark); margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--color-primary); display: inline-block;">Benefits for Your Business:</h3>
+
+        <ul style="list-style: none; margin-bottom: 2.5rem;">
+          <li style="padding: 1rem 0; border-bottom: 1px solid #eee;">
+            <strong style="color: var(--color-dark);">Boost Your Online Reputation</strong>: Generate more positive reviews on key platforms, improving your visibility and attracting new customers.
+          </li>
+          <li style="padding: 1rem 0; border-bottom: 1px solid #eee;">
+            <strong style="color: var(--color-dark);">Enhance Customer Satisfaction</strong>: Proactively address negative feedback and show customers that you value their opinions.
+          </li>
+          <li style="padding: 1rem 0; border-bottom: 1px solid #eee;">
+            <strong style="color: var(--color-dark);">Gain Valuable Insights</strong>: Identify areas for improvement in your products or services based on real customer feedback.
+          </li>
+          <li style="padding: 1rem 0; border-bottom: 1px solid #eee;">
+            <strong style="color: var(--color-dark);">Increase Customer Loyalty</strong>: Demonstrate your commitment to customer satisfaction and build stronger relationships.
+          </li>
+          <li style="padding: 1rem 0; border-bottom: 1px solid #eee;">
+            <strong style="color: var(--color-dark);">Protect Your Brand</strong>: Catch negative feedback before it goes public, minimizing potential damage to your reputation.
+          </li>
+          <li style="padding: 1rem 0;">
+            <strong style="color: var(--color-dark);">Improve SEO</strong>: Positive reviews can improve your search engine rankings.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 4rem 0;">
+    <div class="container" style="text-align: center;">
+      <h2 style="color: white; margin-bottom: 2rem;">Ready to turn customer feedback into your competitive advantage?</h2>
+
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
+        <a href="tel:203-530-7396" class="btn" style="background: var(--color-primary); color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem;">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          Call 203.530.7396
+        </a>
+        <a href="https://calendly.com/chrishauman/15min" target="_blank" rel="noopener noreferrer" class="btn" style="background: var(--color-primary); color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem;">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>
+          Schedule a Call
+        </a>
+        <a href="mailto:chris@webbersaur.us" class="btn" style="background: var(--color-primary); color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem;">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          Email Us
+        </a>
+      </div>
+
+      <a href="contact.html" class="btn btn-large" style="background: var(--color-primary); color: white; padding: 1.25rem 3rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.1rem; display: inline-block;">
+        Get Started Now or Learn More!
+      </a>
     </div>
   </section>
 
@@ -130,7 +197,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <div style="display: flex; align-items: center; gap: var(--spacing-md);">
-            <a href="https://webbersaurus.com" style="flex-shrink: 0;">
+            <a href="index.html" style="flex-shrink: 0;">
               <img loading="lazy" decoding="async" src="images/dinowords.png" alt="Webbersaurus" width="160" height="123" style="max-width: 160px;">
             </a>
             <p style="margin: 0;">Proudly serving the Shoreline community and beyond since 2007.</p>
@@ -139,18 +206,20 @@
         <div class="footer-links">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="https://webbersaurus.com">Home</a></li>
-            <li><a href="https://webbersaurus.com/about-us">About Us</a></li>
-            <li><a href="https://webbersaurus.com/portfolio">Portfolio</a></li>
-            <li><a href="https://webbersaurus.com/reviews">Reviews</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="affiliate.html">Affiliate Program</a></li>
           </ul>
         </div>
         <div class="footer-links">
           <h4>Services</h4>
           <ul>
-            <li><a href="https://webbersaurus.com">Web Development</a></li>
-            <li><a href="https://webbersaurus.com/seo">Search Engine Optimization</a></li>
-            <li><a href="https://webbersaurus.com/gbp-management">Google Business Profile Mgt</a></li>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="seo.html">Search Engine Optimization</a></li>
+            <li><a href="gbp-management.html">Google Business Profile Mgt</a></li>
+            <li><a href="#">Website Maintenance</a></li>
           </ul>
         </div>
         <div class="footer-links">
