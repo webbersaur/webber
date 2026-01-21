@@ -6,6 +6,11 @@
       "source": "/testimonials",
       "destination": "/reviews",
       "permanent": true
+    },
+    {
+      "source": "/demo",
+      "destination": "/",
+      "permanent": true
     }
   ]
 }
