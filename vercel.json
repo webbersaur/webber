@@ -12,27 +12,5 @@
       "destination": "/",
       "permanent": true
     }
-  ],
-  "rewrites": [
-    {
-      "source": "/rate-your-experience",
-      "has": [
-        {
-          "type": "host",
-          "value": "partners.webbersaurus.com"
-        }
-      ],
-      "destination": "/rate-your-experience.html"
-    },
-    {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "partners.webbersaurus.com"
-        }
-      ],
-      "destination": "/rate-your-experience.html"
-    }
   ]
 }
