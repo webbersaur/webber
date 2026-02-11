@@ -11,6 +11,11 @@
       "source": "/demo",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/about-us",
+      "permanent": true
     }
   ]
 }
