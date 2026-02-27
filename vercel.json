@@ -17,5 +17,16 @@
       "destination": "/about-us",
       "permanent": true
     }
+  ],
+  "rewrites": [
+    { "source": "/llms", "destination": "/llms.txt" }
+  ],
+  "headers": [
+    {
+      "source": "/llms.txt",
+      "headers": [
+        { "key": "Content-Type", "value": "text/plain; charset=utf-8" }
+      ]
+    }
   ]
 }

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Homepage images -->
+  <url>
+    <loc>https://www.webbersaurus.com/</loc>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/WebbersaurusW.png</image:loc>
+      <image:title>Webbersaurus Logo</image:title>
+      <image:caption>Webbersaurus web development company logo</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/michaels-trattoria.webp</image:loc>
+      <image:title>Michael's Trattoria Website</image:title>
+      <image:caption>Website designed by Webbersaurus for Michael's Trattoria restaurant</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/a-bite-of-nutmeg.webp</image:loc>
+      <image:title>A Bite of Nutmeg Website</image:title>
+      <image:caption>Website designed by Webbersaurus for A Bite of Nutmeg</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/parthenon-diner.webp</image:loc>
+      <image:title>Parthenon Diner Website</image:title>
+      <image:caption>Website designed by Webbersaurus for Parthenon Diner</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/og-image.png</image:loc>
+      <image:title>Webbersaurus - Connecticut Web Development</image:title>
+      <image:caption>Webbersaurus web development and design agency in Branford, Connecticut</image:caption>
+    </image:image>
+  </url>
+
+  <!-- About Us page images -->
+  <url>
+    <loc>https://www.webbersaurus.com/about-us</loc>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/chris.png</image:loc>
+      <image:title>Chris Hauman - Webbersaurus Founder</image:title>
+      <image:caption>Chris Hauman, founder and lead creative at Webbersaurus web development</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Portfolio page images -->
+  <url>
+    <loc>https://www.webbersaurus.com/portfolio</loc>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/parthenon-diner.webp</image:loc>
+      <image:title>Parthenon Diner Website Design</image:title>
+      <image:caption>Custom website for Parthenon Diner, a family restaurant in Branford and Old Saybrook, CT</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/ozoria-moving.png</image:loc>
+      <image:title>Ozoria Moving Website Design</image:title>
+      <image:caption>Custom website for Ozoria Moving company</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/salerno-hvac.png</image:loc>
+      <image:title>Salerno HVAC Website Design</image:title>
+      <image:caption>Custom website for Salerno HVAC</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/swede-studios.png</image:loc>
+      <image:title>Swede Studios Website Design</image:title>
+      <image:caption>Custom website for Swede Studios</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/hornets-nest-deli.png</image:loc>
+      <image:title>Hornet's Nest Deli Website Design</image:title>
+      <image:caption>Custom website for Hornet's Nest Deli</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/precision-exteriors.png</image:loc>
+      <image:title>Precision Exteriors Website Design</image:title>
+      <image:caption>Custom website for Precision Exteriors</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/branford-jazz.png</image:loc>
+      <image:title>Branford Jazz Website Design</image:title>
+      <image:caption>Custom website for Branford Jazz</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/st-margaret-church.webp</image:loc>
+      <image:title>St. Margaret Church Website Design</image:title>
+      <image:caption>Custom website for St. Margaret Church</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/shop-dine-explore.png</image:loc>
+      <image:title>Shop Dine Explore Branford Website Design</image:title>
+      <image:caption>Custom website for Shop Dine Explore Branford</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/branford-festival.png</image:loc>
+      <image:title>Branford Festival Website Design</image:title>
+      <image:caption>Custom website for Branford Festival</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/cofrancesco-law.png</image:loc>
+      <image:title>Cofrancesco Law Website Design</image:title>
+      <image:caption>Custom website for Cofrancesco Law</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/capotortos.png</image:loc>
+      <image:title>Capotorto's Apizza Website Design</image:title>
+      <image:caption>Custom website for Capotorto's Apizza</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/aa-surplus.png</image:loc>
+      <image:title>A &amp; A Surplus Inc Website Design</image:title>
+      <image:caption>Custom website for A &amp; A Surplus Inc</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/delta-tool.png</image:loc>
+      <image:title>Delta Tool &amp; Mold Website Design</image:title>
+      <image:caption>Custom website for Delta Tool &amp; Mold</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/arrow-sealcoating.png</image:loc>
+      <image:title>Arrow Sealcoating Website Design</image:title>
+      <image:caption>Custom website for Arrow Sealcoating</image:caption>
+    </image:image>
+  </url>
+</urlset>

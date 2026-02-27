@@ -1,0 +1,58 @@
+# Webbersaurus
+
+> Web development and design company based in Branford, Connecticut, serving local businesses since 2007.
+
+Webbersaurus is a web development company founded in 2007 by Chris Hauman. Based in Branford, CT, we specialize in designing user-friendly websites that help small and local businesses grow their online presence. We are proud members of the Shoreline Chamber of Commerce and have served over 150 clients with a perfect 5.0 Google rating across 28 reviews.
+
+## Contact
+
+- Phone: 203.530.7396
+- Email: chris@webbersaur.us
+- Location: Branford, CT
+- Website: https://www.webbersaurus.com
+
+## Services
+
+### Web Development & Design
+Custom website design and development for small businesses. Mobile-first responsive design, SEO-friendly architecture, and user-focused interfaces.
+
+### SEO (Search Engine Optimization)
+Local SEO services including keyword research, on-page optimization, technical SEO, and content strategy to improve search rankings for Connecticut businesses.
+
+### Google Business Profile Management
+Complete GBP setup and optimization including profile creation, photo management, review response strategy, post scheduling, and local search optimization.
+
+### Rate Your Experience (Online Review System)
+A simple, powerful online review system that helps businesses turn customer feedback into growth and boost their online reputation.
+
+## Portfolio
+
+Webbersaurus has designed websites for businesses including:
+- Parthenon Diner (Branford & Old Saybrook, CT)
+- Michael's Trattoria
+- A Bite of Nutmeg
+- Ozoria Moving
+- Salerno HVAC
+- Swede Studios
+- Hornet's Nest Deli
+- Precision Exteriors
+- Branford Jazz
+- St. Margaret Church
+- Shop Dine Explore Branford
+- Branford Festival
+- Cofrancesco Law
+- Capotorto's Apizza
+- A & A Surplus Inc
+- Delta Tool & Mold
+- Arrow Sealcoating
+
+## Pages
+
+- [Home](https://www.webbersaurus.com/)
+- [About Us](https://www.webbersaurus.com/about-us)
+- [Portfolio](https://www.webbersaurus.com/portfolio)
+- [Reviews](https://www.webbersaurus.com/reviews)
+- [SEO Services](https://www.webbersaurus.com/seo)
+- [GBP Management](https://www.webbersaurus.com/gbp-management)
+- [Rate Your Experience](https://www.webbersaurus.com/rate-your-experience)
+- [Contact](https://www.webbersaurus.com/contact)

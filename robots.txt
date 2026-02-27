@@ -4,3 +4,4 @@ Allow: /
 
 # Sitemap location
 Sitemap: https://www.webbersaurus.com/sitemap.xml
+Sitemap: https://www.webbersaurus.com/sitemap-images.xml
