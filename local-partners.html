@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Webbersaurus Local Business Partners - Join our network of Connecticut businesses exchanging links and referrals to boost local visibility.">
+  <title>Local Business Partners | Webbersaurus</title>
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.webbersaurus.com/local-partners">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.webbersaurus.com/local-partners">
+  <meta property="og:title" content="Local Business Partners | Webbersaurus">
+  <meta property="og:description" content="Join our network of Connecticut businesses exchanging links and referrals to boost local visibility.">
+  <meta property="og:image" content="https://www.webbersaurus.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Webbersaurus">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://www.webbersaurus.com/local-partners">
+  <meta name="twitter:title" content="Local Business Partners | Webbersaurus">
+  <meta name="twitter:description" content="Join our network of Connecticut businesses exchanging links and referrals to boost local visibility.">
+  <meta name="twitter:image" content="https://www.webbersaurus.com/images/og-image.png">
+
+  <!-- Additional SEO -->
+  <meta name="robots" content="index, follow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.webbersaurus.com">
+  <link rel="preload" href="images/WebbersaurusW.png" as="image">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Critical CSS for faster FCP -->
+  <style>
+    @font-face{font-family:'Inter Fallback';src:local('Arial');size-adjust:107%;ascent-override:90%;descent-override:22%;line-gap-override:0%}
+    :root{--color-primary:#FF6B35;--color-dark:#1a1a2e;--color-text:#333340;--color-white:#fff;--font-family:'Inter','Inter Fallback',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;--font-size-sm:0.875rem;--font-size-base:1rem;--spacing-sm:0.5rem;--spacing-lg:1.5rem;--spacing-xl:2rem;--header-height:80px;--radius-full:9999px;--transition:all 0.3s ease}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:var(--font-family);font-size:var(--font-size-base);line-height:1.6;color:var(--color-text);background:var(--color-white)}
+    .header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:transparent;z-index:1000}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;height:100%;max-width:1200px;margin:0 auto;padding:0 var(--spacing-lg)}
+    .logo{display:flex;align-items:center}
+    .logo-img{height:200px;width:auto;margin-top:var(--spacing-lg)}
+    .nav{display:flex;align-items:center;gap:var(--spacing-xl);background:rgba(255,255,255,0.85);backdrop-filter:blur(12px);padding:var(--spacing-sm) var(--spacing-lg);border-radius:var(--radius-full)}
+    .nav-link{color:var(--color-text);font-weight:400;font-size:var(--font-size-sm)}
+    .menu-toggle{display:none}
+    .page-header{padding:120px 0 60px;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);color:white;text-align:center}
+    @media(max-width:768px){.nav{position:fixed;top:var(--header-height);left:0;right:0;flex-direction:column;transform:translateY(-100%);opacity:0}.menu-toggle{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer}.menu-toggle span{width:24px;height:2px;background:var(--color-white)}}
+  </style>
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* Partner Page Styles */
+    .partners-intro {
+      max-width: 800px;
+      margin: 0 auto var(--spacing-3xl);
+      text-align: center;
+    }
+
+    .partners-intro p {
+      font-size: var(--font-size-lg);
+    }
+
+    .how-it-works {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--spacing-xl);
+      margin-bottom: var(--spacing-4xl);
+    }
+
+    .step-card {
+      text-align: center;
+      padding: var(--spacing-2xl);
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-gray-200);
+      position: relative;
+    }
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+      background: var(--color-primary);
+      color: var(--color-white);
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: var(--font-size-xl);
+      margin: 0 auto var(--spacing-lg);
+    }
+
+    .step-card h3 {
+      font-size: var(--font-size-lg);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .step-card p {
+      font-size: var(--font-size-sm);
+      margin-bottom: 0;
+    }
+
+    /* Benefits */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--spacing-xl);
+      margin-top: var(--spacing-2xl);
+    }
+
+    .benefit-card {
+      display: flex;
+      gap: var(--spacing-md);
+      padding: var(--spacing-xl);
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-gray-200);
+    }
+
+    .benefit-icon {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      background: rgba(255, 107, 53, 0.1);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .benefit-card h3 {
+      font-size: var(--font-size-base);
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .benefit-card p {
+      font-size: var(--font-size-sm);
+      margin-bottom: 0;
+    }
+
+    /* Current Partners */
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--spacing-xl);
+    }
+
+    .partner-card {
+      padding: var(--spacing-xl);
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-gray-200);
+      transition: var(--transition);
+    }
+
+    .partner-card:hover {
+      border-color: var(--color-primary);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .partner-category {
+      display: inline-block;
+      padding: var(--spacing-xs) var(--spacing-sm);
+      background: rgba(255, 107, 53, 0.1);
+      color: var(--color-primary);
+      border-radius: var(--radius-sm);
+      font-size: var(--font-size-xs);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .partner-card h3 {
+      font-size: var(--font-size-lg);
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .partner-card h3 a {
+      color: var(--color-dark);
+    }
+
+    .partner-card h3 a:hover {
+      color: var(--color-primary);
+    }
+
+    .partner-location {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-light);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .partner-card > p:last-child {
+      font-size: var(--font-size-sm);
+      margin-bottom: 0;
+    }
+
+    /* Application Form */
+    .partner-form-wrapper {
+      max-width: 700px;
+      margin: 0 auto;
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-gray-200);
+      padding: var(--spacing-2xl);
+    }
+
+    .partner-form-wrapper h3 {
+      text-align: center;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .partner-form-wrapper > p {
+      text-align: center;
+      margin-bottom: var(--spacing-2xl);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-lg);
+    }
+
+    .checkbox-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-sm);
+    }
+
+    .checkbox-group label {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      font-weight: 400;
+      color: var(--color-text);
+      cursor: pointer;
+      font-size: var(--font-size-sm);
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      width: auto;
+      accent-color: var(--color-primary);
+    }
+
+    .form-note {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-light);
+      text-align: center;
+      margin-top: var(--spacing-md);
+    }
+
+    @media (max-width: 768px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .checkbox-group {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="inner-page">
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/WebbersaurusW.png" alt="Webbersaurus" class="logo-img" width="200" height="200">
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about-us.html" class="nav-link">About</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="reviews.html" class="nav-link">Reviews</a>
+        <a href="seo.html" class="nav-link">SEO</a>
+        <a href="gbp-management.html" class="nav-link">GBP</a>
+        <a href="rate-your-experience.html" class="nav-link">Reviews System</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Local Business Partners</h1>
+      <p>An exclusive link-building network for Webbersaurus clients to boost local search visibility.</p>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section">
+    <div class="container">
+      <div class="partners-intro">
+        <h2>Grow Together, Locally</h2>
+        <p>As a Webbersaurus client, you get access to our local partner network. We connect you with other Connecticut businesses we work with so you can recommend each other online — boosting local search visibility and driving real referrals.</p>
+      </div>
+
+      <div class="how-it-works">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Apply Below</h3>
+          <p>Fill out the form with your business details and tell us which types of local businesses you'd like to partner with.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>We Match You</h3>
+          <p>We connect you with complementary local businesses that make sense for your audience and theirs.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Exchange Links</h3>
+          <p>Each partner adds a "Local Recommendations" section to their site featuring their partners with a brief description and link.</p>
+        </div>
+      </div>
+
+      <!-- Benefits -->
+      <div class="section-header">
+        <h2>Why Join</h2>
+        <p>Real benefits backed by how local search actually works.</p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">&#128200;</div>
+          <div>
+            <h3>Better Local Rankings</h3>
+            <p>Links from other local businesses signal geographic relevance to Google, helping you rank higher in local searches.</p>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">&#128101;</div>
+          <div>
+            <h3>Real Referral Traffic</h3>
+            <p>Customers visiting a partner's site discover your business through a trusted recommendation, not an ad.</p>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">&#127919;</div>
+          <div>
+            <h3>Curated, Not Spammy</h3>
+            <p>We keep each partner page to 10-15 businesses max. Every link is a genuine recommendation, not a directory dump.</p>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">&#129309;</div>
+          <div>
+            <h3>Community Support</h3>
+            <p>Strengthen the local business community by recommending businesses you actually trust and would send customers to.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Current Partners -->
+  <section class="section" style="background: var(--color-gray-50);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Current Partners</h2>
+        <p>Connecticut businesses already in the network.</p>
+      </div>
+
+      <div class="partners-grid">
+        <div class="partner-card">
+          <span class="partner-category">Restaurant</span>
+          <h3><a href="https://parthenondiner.com/" target="_blank" rel="noopener">Parthenon Diner</a></h3>
+          <p class="partner-location">Branford &amp; Old Saybrook, CT</p>
+          <p>Classic American diner serving breakfast, lunch, and dinner on the Connecticut Shoreline since 1976.</p>
+        </div>
+        <div class="partner-card">
+          <span class="partner-category">Restaurant</span>
+          <h3><a href="https://michaelstrattoria.com/" target="_blank" rel="noopener">Michael's Trattoria</a></h3>
+          <p class="partner-location">Branford, CT</p>
+          <p>Authentic Italian dining with handmade pasta, wood-fired specialties, and a warm family atmosphere.</p>
+        </div>
+        <div class="partner-card">
+          <span class="partner-category">Food &amp; Dining Guide</span>
+          <h3><a href="https://abiteofnutmeg.com/" target="_blank" rel="noopener">A Bite of Nutmeg</a></h3>
+          <p class="partner-location">CT Shoreline</p>
+          <p>Your guide to the best restaurants, cafes, and food experiences along the Connecticut Shoreline.</p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: var(--spacing-2xl);">
+        <p style="color: var(--color-text-light); font-size: var(--font-size-sm);">More partners joining soon. Apply below to be listed.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Form -->
+  <section class="section">
+    <div class="container">
+      <div class="partner-form-wrapper">
+        <h3>Join the Network</h3>
+        <p>This program is available exclusively to Webbersaurus clients. Already a client? Fill out the form below. Not a client yet? <a href="contact.html">Get in touch</a> to learn how we can help your business.</p>
+
+        <form action="https://formsubmit.co/chrishauman@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Local Partner Application">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="business-name">Business Name</label>
+              <input type="text" id="business-name" name="business_name" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-name">Your Name</label>
+              <input type="text" id="contact-name" name="contact_name" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="website">Website URL</label>
+            <input type="url" id="website" name="website" placeholder="https://">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="business-type">Business Type</label>
+              <select id="business-type" name="business_type" required>
+                <option value="">Select a category</option>
+                <option value="restaurant">Restaurant / Food Service</option>
+                <option value="retail">Retail / Shopping</option>
+                <option value="health">Health &amp; Wellness</option>
+                <option value="home-services">Home Services / Contractors</option>
+                <option value="professional">Professional Services</option>
+                <option value="automotive">Automotive</option>
+                <option value="beauty">Beauty &amp; Personal Care</option>
+                <option value="entertainment">Entertainment &amp; Events</option>
+                <option value="fitness">Fitness &amp; Recreation</option>
+                <option value="education">Education &amp; Tutoring</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="location">Town / City</label>
+              <input type="text" id="location" name="location" placeholder="e.g. Branford, CT" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>What types of businesses would you like to partner with? (select all that apply)</label>
+            <div class="checkbox-group">
+              <label><input type="checkbox" name="partner_prefs[]" value="restaurants"> Restaurants &amp; Food</label>
+              <label><input type="checkbox" name="partner_prefs[]" value="retail"> Retail &amp; Shopping</label>
+              <label><input type="checkbox" name="partner_prefs[]" value="health"> Health &amp; Wellness</label>
+              <label><input type="checkbox" name="partner_prefs[]" value="home-services"> Home Services</label>
+              <label><input type="checkbox" name="partner_prefs[]" value="professional"> Professional Services</label>
+              <label><input type="checkbox" name="partner_prefs[]" value="automotive"> Automotive</label>
+              <label><input type="checkbox" name="partner_prefs[]" value="beauty"> Beauty &amp; Personal Care</label>
+              <label><input type="checkbox" name="partner_prefs[]" value="entertainment"> Entertainment &amp; Events</label>
+              <label><input type="checkbox" name="partner_prefs[]" value="fitness"> Fitness &amp; Recreation</label>
+              <label><input type="checkbox" name="partner_prefs[]" value="any"> Open to Any</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Anything else we should know?</label>
+            <textarea id="message" name="message" rows="4" placeholder="E.g. specific businesses you'd like to partner with, your target audience, etc."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">Submit Application</button>
+          <p class="form-note">We'll review your application and get back to you within a few business days.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta">
+    <div class="container">
+      <h2>Want Us to Manage Your SEO?</h2>
+      <p>Link partnerships are just one piece of the puzzle. We offer full local SEO services for Connecticut businesses.</p>
+      <a href="seo.html" class="btn btn-large">Learn About Our SEO Services</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: var(--spacing-md);">
+            <a href="index.html" style="flex-shrink: 0;">
+              <img loading="lazy" decoding="async" src="images/dinowords.png" alt="Webbersaurus" width="160" height="123" style="max-width: 160px;">
+            </a>
+            <p style="margin: 0;">Proudly serving the Shoreline community and beyond since 2007.</p>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="affiliate.html">Affiliate Program</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="contact.html">Web Development</a></li>
+            <li><a href="seo.html">Search Engine Optimization</a></li>
+            <li><a href="gbp-management.html">Google Business Profile Mgt</a></li>
+            <li><a href="contact.html">Website Maintenance</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:203-530-7396">203.530.7396</a></li>
+            <li><a href="mailto:chris@webbersaur.us">chris@webbersaur.us</a></li>
+            <li>Branford, CT</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Webbersaurus. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
