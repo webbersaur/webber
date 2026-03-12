@@ -31,39 +31,50 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="css/styles.css">
   <style>
-    .case-study-stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: var(--spacing-lg);
-      max-width: 900px;
-      margin: 0 auto var(--spacing-2xl);
+    /* Override to match Bite of Nutmeg navy/gold */
+    body.inner-page {
+      background-color: #FDF6EC;
     }
 
-    .cs-stat {
-      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
-      color: var(--color-white);
-      border-radius: var(--radius-lg);
-      padding: var(--spacing-xl) var(--spacing-md);
+    .inner-page .page-header {
+      background: linear-gradient(135deg, #1e3a6e 0%, #152a52 100%);
+    }
+
+    .cs-byline {
       text-align: center;
+      padding: 20px 20px 0;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      color: #888;
+      letter-spacing: 0.03em;
     }
 
-    .cs-stat-number {
-      font-size: var(--font-size-4xl);
-      font-weight: 700;
-      display: block;
-      line-height: 1.1;
+    .cs-byline a {
+      color: #1e3a6e;
+      font-weight: 600;
+      text-decoration: none;
     }
 
-    .cs-stat-label {
-      font-size: var(--font-size-sm);
-      opacity: 0.9;
+    .cs-byline a:hover {
+      text-decoration: underline;
+    }
+
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      color: #1e3a6e;
+    }
+
+    .cs-client-info {
+      font-family: 'Montserrat', sans-serif;
+      color: #888;
+      font-size: 0.95rem;
       margin-top: var(--spacing-xs);
     }
 
@@ -74,65 +85,152 @@
     }
 
     .cs-context p {
-      color: var(--color-text-light);
-      font-size: var(--font-size-lg);
+      font-family: 'Montserrat', sans-serif;
+      color: #444;
+      font-size: 1.05rem;
       line-height: 1.8;
     }
 
     .cs-context .highlight {
-      color: var(--color-primary);
-      font-weight: 700;
+      color: #1e3a6e;
+      font-weight: 600;
     }
 
     .cs-speed-badge {
       display: inline-block;
-      background: var(--color-dark);
-      color: var(--color-primary);
-      font-weight: 700;
-      font-size: var(--font-size-sm);
-      padding: var(--spacing-sm) var(--spacing-xl);
-      border-radius: var(--radius-full);
+      background: linear-gradient(135deg, #1e3a6e 0%, #2a4a8a 100%);
+      color: #f0b323;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 10px 24px;
+      border-radius: 50px;
       margin-top: var(--spacing-md);
     }
 
     .cs-date {
-      color: var(--color-text-light);
-      font-size: var(--font-size-sm);
-      margin-top: var(--spacing-sm);
+      font-family: 'Montserrat', sans-serif;
+      color: #888;
+      font-size: 0.85rem;
+      margin-top: 0.75rem;
     }
 
-    .cs-client-info {
-      color: var(--color-text-light);
-      font-size: var(--font-size-sm);
-      margin-top: var(--spacing-xs);
+    .case-study-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      max-width: 1000px;
+      margin: 0 auto var(--spacing-2xl);
+    }
+
+    .cs-stat {
+      background: linear-gradient(135deg, #1e3a6e 0%, #152a52 100%);
+      border-radius: 12px;
+      padding: 24px 16px;
+      text-align: center;
+    }
+
+    .cs-stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #f0b323;
+      display: block;
+      line-height: 1.1;
+    }
+
+    .cs-stat-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.8);
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+
+    .cs-challenge {
+      max-width: 800px;
+      margin: 0 auto var(--spacing-2xl);
+      padding: 30px;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-left: 4px solid #f0b323;
+      border-radius: 12px;
+    }
+
+    .cs-challenge h3 {
+      font-family: 'Playfair Display', serif;
+      color: #1e3a6e;
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .cs-challenge p {
+      font-family: 'Montserrat', sans-serif;
+      color: #444;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .pagespeed-cta {
+      text-align: center;
+      padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    .pagespeed-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #1e3a6e 0%, #2a4a8a 100%);
+      color: #f0b323;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .pagespeed-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(30, 58, 110, 0.3);
+    }
+
+    .pagespeed-icon {
+      margin-right: 4px;
+    }
+
+    .pagespeed-subtitle {
+      font-family: 'Montserrat', sans-serif;
+      color: #888;
+      font-size: 0.85rem;
+      margin-top: 8px;
     }
 
     .keyword-results {
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto var(--spacing-2xl);
     }
 
     .keyword-results h3 {
+      font-family: 'Playfair Display', serif;
+      color: #1e3a6e;
+      font-size: 1.5rem;
       text-align: center;
-      margin-bottom: var(--spacing-lg);
-      font-size: var(--font-size-2xl);
+      margin-bottom: 1.5rem;
     }
 
     .kw-card {
-      background: var(--color-white);
-      border: 1px solid var(--color-gray-200);
-      border-radius: var(--radius-md);
-      padding: var(--spacing-lg) var(--spacing-xl);
-      margin-bottom: var(--spacing-md);
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      padding: 20px 24px;
+      margin-bottom: 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: var(--spacing-md);
-      transition: var(--transition);
+      gap: 16px;
     }
 
     .kw-card:hover {
-      box-shadow: var(--shadow-md);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
     }
 
     .kw-info {
@@ -140,65 +238,89 @@
     }
 
     .kw-name {
-      font-weight: 700;
-      color: var(--color-text);
-      font-size: var(--font-size-base);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      color: #1e3a6e;
+      font-size: 1.05rem;
+    }
+
+    .kw-name a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px dashed #1e3a6e;
     }
 
     .kw-desc {
-      color: var(--color-text-light);
-      font-size: var(--font-size-sm);
-      margin-top: 2px;
+      font-family: 'Montserrat', sans-serif;
+      color: #888;
+      font-size: 0.85rem;
+      margin-top: 4px;
     }
 
     .kw-result {
       display: flex;
       align-items: center;
-      gap: var(--spacing-sm);
+      gap: 12px;
       flex-shrink: 0;
     }
 
     .kw-before {
-      color: var(--color-gray-300);
-      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      color: #ccc;
+      font-size: 0.9rem;
       text-decoration: line-through;
-      font-size: var(--font-size-sm);
     }
 
     .kw-arrow {
-      color: var(--color-primary);
+      color: #22c55e;
+      font-size: 1.2rem;
     }
 
     .kw-after {
-      background: var(--color-primary);
-      color: var(--color-white);
+      background: linear-gradient(135deg, #166534 0%, #15803d 100%);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
       font-weight: 700;
-      padding: var(--spacing-sm) var(--spacing-md);
-      border-radius: var(--radius-sm);
-      min-width: 48px;
+      font-size: 1.1rem;
+      padding: 8px 16px;
+      border-radius: 8px;
+      min-width: 50px;
       text-align: center;
     }
 
     .kw-after.top3 {
-      background: var(--color-dark);
+      background: linear-gradient(135deg, #1e3a6e 0%, #2a4a8a 100%);
     }
 
-    .cs-challenge {
-      max-width: 700px;
-      margin: 0 auto var(--spacing-2xl);
-      padding: var(--spacing-xl);
-      background: var(--color-gray-50);
-      border-left: 4px solid var(--color-primary);
-      border-radius: var(--radius-md);
+    /* CTA override */
+    .section.cta {
+      background: linear-gradient(135deg, #1e3a6e 0%, #152a52 100%);
     }
 
-    .cs-challenge h3 {
-      margin-bottom: var(--spacing-sm);
+    .section.cta h2 {
+      font-family: 'Playfair Display', serif;
+      color: #f0b323;
     }
 
-    .cs-challenge p {
-      color: var(--color-text-light);
-      line-height: 1.7;
+    .section.cta p {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .section.cta .btn {
+      background: #f0b323;
+      color: #1e3a6e;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      border-radius: 50px;
+    }
+
+    .section.cta .btn:hover {
+      background: #f5c94d;
+    }
+
+    .section.cta a[href^="tel"] {
+      color: #fff;
     }
 
     @media (max-width: 768px) {
@@ -209,16 +331,30 @@
       .kw-card {
         flex-direction: column;
         align-items: flex-start;
+        gap: 12px;
       }
 
       .kw-result {
         align-self: flex-end;
       }
+
+      .cs-challenge {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
     }
 
     @media (max-width: 480px) {
       .cs-stat-number {
-        font-size: var(--font-size-3xl);
+        font-size: 1.5rem;
+      }
+
+      .case-study-stats {
+        gap: 10px;
+      }
+
+      .cs-stat {
+        padding: 16px 10px;
       }
     }
   </style>
@@ -257,6 +393,11 @@
     </div>
   </section>
 
+  <!-- Byline -->
+  <div class="cs-byline">
+    A case study by <a href="https://webbersaur.us">Webbersaurus Web Development</a>
+  </div>
+
   <!-- Client Intro -->
   <section class="section">
     <div class="container">
@@ -268,7 +409,7 @@
       <div class="cs-context">
         <p>Michael's Trattoria already ranked well for <span class="highlight">"italian restaurant"</span> keywords. Our goal was the much broader and more competitive <span class="highlight">"restaurants wallingford ct"</span> — a keyword where they weren't even in the top 50.</p>
         <div class="cs-speed-badge">We typically quote 60–90 days for these results. This took 30.</div>
-        <div class="cs-date">Rankings as of 3/11/26</div>
+        <div class="cs-date">Rankings as of 3/12/26</div>
       </div>
 
       <!-- Stats -->
@@ -304,6 +445,14 @@
     </div>
   </section>
 
+  <!-- PageSpeed Button -->
+  <div class="pagespeed-cta">
+    <a href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fmichaelstrattoria.com&form_factor=desktop" target="_blank" rel="noopener" class="pagespeed-btn">
+      <span class="pagespeed-icon">⚡</span> Almost World Famous Technical Excellence
+    </a>
+    <p class="pagespeed-subtitle">Run a live Google PageSpeed score on the site we built</p>
+  </div>
+
   <!-- Keyword Results -->
   <section class="section">
     <div class="container">
@@ -312,7 +461,7 @@
 
         <div class="kw-card">
           <div class="kw-info">
-            <div class="kw-name"><a href="https://www.google.com/search?q=restaurants+wallingford+ct" target="_blank" rel="noopener" style="color: inherit; text-decoration: none; border-bottom: 1px dashed var(--color-text);">"restaurants wallingford ct"</a></div>
+            <div class="kw-name"><a href="https://www.google.com/search?q=restaurants+wallingford+ct" target="_blank" rel="noopener" class="kw-link">"restaurants wallingford ct"</a></div>
             <div class="kw-desc">Broadest, most competitive keyword — the primary goal</div>
           </div>
           <div class="kw-result">
@@ -324,7 +473,7 @@
 
         <div class="kw-card">
           <div class="kw-info">
-            <div class="kw-name"><a href="https://www.google.com/search?q=italian+restaurant+wallingford+ct" target="_blank" rel="noopener" style="color: inherit; text-decoration: none; border-bottom: 1px dashed var(--color-text);">"italian restaurant wallingford ct"</a></div>
+            <div class="kw-name"><a href="https://www.google.com/search?q=italian+restaurant+wallingford+ct" target="_blank" rel="noopener" class="kw-link">"italian restaurant wallingford ct"</a></div>
             <div class="kw-desc">Core niche keyword</div>
           </div>
           <div class="kw-result">
@@ -336,7 +485,7 @@
 
         <div class="kw-card">
           <div class="kw-info">
-            <div class="kw-name"><a href="https://www.google.com/search?q=private+parties+wallingford+ct" target="_blank" rel="noopener" style="color: inherit; text-decoration: none; border-bottom: 1px dashed var(--color-text);">"private parties wallingford ct"</a></div>
+            <div class="kw-name"><a href="https://www.google.com/search?q=private+parties+wallingford+ct" target="_blank" rel="noopener" class="kw-link">"private parties wallingford ct"</a></div>
             <div class="kw-desc">High-value event keyword — the biggest win</div>
           </div>
           <div class="kw-result">
@@ -348,7 +497,7 @@
 
         <div class="kw-card">
           <div class="kw-info">
-            <div class="kw-name"><a href="https://www.google.com/search?q=best+italian+restaurant+wallingford" target="_blank" rel="noopener" style="color: inherit; text-decoration: none; border-bottom: 1px dashed var(--color-text);">"best italian restaurant wallingford"</a></div>
+            <div class="kw-name"><a href="https://www.google.com/search?q=best+italian+restaurant+wallingford" target="_blank" rel="noopener" class="kw-link">"best italian restaurant wallingford"</a></div>
             <div class="kw-desc">High-intent "best" keyword</div>
           </div>
           <div class="kw-result">
