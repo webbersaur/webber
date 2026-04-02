@@ -3,6 +3,12 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/:path(.*)",
+      "has": [{ "type": "host", "value": "webber-eta.vercel.app" }],
+      "destination": "https://www.webbersaurus.com/:path",
+      "permanent": true
+    },
+    {
       "source": "/testimonials",
       "destination": "/reviews",
       "permanent": true
