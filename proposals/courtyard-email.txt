@@ -7,7 +7,7 @@ Great talking with you about getting a website up for the Courtyard. As promised
 I also included an optional section on Google Business Profile management if that's something you'd like to explore down the road.
 
 You can view the full proposal here:
-[PROPOSAL LINK]
+https://webbersaur.github.io/webber/proposals/courtyard-restaurant.html
 
 Take a look when you get a chance and let me know if you have any questions. Happy to walk through it together if that's easier.
 
@@ -15,4 +15,4 @@ Talk soon,
 Chris Hauman
 Webbersaurus Digital Agency
 203.530.7396
-chris@webbersaur.us
+
