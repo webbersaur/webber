@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Change Portal Test Page | Webbersaurus</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="images/WebbersaurusW.png" as="image">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    @font-face{font-family:'Inter Fallback';src:local('Arial');size-adjust:107%;ascent-override:90%;descent-override:22%;line-gap-override:0%}
+    :root{--color-primary:#FF6B35;--color-primary-dark:#E55A2B;--color-dark:#1a1a2e;--color-text:#333340;--color-text-light:#6b6b80;--color-white:#fff;--color-gray-50:#f9fafb;--color-gray-200:#e5e7eb;--font-family:'Inter','Inter Fallback',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;--spacing-sm:0.5rem;--spacing-md:1rem;--spacing-lg:1.5rem;--spacing-xl:2rem;--spacing-2xl:3rem;--spacing-3xl:4rem;--radius-md:0.5rem;--radius-lg:1rem;--shadow-lg:0 10px 25px rgba(0,0,0,0.1);--transition:all 0.3s ease}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:var(--font-family);font-size:1rem;line-height:1.6;color:var(--color-text);background:var(--color-white)}
+    img{max-width:100%;height:auto;display:block}
+    .container{max-width:1200px;margin:0 auto;padding:0 var(--spacing-lg)}
+    h1,h2,h3{color:var(--color-dark);font-weight:700;line-height:1.2;margin-bottom:var(--spacing-md)}
+    p{margin-bottom:var(--spacing-md);color:var(--color-text-light)}
+
+    /* Header */
+    .header{background:var(--color-dark);padding:var(--spacing-lg) 0}
+    .header-inner{display:flex;align-items:center;justify-content:space-between}
+    .header .logo-img{height:50px;width:auto}
+    .header-badge{background:var(--color-primary);color:var(--color-white);padding:var(--spacing-sm) var(--spacing-md);border-radius:var(--radius-md);font-size:0.85rem;font-weight:600}
+
+    /* Hero / Featured */
+    .hero-section{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);color:var(--color-white);padding:var(--spacing-3xl) 0;text-align:center}
+    .hero-section h1{color:var(--color-white);font-size:2.5rem}
+    .hero-section p{color:rgba(255,255,255,0.8);font-size:1.125rem;max-width:600px;margin:0 auto var(--spacing-lg)}
+
+    /* Featured section (photo drop target) */
+    .featured-section{background:var(--color-gray-50);padding:var(--spacing-3xl) 0}
+    .featured-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--spacing-xl);align-items:center}
+    .featured-image{border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;background:var(--color-gray-200);display:flex;align-items:center;justify-content:center;color:var(--color-text-light)}
+    .featured-image img{width:100%;height:100%;object-fit:cover}
+    .featured-label{display:inline-block;background:rgba(255,107,53,0.15);color:var(--color-primary);padding:var(--spacing-sm) var(--spacing-md);border-radius:var(--radius-md);font-size:0.85rem;font-weight:600;margin-bottom:var(--spacing-md)}
+
+    /* Menu section */
+    .menu-section{padding:var(--spacing-3xl) 0}
+    .menu-section h2{text-align:center;margin-bottom:var(--spacing-2xl)}
+    .menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--spacing-xl)}
+    .menu-category h3{color:var(--color-primary);margin-bottom:var(--spacing-lg);padding-bottom:var(--spacing-sm);border-bottom:2px solid var(--color-gray-200)}
+    .menu-item{display:flex;justify-content:space-between;align-items:baseline;padding:var(--spacing-sm) 0;border-bottom:1px dotted var(--color-gray-200)}
+    .menu-item-name{font-weight:600;color:var(--color-dark)}
+    .menu-item-desc{font-size:0.85rem;color:var(--color-text-light);margin:0.25rem 0 0}
+    .menu-item-price{font-weight:700;color:var(--color-primary);white-space:nowrap;margin-left:var(--spacing-md)}
+
+    /* Hours section */
+    .hours-section{background:var(--color-dark);color:var(--color-white);padding:var(--spacing-3xl) 0;text-align:center}
+    .hours-section h2{color:var(--color-white)}
+    .hours-grid{display:inline-grid;grid-template-columns:auto auto;gap:var(--spacing-sm) var(--spacing-xl);text-align:left;margin-top:var(--spacing-lg)}
+    .hours-day{font-weight:600}
+    .hours-time{color:rgba(255,255,255,0.7)}
+
+    /* Content section */
+    .content-section{padding:var(--spacing-3xl) 0}
+    .content-section h2{text-align:center;margin-bottom:var(--spacing-2xl)}
+    .content-body{max-width:800px;margin:0 auto;font-size:1.05rem;line-height:1.8}
+
+    /* Footer */
+    .footer{background:var(--color-gray-50);padding:var(--spacing-xl) 0;text-align:center;font-size:0.85rem;color:var(--color-text-light)}
+
+    /* Section markers (for portal targeting) */
+    [data-section]{position:relative}
+    [data-section]::before{content:attr(data-section);position:absolute;top:0;right:0;background:var(--color-primary);color:white;font-size:0.65rem;padding:2px 8px;border-radius:0 0 0 var(--radius-md);opacity:0.5;font-family:monospace}
+
+    @media(max-width:768px){
+      .featured-grid,.menu-grid{grid-template-columns:1fr}
+      .hero-section h1{font-size:2rem}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <img src="images/WebbersaurusW.png" alt="Webbersaurus" class="logo-img" width="50" height="50">
+      <span class="header-badge">Change Portal Test Page</span>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-section" data-section="hero">
+    <div class="container">
+      <h1>Welcome to Our Test Restaurant</h1>
+      <p>This is a test page for the Webbersaurus Change Portal. Each section below can be targeted by the portal for updates.</p>
+    </div>
+  </section>
+
+  <!-- Featured / Tonight's Special (photo drop target) -->
+  <section class="featured-section" data-section="featured-special">
+    <div class="container">
+      <div class="featured-grid">
+        <div class="featured-image" id="featured-photo">
+          <span>Photo drop target — no image yet</span>
+        </div>
+        <div>
+          <span class="featured-label">Tonight's Special</span>
+          <h2>Chef's Featured Dish</h2>
+          <p>This section is the photo drop target. When a client uploads a photo with the "Post directly to site" checkbox, it lands here.</p>
+          <p style="font-weight:600;color:var(--color-dark);">$24.95</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section class="menu-section" data-section="menu">
+    <div class="container">
+      <h2>Sample Menu</h2>
+      <div class="menu-grid">
+        <div class="menu-category" data-section="appetizers">
+          <h3>Appetizers</h3>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name">Bruschetta</div>
+              <p class="menu-item-desc">Toasted bread with tomatoes, garlic, basil</p>
+            </div>
+            <span class="menu-item-price">$12.95</span>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name">Calamari Fritti</div>
+              <p class="menu-item-desc">Lightly fried squid with marinara</p>
+            </div>
+            <span class="menu-item-price">$14.95</span>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name">Mozzarella Sticks</div>
+              <p class="menu-item-desc">Hand-breaded, served with marinara</p>
+            </div>
+            <span class="menu-item-price">$10.95</span>
+          </div>
+        </div>
+        <div class="menu-category" data-section="entrees">
+          <h3>Entrees</h3>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name">Chicken Parmesan</div>
+              <p class="menu-item-desc">Breaded cutlet, marinara, mozzarella, pasta</p>
+            </div>
+            <span class="menu-item-price">$22.95</span>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name">Penne Vodka</div>
+              <p class="menu-item-desc">Penne in creamy vodka sauce with prosciutto</p>
+            </div>
+            <span class="menu-item-price">$18.95</span>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name">Grilled Salmon</div>
+              <p class="menu-item-desc">Atlantic salmon, lemon butter, seasonal vegetables</p>
+            </div>
+            <span class="menu-item-price">$26.95</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hours -->
+  <section class="hours-section" data-section="hours">
+    <div class="container">
+      <h2>Hours of Operation</h2>
+      <div class="hours-grid">
+        <span class="hours-day">Monday - Thursday</span><span class="hours-time">11:00 AM - 9:00 PM</span>
+        <span class="hours-day">Friday - Saturday</span><span class="hours-time">11:00 AM - 10:00 PM</span>
+        <span class="hours-day">Sunday</span><span class="hours-time">12:00 PM - 8:00 PM</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Content -->
+  <section class="content-section" data-section="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <div class="content-body">
+        <p>This is a sample content section that can be updated through the Change Portal. A client could record a voice message like "Update the about section to mention our new outdoor patio" and the portal would generate a draft for this area.</p>
+        <p>The content here is intentionally generic so you can test different types of content updates — text changes, adding new paragraphs, or rewriting sections entirely.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>Test Page — Not for production. Sections marked with <code>data-section</code> attributes are targetable by the Change Portal.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
