@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Avalanche Share Image</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: white;
+    }
+    .share {
+      width: 1200px;
+      height: 630px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+    }
+    .share::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 12px;
+      background: #FF6B35;
+      z-index: 2;
+    }
+    .left {
+      padding: 56px 48px 48px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: white;
+      position: relative;
+    }
+    .eyebrow {
+      font-size: 20px;
+      font-weight: 700;
+      color: #FF6B35;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-size: 64px;
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+    .sub {
+      font-size: 20px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.4;
+      margin-bottom: 28px;
+    }
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+    .price {
+      font-size: 88px;
+      font-weight: 900;
+      color: #FF6B35;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .price-label {
+      font-size: 22px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .highlights {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px 16px;
+      font-size: 17px;
+      line-height: 1.35;
+    }
+    .highlights .check {
+      color: #FF6B35;
+      font-weight: 900;
+      font-size: 20px;
+    }
+    .highlights .item strong { color: white; font-weight: 700; }
+    .highlights .item { color: rgba(255, 255, 255, 0.9); }
+
+    .right {
+      position: relative;
+      overflow: hidden;
+    }
+    .right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .right::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(26, 26, 46, 0.35) 0%, rgba(26, 26, 46, 0) 25%);
+    }
+    .footer-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.72);
+      color: white;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 3;
+      font-size: 18px;
+      font-weight: 600;
+      backdrop-filter: blur(8px);
+    }
+    .footer-bar .url { color: #FF6B35; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <div class="share">
+    <div class="left">
+      <div>
+        <div class="eyebrow">For Sale · Branford, CT</div>
+        <h1>2004 Chevy<br>Avalanche Z71</h1>
+        <div class="sub">White · 4WD · 5.3L Vortec V8 · Black Leather · 180,988 mi</div>
+        <div class="price-row">
+          <div class="price">$7,000</div>
+          <div class="price-label">OBO · Cash</div>
+        </div>
+      </div>
+      <div class="highlights">
+        <div class="check">✓</div><div class="item"><strong>Reman transmission</strong> — balance of 5-yr warranty</div>
+        <div class="check">✓</div><div class="item"><strong>New fuel pump</strong> (Dec 2025) &amp; <strong>new tires</strong></div>
+        <div class="check">✓</div><div class="item"><strong>CT emissions passed</strong> — valid thru Dec 2026</div>
+        <div class="check">✓</div><div class="item">CarPlay, SmartStart, bed tent included</div>
+      </div>
+    </div>
+    <div class="right">
+      <img src="images/avalanche/2004-chevy-avalanche-for-sale-front-driver-three-quarter.webp" alt="2004 Chevy Avalanche Z71">
+    </div>
+    <div class="footer-bar">
+      <span>Call/text Chris · <strong>203.530.7396</strong></span>
+      <span class="url">webbersaurus.com/avalanche</span>
+    </div>
+  </div>
+</body>
+</html>
