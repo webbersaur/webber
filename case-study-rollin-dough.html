@@ -334,6 +334,99 @@
         padding: 16px 10px;
       }
     }
+
+    .lightbox-trigger {
+      background: none;
+      border: 0;
+      padding: 0;
+      cursor: zoom-in;
+      display: inline-block;
+      max-width: 360px;
+      width: 100%;
+    }
+
+    .lightbox-trigger img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      transition: transform 0.2s ease;
+    }
+
+    .kw-proof {
+      max-width: 100%;
+      margin: -8px 0 20px;
+      display: block;
+    }
+
+    .kw-proof img {
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .kw-proof-caption {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      color: #888;
+      text-align: center;
+      margin-top: 6px;
+      margin-bottom: 24px;
+    }
+
+    .lightbox-trigger:hover img,
+    .lightbox-trigger:focus-visible img {
+      transform: scale(1.02);
+    }
+
+    .lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 24px;
+      cursor: zoom-out;
+    }
+
+    .lightbox-overlay.open {
+      display: flex;
+    }
+
+    .lightbox-overlay img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      background: rgba(255,255,255,0.1);
+      border: 0;
+      color: #fff;
+      font-size: 2rem;
+      line-height: 1;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-close:hover,
+    .lightbox-close:focus-visible {
+      background: rgba(255,255,255,0.2);
+    }
   </style>
 </head>
 <body class="inner-page">
@@ -446,6 +539,10 @@
             <span class="kw-after top3">#2</span>
           </div>
         </div>
+        <button type="button" class="lightbox-trigger kw-proof" data-lightbox-src="images/rollin-dough-pizza-trailer-guilford-serp.webp" aria-label="View larger Google search results screenshot">
+          <img loading="lazy" decoding="async" src="images/rollin-dough-pizza-trailer-guilford-serp.webp" alt="Google search results for &quot;pizza trailer in guilford&quot; showing Rollin Dough Mobile LLC at the top of the Places pack" width="1600" height="989">
+        </button>
+        <div class="kw-proof-caption">Live Google SERP — May 6, 2026</div>
 
         <div class="kw-card">
           <div class="kw-info">
@@ -458,6 +555,10 @@
             <span class="kw-after">#10</span>
           </div>
         </div>
+        <button type="button" class="lightbox-trigger kw-proof" data-lightbox-src="images/rollin-dough-pizza-truck-guilford-serp.webp" aria-label="View larger Google search results screenshot">
+          <img loading="lazy" decoding="async" src="images/rollin-dough-pizza-truck-guilford-serp.webp" alt="Google search results for &quot;pizza truck in guilford&quot; showing Rollin Dough Mobile LLC in the Places pack" width="1600" height="910">
+        </button>
+        <div class="kw-proof-caption">Live Google SERP — May 6, 2026</div>
       </div>
     </div>
   </section>
@@ -468,7 +569,20 @@
       <div style="max-width: 720px; margin: 0 auto; text-align: center;">
         <h3>Confirmed by a Real Customer</h3>
         <p style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-lg);">When asked how they found Rollin Dough, the answer was simple — <strong>Google search</strong>. That's the SEO doing its job.</p>
-        <img loading="lazy" decoding="async" src="images/rollin-dough-google-search-proof.webp" alt="Text message from a Rollin Dough customer confirming they found the business via Google search" width="778" height="1000" style="max-width: 360px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.12);">
+        <button type="button" class="lightbox-trigger" data-lightbox-src="images/rollin-dough-google-search-proof.webp" aria-label="View larger image">
+          <img loading="lazy" decoding="async" src="images/rollin-dough-google-search-proof.webp" alt="Text message from a Rollin Dough customer confirming they found the business via Google search" width="778" height="1000">
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Revenue Milestone -->
+  <section class="section">
+    <div class="container">
+      <div class="cs-challenge">
+        <h3>Investment Recouped in 30 Days</h3>
+        <p class="cs-date" style="color:#c0392b; font-weight:700; font-size:1rem; margin-top:-0.25rem; margin-bottom:0.75rem;">May 1, 2026 — One Month After Launch</p>
+        <p>Rollin Dough secured their first job sourced through the new website, fully paying for the website investment 30 days in. Page 1 rankings translated to real revenue almost immediately.</p>
       </div>
     </div>
   </section>
@@ -530,5 +644,54 @@
   </footer>
 
   <script src="js/main.js"></script>
+
+  <!-- Lightbox -->
+  <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+    <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+    <img id="lightboxImg" src="" alt="">
+  </div>
+  <script>
+    (function () {
+      var overlay = document.getElementById('lightbox');
+      var img = document.getElementById('lightboxImg');
+      var closeBtn = document.getElementById('lightboxClose');
+      var triggers = document.querySelectorAll('.lightbox-trigger');
+      var lastFocus = null;
+
+      function open(src, alt) {
+        lastFocus = document.activeElement;
+        img.src = src;
+        img.alt = alt || '';
+        overlay.hidden = false;
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+      }
+
+      function close() {
+        overlay.classList.remove('open');
+        overlay.hidden = true;
+        img.src = '';
+        document.body.style.overflow = '';
+        if (lastFocus) lastFocus.focus();
+      }
+
+      triggers.forEach(function (t) {
+        t.addEventListener('click', function () {
+          var src = t.getAttribute('data-lightbox-src');
+          var inner = t.querySelector('img');
+          open(src, inner ? inner.alt : '');
+        });
+      });
+
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay || e.target === img) close();
+      });
+      closeBtn.addEventListener('click', close);
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !overlay.hidden) close();
+      });
+    })();
+  </script>
 </body>
 </html>
