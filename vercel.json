@@ -22,6 +22,11 @@
       "source": "/about",
       "destination": "/about-us",
       "permanent": true
+    },
+    {
+      "source": "/bmw",
+      "destination": "/2012-bmw-r1200gs-adventure-for-sale-ct",
+      "permanent": true
     }
   ],
   "rewrites": [
