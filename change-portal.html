@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Professional Google Business Profile management and local SEO services. Boost your local presence and attract more customers with expert GBP optimization.">
-  <title>GBP Management | Webbersaurus</title>
+  <meta name="description" content="Update your website by voice, text, or photo. The Webbersaurus Change Portal lets you submit changes from your phone — AI drafts the update, we review and publish it in seconds.">
+  <title>Change Portal | Webbersaurus</title>
 
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://www.webbersaurus.com/gbp-management">
+  <link rel="canonical" href="https://www.webbersaurus.com/change-portal">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.webbersaurus.com/gbp-management">
-  <meta property="og:title" content="GBP Management | Webbersaurus">
-  <meta property="og:description" content="Professional Google Business Profile management and local SEO services. Boost your local presence and attract more customers.">
+  <meta property="og:url" content="https://www.webbersaurus.com/change-portal">
+  <meta property="og:title" content="Change Portal | Webbersaurus">
+  <meta property="og:description" content="Update your website by voice, text, or photo. AI drafts the change, we review and publish it in seconds. No logins, no apps, no waiting.">
   <meta property="og:image" content="https://www.webbersaurus.com/images/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -22,9 +22,9 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://www.webbersaurus.com/gbp-management">
-  <meta name="twitter:title" content="GBP Management | Webbersaurus">
-  <meta name="twitter:description" content="Professional Google Business Profile management and local SEO services. Boost your local presence and attract more customers.">
+  <meta name="twitter:url" content="https://www.webbersaurus.com/change-portal">
+  <meta name="twitter:title" content="Change Portal | Webbersaurus">
+  <meta name="twitter:description" content="Update your website by voice, text, or photo. AI drafts the change, we review and publish it in seconds.">
   <meta name="twitter:image" content="https://www.webbersaurus.com/images/og-image.jpg">
 
   <!-- Additional SEO -->
@@ -35,8 +35,8 @@
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Google Business Profile Management",
-    "description": "Professional Google Business Profile management and local SEO services including profile optimization, content updates, review management, analytics, and local search optimization.",
+    "name": "Website Change Portal",
+    "description": "An AI-powered portal that lets business owners submit website changes by voice, text, or photo from any device. Submissions are transcribed and drafted by AI, reviewed by Webbersaurus, and published to the live site.",
     "provider": {
       "@type": "LocalBusiness",
       "@id": "https://www.webbersaurus.com/#business",
@@ -54,8 +54,8 @@
       "@type": "State",
       "name": "Connecticut"
     },
-    "serviceType": "Google Business Profile Management",
-    "url": "https://www.webbersaurus.com/gbp-management"
+    "serviceType": "Managed Website Updates",
+    "url": "https://www.webbersaurus.com/change-portal"
   }
   </script>
 
@@ -86,9 +86,25 @@
       color: var(--color-primary);
       font-weight: 700;
     }
-    .service-card h4 {
-      color: var(--color-primary);
-      margin-bottom: var(--spacing-sm);
+    .hero-cta {
+      display: flex;
+      gap: var(--spacing-md);
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: var(--spacing-lg);
+    }
+    .step-number {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto var(--spacing-md);
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+      color: var(--color-white);
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--font-size-xl);
+      font-weight: 700;
     }
     .why-list {
       max-width: 800px;
@@ -105,32 +121,21 @@
     .why-item strong {
       color: var(--color-primary);
     }
-    .video-container {
+    .proof-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-md);
+      justify-content: center;
       max-width: 800px;
-      margin: 0 auto var(--spacing-xl);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
+      margin: 0 auto;
     }
-    .video-container iframe {
-      width: 100%;
-      aspect-ratio: 16/9;
-      display: block;
-    }
-    .stat-highlight {
-      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
-      color: var(--color-white);
-      padding: var(--spacing-xl);
-      border-radius: var(--radius-lg);
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto var(--spacing-2xl);
-    }
-    .stat-highlight .stat-number {
-      font-size: var(--font-size-4xl);
+    .proof-chip {
+      background: var(--color-white);
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-full);
+      padding: var(--spacing-sm) var(--spacing-lg);
       font-weight: 700;
-      display: block;
-      margin-bottom: var(--spacing-sm);
+      color: var(--color-text);
     }
   </style>
 </head>
@@ -148,7 +153,7 @@
         <a href="reviews.html" class="nav-link">Reviews</a>
         <a href="seo.html" class="nav-link">SEO</a>
         <a href="gbp-management.html" class="nav-link">GBP</a>
-        <a href="change-portal.html" class="nav-link">Change Portal</a>
+        <a href="change-portal.html" class="nav-link active">Change Portal</a>
         <a href="rate-your-experience.html" class="nav-link">Reviews System</a>
         <div class="nav-dropdown">
           <span class="nav-link nav-dropdown-toggle">Case Studies</span>
@@ -170,122 +175,125 @@
   <!-- Page Header -->
   <section class="page-header">
     <div class="container">
-      <h1>Google Business Profile Management</h1>
-      <p>Boost your local presence with expert GBP management and local SEO</p>
-    </div>
-  </section>
-
-  <!-- Video & Intro -->
-  <section class="section">
-    <div class="container">
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/LMGsMJ_vcMg" title="Google Business Profile Management by Webbersaurus" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-
-      <div class="stat-highlight">
-        <span class="stat-number">85%</span>
-        of businesses overlook this free tool that drives local customers
-      </div>
-
-      <div class="section-header">
-        <h2>Stand Out in Local Searches</h2>
-        <p>In today's digital landscape, having a strong online presence is critical for attracting customers and driving business growth. A well-managed Google Business Profile ensures that your business stands out in local searches, connects with potential customers, and gains trust through accurate and engaging information.</p>
+      <h1>Update Your Website by Voice, Text, or Photo</h1>
+      <p>An AI-powered portal we build right into your site. Talk, snap, or type &mdash; we review and publish. No logins, no apps, no waiting.</p>
+      <div class="hero-cta">
+        <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
+        <a href="contact.html" class="btn btn-primary">Get It On My Site</a>
       </div>
     </div>
   </section>
 
-  <!-- Services -->
-  <section class="section" style="background: var(--color-gray-50);">
+  <!-- How It Works -->
+  <section class="section" id="how-it-works">
     <div class="container">
       <div class="section-header">
-        <h2>Our Google Business Services</h2>
-        <p>Comprehensive management to maximize your local visibility</p>
+        <h2>How It Works</h2>
+        <p>Three simple steps from "I need a change" to "it's live."</p>
       </div>
       <div class="services-grid">
         <div class="service-card">
-          <div class="service-icon">&#9881;</div>
-          <h3>Profile Setup & Optimization</h3>
-          <p>We'll create and optimize your GBP profile to ensure it's fully complete and professional.</p>
+          <div class="step-number">1</div>
+          <h3>&#127908; You Submit</h3>
+          <p>Tap a hidden button built into your own site, then record a voice memo, snap a photo, or type the change &mdash; right from your phone.</p>
+        </div>
+        <div class="service-card">
+          <div class="step-number">2</div>
+          <h3>&#129302; AI Drafts It</h3>
+          <p>AI transcribes your request and writes the update in your site's exact style &mdash; menus, hours, specials, photos, and more.</p>
+        </div>
+        <div class="service-card">
+          <div class="step-number">3</div>
+          <h3>&#9889; We Publish</h3>
+          <p>We review every change, approve it with one click, and it's live on your website in seconds.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section" style="background: var(--color-gray-50);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Business Owners Love It</h2>
+        <p>Built for real, everyday changes &mdash; without the technical headaches.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">&#128241;</div>
+          <h3>Works From Your Phone</h3>
+          <p>Submit a change from the kitchen, the job site, or the car. Nothing to install.</p>
           <ul class="feature-list">
-            <li>Accurate NAP (name, address, phone) consistency</li>
-            <li>High-quality photos and videos</li>
-            <li>Compelling descriptions with targeted keywords</li>
+            <li>Record your voice, snap a photo, or type it</li>
+            <li>No app download required</li>
+            <li>No password &mdash; secure one-tap sign-in</li>
           </ul>
         </div>
         <div class="service-card">
-          <div class="service-icon">&#128221;</div>
-          <h3>Content Updates & Posting</h3>
-          <p>Keep your profile fresh and active to engage your audience and attract local customers.</p>
+          <div class="service-icon">&#129302;</div>
+          <h3>AI Does the Heavy Lifting</h3>
+          <p>Smart transcription and drafting so your update is ready in seconds, not days.</p>
           <ul class="feature-list">
-            <li>Weekly GBP posts</li>
-            <li>Sales, events, and service announcements</li>
-            <li>Seasonal updates and holiday hours</li>
+            <li>Voice automatically transcribed to text</li>
+            <li>Drafts match your site's existing design</li>
+            <li>Understands menus, hours, photos, and content</li>
           </ul>
         </div>
         <div class="service-card">
-          <div class="service-icon">&#11088;</div>
-          <h3>Review Management</h3>
-          <p>Customer reviews play a major role in building credibility. We help you leverage reviews to enhance your reputation.</p>
+          <div class="service-icon">&#9989;</div>
+          <h3>You Stay in Control</h3>
+          <p>Nothing goes live until it's right. We review every change before it publishes.</p>
           <ul class="feature-list">
-            <li>Weekly responses to all reviews</li>
-            <li>Strategies to encourage positive reviews</li>
-            <li>Professional handling of negative feedback</li>
+            <li>Side-by-side review of every request</li>
+            <li>Approve with one click</li>
+            <li>Send it back with notes if it's not perfect</li>
           </ul>
         </div>
         <div class="service-card">
-          <div class="service-icon">&#128200;</div>
-          <h3>Insights & Analytics</h3>
-          <p>We track your profile's performance and provide actionable insights to improve visibility.</p>
+          <div class="service-icon">&#128247;</div>
+          <h3>Instant Photo Drops</h3>
+          <p>Set up photo spots like "Today's Specials" that go live the moment you upload.</p>
           <ul class="feature-list">
-            <li>Search views and click-through analysis</li>
-            <li>Engagement opportunity identification</li>
-            <li>Detailed monthly reports</li>
+            <li>Perfect for daily specials and fresh photos</li>
+            <li>Auto-publishes in seconds, no review needed</li>
+            <li>Crop and adjust right on your phone</li>
           </ul>
         </div>
         <div class="service-card">
-          <div class="service-icon">&#128269;</div>
-          <h3>Local SEO Integration</h3>
-          <p>Our GBP management complements your local SEO strategy to help you rank higher.</p>
+          <div class="service-icon">&#127760;</div>
+          <h3>Works With Your Site</h3>
+          <p>The portal plugs into the kind of site you already have.</p>
           <ul class="feature-list">
-            <li>Location-based content optimization</li>
-            <li>Google Maps visibility</li>
-            <li>Google 3-Pack ranking strategies</li>
+            <li>Custom static sites</li>
+            <li>WordPress &amp; Divi sites</li>
+            <li>Built and managed by us, end to end</li>
           </ul>
         </div>
         <div class="service-card">
-          <div class="service-icon">&#128640;</div>
-          <h3>SEO-Only Plans</h3>
-          <p>Interested in Search Engine Optimization without GBP management? We offer standalone SEO plans too.</p>
+          <div class="service-icon">&#9839;</div>
+          <h3>Unlimited &amp; Included</h3>
+          <p>A one-of-a-kind, custom-built system &mdash; not an off-the-shelf plugin.</p>
           <ul class="feature-list">
-            <li>Custom SEO strategies</li>
-            <li>On-page optimization</li>
-            <li>Local search dominance</li>
+            <li>Unlimited change requests</li>
+            <li>Always included in your monthly plan</li>
+            <li>No per-edit fees, ever</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Why Choose Us -->
+  <!-- Proof -->
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <h2>Why Choose Us?</h2>
-        <p>18+ years of experience driving results for local businesses</p>
+        <h2>Already Powering Local Businesses</h2>
+        <p>Restaurants and service businesses across Connecticut keep their sites fresh with the Change Portal.</p>
       </div>
-      <div class="why-list">
-        <div class="why-item">
-          <strong>Proven Expertise:</strong> With 18 years of experience in digital marketing and GBP management, we know how to drive results.
-        </div>
-        <div class="why-item">
-          <strong>Personalized Approach:</strong> We tailor our strategies to fit your business goals and local market.
-        </div>
-        <div class="why-item">
-          <strong>Save Time:</strong> Focus on running your business while we handle the complexities of managing your GBP profile.
-        </div>
-        <div class="why-item">
-          <strong>Enhanced Visibility:</strong> Attract more local customers with a polished, optimized, and active GBP profile.
-        </div>
+      <div class="proof-row">
+        <span class="proof-chip">Michael's Trattoria</span>
+        <span class="proof-chip">Robinson Aviation</span>
+        <span class="proof-chip">The Courtyard Restaurant</span>
       </div>
     </div>
   </section>
@@ -293,9 +301,9 @@
   <!-- CTA Section -->
   <section class="section cta">
     <div class="container">
-      <h2>Let Us Help You Grow</h2>
-      <p>Take control of your local search presence with professional Google Business Profile management. Whether you're looking to gain more customers, increase engagement, or dominate local search results, we are here to help.</p>
-      <a href="https://calendly.com/chrishauman/15min" class="btn btn-large" target="_blank">Schedule a Call</a>
+      <h2>Want This On Your Site?</h2>
+      <p>The Change Portal comes built into the websites we design and manage. Tell us about your business and we'll show you how easy keeping your site up to date can be.</p>
+      <a href="contact.html" class="btn btn-large">Get Started</a>
       <p style="margin-top: var(--spacing-lg); font-size: var(--font-size-sm); opacity: 0.8;">Or call us directly: <a href="tel:203-530-7396" style="color: var(--color-white); text-decoration: underline;">203.530.7396</a></p>
     </div>
   </section>
@@ -342,7 +350,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 Webbersaurus. All rights reserved.</p>
+        <p>&copy; 2026 Webbersaurus. All rights reserved.</p>
       </div>
     </div>
   </footer>
