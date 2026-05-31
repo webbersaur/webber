@@ -137,6 +137,22 @@
       font-weight: 700;
       color: var(--color-text);
     }
+    .phone-demo {
+      max-width: 320px;
+      margin: 0 auto;
+      border: 10px solid var(--color-dark);
+      border-radius: 36px;
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+      background: var(--color-dark);
+      line-height: 0;
+    }
+    .phone-demo video {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 26px;
+    }
   </style>
 </head>
 <body class="inner-page">
@@ -178,8 +194,24 @@
       <h1>Update Your Website by Voice, Text, or Photo</h1>
       <p>An AI-powered portal we build right into your site. Talk, snap, or type &mdash; we review and publish. No logins, no apps, no waiting.</p>
       <div class="hero-cta">
-        <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
-        <a href="contact.html" class="btn btn-primary">Get It On My Site</a>
+        <a href="#demo" class="btn btn-primary">Watch the 60-Second Demo</a>
+        <a href="contact.html" class="btn btn-secondary">Get It On My Site</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo Video -->
+  <section class="section" id="demo" style="background: var(--color-gray-50);">
+    <div class="container">
+      <div class="section-header">
+        <h2>See It In Action</h2>
+        <p>A real change submitted from a phone &mdash; start to finish in under a minute.</p>
+      </div>
+      <div class="phone-demo">
+        <video controls playsinline preload="metadata" poster="videos/change-portal-demo-poster.jpg">
+          <source src="videos/change-portal-demo.mp4" type="video/mp4">
+          Your browser can't play this video. <a href="videos/change-portal-demo.mp4">Download the demo</a>.
+        </video>
       </div>
     </div>
   </section>
