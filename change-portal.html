@@ -153,6 +153,58 @@
       display: block;
       border-radius: 26px;
     }
+    .demo-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 320px) 1fr;
+      gap: var(--spacing-xl);
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .specials-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-md);
+      padding: var(--spacing-lg);
+      box-shadow: var(--shadow-lg);
+    }
+    .specials-card h3 {
+      margin: var(--spacing-sm) 0 var(--spacing-md);
+    }
+    .specials-eyebrow {
+      margin: 0;
+      font-size: var(--font-size-sm);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-primary);
+    }
+    .specials-photo-link {
+      display: block;
+    }
+    .specials-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: var(--radius-md);
+    }
+    .specials-caption {
+      margin: var(--spacing-md) 0 0;
+      font-size: var(--font-size-sm);
+      color: var(--color-text-light);
+    }
+    .specials-live {
+      color: var(--color-primary);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    @media (max-width: 768px) {
+      .demo-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        max-width: 420px;
+      }
+    }
   </style>
 </head>
 <body class="inner-page">
@@ -212,11 +264,21 @@
         <h2>See It In Action</h2>
         <p>A real change submitted from a phone &mdash; start to finish in under a minute.</p>
       </div>
-      <div class="phone-demo">
-        <video controls playsinline preload="metadata" poster="videos/change-portal-demo-poster.jpg">
-          <source src="videos/change-portal-demo.mp4" type="video/mp4">
-          Your browser can't play this video. <a href="videos/change-portal-demo.mp4">Download the demo</a>.
-        </video>
+      <div class="demo-grid">
+        <div class="phone-demo">
+          <video controls playsinline preload="metadata" poster="videos/change-portal-demo-poster.jpg">
+            <source src="videos/change-portal-demo.mp4" type="video/mp4">
+            Your browser can't play this video. <a href="videos/change-portal-demo.mp4">Download the demo</a>.
+          </video>
+        </div>
+        <aside class="specials-card" id="specialsCard">
+          <p class="specials-eyebrow">Live on a real client site</p>
+          <h3>Today's Specials &mdash; The Courtyard, Old Saybrook</h3>
+          <a class="specials-photo-link" href="https://www.courtyardoldsaybrook.com/#specials" target="_blank" rel="noopener">
+            <img id="courtyardSpecials" alt="The Courtyard's specials board, updated today" src="https://www.courtyardoldsaybrook.com/images/1781869787597-8d4e2a1a.webp" loading="lazy" decoding="async">
+          </a>
+          <p class="specials-caption">&#128247; Snapped on a phone and published through the Change Portal &mdash; updated by the kitchen each morning. <span class="specials-live">See it live &rarr;</span></p>
+        </aside>
       </div>
     </div>
   </section>
@@ -393,5 +455,24 @@
   </footer>
 
   <script src="js/main.js"></script>
+
+  <!-- Live-fetch The Courtyard's current specials photo as proof the portal works -->
+  <script>
+    (function () {
+      var BASE = 'https://www.courtyardoldsaybrook.com/';
+      fetch(BASE, { mode: 'cors' })
+        .then(function (r) { return r.ok ? r.text() : Promise.reject(); })
+        .then(function (html) {
+          var doc = new DOMParser().parseFromString(html, 'text/html');
+          var img = doc.querySelector('#featured-photo img, .specials-photo img');
+          var src = img && img.getAttribute('src');
+          if (src) {
+            var url = src.indexOf('http') === 0 ? src : BASE + src.replace(/^\//, '');
+            document.getElementById('courtyardSpecials').src = url;
+          }
+        })
+        .catch(function () { /* keep the hardcoded fallback image already in the <img> */ });
+    })();
+  </script>
 </body>
 </html>
