@@ -45,6 +45,36 @@
   <url>
     <loc>https://www.webbersaurus.com/portfolio</loc>
     <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/merin-law.webp</image:loc>
+      <image:title>Merin Law Website Design</image:title>
+      <image:caption>Custom website for Merin Law, a family law firm on the Connecticut shoreline</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/martins-aluminum.webp</image:loc>
+      <image:title>Martin's Aluminum Products Website Design</image:title>
+      <image:caption>Custom website for Martin's Aluminum Products, a roofing and siding contractor in Southbury, CT</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/top-form-pt.webp</image:loc>
+      <image:title>Top Form Physical Therapy Website Design</image:title>
+      <image:caption>Custom website for Top Form Physical Therapy</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/robinson-aviation.webp</image:loc>
+      <image:title>Robinson Aviation Website Design</image:title>
+      <image:caption>Custom website for Robinson Aviation, the FBO at Tweed New Haven Airport</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/pavement-protectors.webp</image:loc>
+      <image:title>Pavement Protectors Website Design</image:title>
+      <image:caption>Custom website for Pavement Protectors, a Connecticut sealcoating company</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/autac.webp</image:loc>
+      <image:title>AUTAC Website Design</image:title>
+      <image:caption>Custom website for AUTAC, a coil cord manufacturer in Branford, CT</image:caption>
+    </image:image>
+    <image:image>
       <image:loc>https://www.webbersaurus.com/images/portfolio/parthenon-diner.webp</image:loc>
       <image:title>Parthenon Diner Website Design</image:title>
       <image:caption>Custom website for Parthenon Diner, a family restaurant in Branford and Old Saybrook, CT</image:caption>
@@ -115,9 +145,9 @@
       <image:caption>Custom website for Delta Tool &amp; Mold</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://www.webbersaurus.com/images/portfolio/arrow-sealcoating.png</image:loc>
-      <image:title>Arrow Sealcoating Website Design</image:title>
-      <image:caption>Custom website for Arrow Sealcoating</image:caption>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/lhb-development.png</image:loc>
+      <image:title>LHB Development Website Design</image:title>
+      <image:caption>Custom website for LHB Development</image:caption>
     </image:image>
   </url>
 </urlset>
