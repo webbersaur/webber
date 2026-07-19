@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Weekly Specials Test Page | Webbersaurus</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{--color-primary:#FF6B35;--color-dark:#1a1a2e;--color-text:#333340;--color-text-light:#6b6b80;--color-white:#fff;--color-gray-50:#f9fafb;--color-gray-200:#e5e7eb;--font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;--spacing-sm:0.5rem;--spacing-md:1rem;--spacing-lg:1.5rem;--spacing-xl:2rem;--spacing-3xl:4rem;--radius-md:0.5rem;--radius-lg:1rem}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:var(--font-family);font-size:1rem;line-height:1.6;color:var(--color-text);background:var(--color-white)}
+    .container{max-width:900px;margin:0 auto;padding:0 var(--spacing-lg)}
+    h1,h2{color:var(--color-dark);font-weight:700;line-height:1.2;margin-bottom:var(--spacing-md)}
+    p{margin-bottom:var(--spacing-md);color:var(--color-text-light)}
+    code{background:var(--color-gray-200);padding:0.1rem 0.35rem;border-radius:3px;font-size:0.9em}
+
+    .header{background:var(--color-dark);padding:var(--spacing-lg) 0}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:var(--spacing-md)}
+    .header .logo-img{height:44px;width:auto}
+    .header-badge{background:var(--color-primary);color:var(--color-white);padding:var(--spacing-sm) var(--spacing-md);border-radius:var(--radius-md);font-size:0.85rem;font-weight:600}
+
+    .hero-section{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);color:var(--color-white);padding:var(--spacing-3xl) 0;text-align:center}
+    .hero-section h1{color:var(--color-white);font-size:2.25rem}
+    .hero-section > .container > p{color:rgba(255,255,255,0.8);max-width:600px;margin:0 auto var(--spacing-lg)}
+
+    /* ---- Weekly specials band ----
+       Same structure and class names as longleys-static so the two stay
+       comparable; restyled to Webbersaurus tokens. */
+    .hero-specials{
+      margin-top:var(--spacing-xl);
+      padding:var(--spacing-lg) var(--spacing-xl);
+      background:rgba(0,0,0,0.28);
+      border:1px solid rgba(255,107,53,0.55);
+      border-radius:var(--radius-lg);
+      text-align:left;
+    }
+    .hero-specials-heading{
+      font-size:clamp(1.25rem,3vw,1.6rem);
+      color:var(--color-primary);
+      margin-bottom:0.75rem;
+      text-align:center;
+    }
+    .hero-specials-list{list-style:none;display:grid;gap:0.5rem}
+    /* Longer lists split so the band doesn't run down the page. */
+    .hero-specials-list.two-col{grid-template-columns:1fr 1fr;column-gap:1.75rem}
+    .hero-specials-list li{position:relative;padding-left:1.25rem;font-size:clamp(0.95rem,1.8vw,1.05rem);line-height:1.4;color:var(--color-white)}
+    .hero-specials-list li::before{content:'\2022';position:absolute;left:0;color:var(--color-primary);font-weight:700}
+    /* Free-form text ("Market Price", "$12 / $18") - must never wrap mid-value. */
+    .hero-specials-price{margin-left:0.5rem;white-space:nowrap;color:var(--color-primary);font-weight:600}
+    .hero-specials-posted{
+      margin-top:var(--spacing-md);margin-bottom:0;font-size:0.78rem;
+      letter-spacing:0.04em;text-transform:uppercase;color:rgba(255,255,255,0.65);text-align:center;
+    }
+    @media (max-width:640px){
+      .hero-specials{padding:var(--spacing-md)}
+      .hero-specials-list.two-col{grid-template-columns:1fr}
+    }
+
+    .notes{padding:var(--spacing-3xl) 0;background:var(--color-gray-50)}
+    .notes ul{margin:0 0 var(--spacing-md) 1.25rem;color:var(--color-text-light)}
+    .notes li{margin-bottom:0.4rem}
+    .empty-hint{background:#fff;border:1px dashed var(--color-gray-200);border-radius:var(--radius-md);padding:var(--spacing-md);color:var(--color-text-light);font-size:0.9rem}
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <img src="images/WebbersaurusW.png" alt="Webbersaurus" class="logo-img">
+      <span class="header-badge">Weekly Specials Test</span>
+    </div>
+  </header>
+
+  <section class="hero-section">
+    <div class="container">
+      <h1>Weekly Specials Test Page</h1>
+      <p>A safe target for the change portal's Weekly Specials feature. Publishing here
+         touches nothing a client or customer sees.</p>
+
+      <!-- The band. Starts hidden; the renderer only unhides it when there is
+           something live to show. -->
+      <div id="hero-specials" class="hero-specials" hidden></div>
+    </div>
+  </section>
+
+  <section class="notes">
+    <div class="container">
+      <h2>What this page is</h2>
+      <p>
+        This is the sandbox for the Weekly Specials feature. The <code>test-restaurant</code>
+        client in the change portal points at this repo, so publishing from
+        <code>/client/specials.html</code> commits <code>data/specials.json</code> here and the
+        band above renders it. See <code>docs/adding-weekly-specials.md</code> in the
+        change-portal repo for the full runbook.
+      </p>
+      <div class="empty-hint" id="empty-hint">
+        Nothing is showing above. That is the correct empty state - the band stays hidden
+        when <code>data/specials.json</code> has no items, or when its <code>expires</code>
+        date has passed.
+      </div>
+      <h2 style="margin-top:2rem;">Worth checking here before a real site</h2>
+      <ul>
+        <li>Plain strings and <code>{name, price}</code> objects both render (the site must
+            tolerate either).</li>
+        <li>A price typed into the line stays in the line; only the separate price field
+            renders styled.</li>
+        <li>Markup in a special renders as literal text, never as HTML.</li>
+        <li>More than six items splits into two columns.</li>
+        <li>An expired <code>expires</code> hides the whole band.</li>
+      </ul>
+    </div>
+  </section>
+
+  <script>
+    const MONTHS = ['January','February','March','April','May','June',
+                    'July','August','September','October','November','December'];
+
+    function formatPostedDate(ymd) {
+      const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(ymd || ''));
+      if (!m) return '';
+      const month = MONTHS[Number(m[2]) - 1];
+      if (!month) return '';
+      return `${month} ${Number(m[3])}, ${m[1]}`;
+    }
+
+    // Mirrors longleys-static/js/main.js. Keep the two in step: this page exists
+    // to catch renderer problems before they reach a client site.
+    async function renderSpecials() {
+      const mount = document.getElementById('hero-specials');
+      if (!mount) return;
+
+      let data;
+      try {
+        // Root-relative: vercel.json uses clean URLs, so a page-relative path
+        // would resolve differently depending on the trailing slash.
+        const res = await fetch(`/data/specials.json?t=${Date.now()}`, { cache: 'no-store' });
+        if (!res.ok) return;
+        data = await res.json();
+      } catch {
+        return; // network/parse failure - leave the page clean
+      }
+
+      // Two shapes: legacy plain strings, and {name, price} objects from the
+      // portal. Normalize both so the render loop stays single-path. Price is
+      // free-form ("Market Price", "$12 / $18") and never parsed as a number.
+      const items = (Array.isArray(data.items) ? data.items : [])
+        .map(it => typeof it === 'string'
+          ? { name: it.trim(), price: '' }
+          : { name: String(it?.name ?? '').trim(), price: String(it?.price ?? '').trim() })
+        .filter(it => it.name);
+      if (!items.length) return;
+
+      // Require a valid timestamp and hide once it has passed. A missing or
+      // malformed `expires` fails clean rather than sticking forever.
+      const expiresAt = Date.parse(data.expires);
+      if (Number.isNaN(expiresAt) || Date.now() > expiresAt) return;
+
+      const heading = (typeof data.heading === 'string' && data.heading.trim())
+        ? data.heading.trim()
+        : "This Week's Specials";
+
+      const h = document.createElement('h2');
+      h.className = 'hero-specials-heading';
+      h.textContent = heading;
+      mount.appendChild(h);
+
+      const list = document.createElement('ul');
+      list.className = 'hero-specials-list';
+      if (items.length > 6) list.classList.add('two-col');
+      for (const item of items) {
+        const li = document.createElement('li');
+        const name = document.createElement('span');
+        name.textContent = item.name; // verbatim - textContent guards against markup
+        li.appendChild(name);
+        if (item.price) {
+          const price = document.createElement('span');
+          price.className = 'hero-specials-price';
+          price.textContent = item.price;
+          li.appendChild(price);
+        }
+        list.appendChild(li);
+      }
+      mount.appendChild(list);
+
+      const posted = formatPostedDate(data.posted);
+      if (posted) {
+        const p = document.createElement('p');
+        p.className = 'hero-specials-posted';
+        p.textContent = `Posted ${posted}`;
+        mount.appendChild(p);
+      }
+
+      mount.hidden = false;
+      const hint = document.getElementById('empty-hint');
+      if (hint) hint.style.display = 'none';
+    }
+
+    renderSpecials();
+  </script>
+
+</body>
+</html>
