@@ -1,6 +1,16 @@
 {
-  "posted": "",
-  "expires": "",
+  "posted": "2026-07-20",
+  "expires": "2026-07-26T23:59:59-04:00",
   "heading": "This Week's Specials",
-  "items": []
+  "items": [
+    {
+      "name": "The Meatballs Panini"
+    },
+    {
+      "name": "Chipotle Chicken Panini"
+    },
+    {
+      "name": "Chicago Italian Hot Beef Sandwich"
+    }
+  ]
 }
