@@ -422,6 +422,11 @@ p {
   color: var(--color-primary);
 }
 
+/* Mobile-only "All <section>" link; see the 768px breakpoint */
+.nav-dropdown-menu .nav-dropdown-all {
+  display: none;
+}
+
 /* Mobile Menu Toggle */
 .menu-toggle {
   display: none;
@@ -1314,7 +1319,13 @@ a.service-card .card-link {
     background: var(--color-white);
     flex-direction: column;
     padding: var(--spacing-xl);
+    padding-bottom: calc(var(--spacing-xl) + env(safe-area-inset-bottom));
     gap: var(--spacing-lg);
+    max-height: calc(100vh - var(--header-height));
+    max-height: calc(100dvh - var(--header-height));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
     box-shadow: var(--shadow-lg);
     transform: translateY(-100%);
     opacity: 0;
@@ -1348,6 +1359,13 @@ a.service-card .card-link {
     padding: 0;
     margin-top: 0;
     padding-left: var(--spacing-lg);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+  }
+
+  .nav-dropdown.open .nav-dropdown-menu {
+    max-height: 500px;
   }
 
   .nav-dropdown-menu a {
@@ -1356,8 +1374,21 @@ a.service-card .card-link {
     color: var(--color-text-light);
   }
 
-  .nav-dropdown-toggle::after {
-    display: none;
+  /* Injected on mobile so a dropdown's own landing page stays reachable */
+  .nav-dropdown-menu .nav-dropdown-all {
+    display: block;
+  }
+
+  /* Touch devices can leave :hover stuck, so drive the chevron off .open */
+  .nav-dropdown:hover .nav-dropdown-toggle::after {
+    transform: rotate(45deg);
+    margin-bottom: 2px;
+  }
+
+  .nav-dropdown.open .nav-dropdown-toggle::after,
+  .nav-dropdown.open:hover .nav-dropdown-toggle::after {
+    transform: rotate(-135deg);
+    margin-bottom: -1px;
   }
 
   .menu-toggle {

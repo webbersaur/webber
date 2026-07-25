@@ -12,12 +12,40 @@ document.addEventListener('DOMContentLoaded', function() {
       nav.classList.toggle('active');
     });
 
-    // Close menu when clicking a link
-    const navLinks = nav.querySelectorAll('.nav-link');
+    // Close menu when clicking a link (dropdown toggles expand instead, below)
+    const navLinks = nav.querySelectorAll('.nav-link:not(.nav-dropdown-toggle), .nav-dropdown-menu a');
     navLinks.forEach(link => {
       link.addEventListener('click', function() {
         menuToggle.classList.remove('active');
         nav.classList.remove('active');
+      });
+    });
+
+    // On mobile, dropdown toggles expand/collapse their submenu
+    const mobileNav = window.matchMedia('(max-width: 768px)');
+    nav.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+      const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+      const submenu = dropdown.querySelector('.nav-dropdown-menu');
+      if (!toggle || !submenu) return;
+
+      // The toggle no longer navigates on mobile, so surface its page in the submenu
+      const href = toggle.getAttribute('href');
+      if (href) {
+        const allLink = document.createElement('a');
+        allLink.href = href;
+        allLink.className = 'nav-dropdown-all';
+        allLink.textContent = 'All ' + toggle.textContent.trim();
+        allLink.addEventListener('click', function() {
+          menuToggle.classList.remove('active');
+          nav.classList.remove('active');
+        });
+        submenu.insertBefore(allLink, submenu.firstChild);
+      }
+
+      toggle.addEventListener('click', function(e) {
+        if (!mobileNav.matches) return;
+        e.preventDefault();
+        dropdown.classList.toggle('open');
       });
     });
   }
