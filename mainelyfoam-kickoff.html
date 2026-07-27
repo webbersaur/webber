@@ -179,6 +179,47 @@
       margin-top: 0.35rem;
     }
 
+    .scheme-options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--spacing-lg);
+    }
+    .scheme-option {
+      display: block;
+      border: 2px solid var(--color-gray-200);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      cursor: pointer;
+      font-weight: 400;
+      transition: var(--transition);
+    }
+    .scheme-option:hover { border-color: var(--color-primary); }
+    .scheme-option:has(input:checked) {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.15);
+    }
+    .swatch-bar { display: flex; height: 58px; }
+    .swatch-bar span { flex: 1; }
+    .scheme-body { padding: var(--spacing-lg); }
+    .scheme-head {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--spacing-sm);
+    }
+    .scheme-head input[type="checkbox"] { margin-top: 0.3rem; }
+    .scheme-body input[type="checkbox"] {
+      width: auto;
+      accent-color: var(--color-primary);
+      flex-shrink: 0;
+    }
+    .scheme-name { font-weight: 700; }
+    .scheme-desc {
+      display: block;
+      font-size: var(--font-size-sm);
+      color: var(--color-text-light);
+      margin-top: 0.35rem;
+    }
+
     .wish-list {
       background: var(--color-gray-100, #f7f7f9);
       border-radius: var(--radius-lg);
@@ -199,9 +240,14 @@
       margin-top: var(--spacing-md);
     }
 
+    @media (max-width: 900px) {
+      .scheme-options { grid-template-columns: 1fr 1fr; }
+    }
+
     @media (max-width: 768px) {
       .town-columns { grid-template-columns: 1fr; }
       .photo-options { grid-template-columns: 1fr; }
+      .scheme-options { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -250,7 +296,7 @@
   <section class="page-header">
     <div class="container">
       <h1>Maine-ly Foam - Project Kickoff</h1>
-      <p>Two quick things and we can start building. Takes about five minutes.</p>
+      <p>Three quick things and we can start building. Takes about five minutes.</p>
     </div>
   </section>
 
@@ -259,7 +305,7 @@
     <div class="container">
       <div class="kickoff-intro">
         <h2>Let's Get Started</h2>
-        <p>Your Growth build includes 10 dedicated Maine town pages and 10 New Hampshire town pages, each written with real local detail. Tell us which towns to target and how you'd like to send photos, and we'll take it from there.</p>
+        <p>Your Growth build includes 10 dedicated Maine town pages and 10 New Hampshire town pages, each written with real local detail. Tell us which towns to target, how you'd like to send photos, and which colors you're drawn to, and we'll take it from there.</p>
       </div>
 
       <div class="kickoff-form-wrapper">
@@ -371,6 +417,102 @@
                 <li>Your trucks, with the name visible</li>
                 <li>Any completed job you're proud of</li>
               </ul>
+            </div>
+          </div>
+
+          <!-- Colors -->
+          <div class="form-block">
+            <span class="block-label">Step 3</span>
+            <h3>What colors should the site use?</h3>
+            <p>Your current site runs dark brown, cream and burnt orange. We can keep that, freshen it up, or go a different direction entirely. Check any you like - more than one is fine, and we'll show you a real mockup before anything gets built.</p>
+
+            <div class="scheme-options">
+              <label class="scheme-option">
+                <span class="swatch-bar" aria-hidden="true">
+                  <span style="background:#442302"></span>
+                  <span style="background:#755331"></span>
+                  <span style="background:#A85900"></span>
+                  <span style="background:#FFE5CF"></span>
+                </span>
+                <span class="scheme-body">
+                  <span class="scheme-head"><input type="checkbox" name="color_schemes[]" value="Current colors, refreshed"><span class="scheme-name">Current Colors, Refreshed</span></span>
+                  <span class="scheme-desc">The browns, cream and burnt orange you already have, cleaned up and modernized. Safest option - nothing your repeat customers won't recognize.</span>
+                </span>
+              </label>
+
+              <label class="scheme-option">
+                <span class="swatch-bar" aria-hidden="true">
+                  <span style="background:#1F3D2B"></span>
+                  <span style="background:#3E6B4C"></span>
+                  <span style="background:#D9822B"></span>
+                  <span style="background:#F2EDE4"></span>
+                </span>
+                <span class="scheme-body">
+                  <span class="scheme-head"><input type="checkbox" name="color_schemes[]" value="Maine Woods"><span class="scheme-name">Maine Woods</span></span>
+                  <span class="scheme-desc">Deep evergreen, birch white and a rust orange. Reads local and outdoorsy without looking like a landscaper.</span>
+                </span>
+              </label>
+
+              <label class="scheme-option">
+                <span class="swatch-bar" aria-hidden="true">
+                  <span style="background:#2B3440"></span>
+                  <span style="background:#55606E"></span>
+                  <span style="background:#F26B21"></span>
+                  <span style="background:#F4F6F8"></span>
+                </span>
+                <span class="scheme-body">
+                  <span class="scheme-head"><input type="checkbox" name="color_schemes[]" value="Slate and Safety Orange"><span class="scheme-name">Slate &amp; Safety Orange</span></span>
+                  <span class="scheme-desc">Charcoal grays with a bright work-site orange. Clean, modern contractor look - the buttons really pop.</span>
+                </span>
+              </label>
+
+              <label class="scheme-option">
+                <span class="swatch-bar" aria-hidden="true">
+                  <span style="background:#12314F"></span>
+                  <span style="background:#2C5580"></span>
+                  <span style="background:#E0A526"></span>
+                  <span style="background:#F7F4EE"></span>
+                </span>
+                <span class="scheme-body">
+                  <span class="scheme-head"><input type="checkbox" name="color_schemes[]" value="Navy and Amber"><span class="scheme-name">Navy &amp; Amber</span></span>
+                  <span class="scheme-desc">Deep navy with warm gold. The most buttoned-up of the bunch - good if you want to look established, which after 38 years you are.</span>
+                </span>
+              </label>
+
+              <label class="scheme-option">
+                <span class="swatch-bar" aria-hidden="true">
+                  <span style="background:#8C2F27"></span>
+                  <span style="background:#2E2A28"></span>
+                  <span style="background:#D8A24A"></span>
+                  <span style="background:#F5F0E8"></span>
+                </span>
+                <span class="scheme-body">
+                  <span class="scheme-head"><input type="checkbox" name="color_schemes[]" value="Barn Red and Charcoal"><span class="scheme-name">Barn Red &amp; Charcoal</span></span>
+                  <span class="scheme-desc">New England barn red over charcoal and cream. Closest to the red in your truck lettering.</span>
+                </span>
+              </label>
+
+              <label class="scheme-option">
+                <span class="swatch-bar" aria-hidden="true">
+                  <span style="background:#14425C"></span>
+                  <span style="background:#2E7EA6"></span>
+                  <span style="background:#E8892B"></span>
+                  <span style="background:#EEF3F6"></span>
+                </span>
+                <span class="scheme-body">
+                  <span class="scheme-head"><input type="checkbox" name="color_schemes[]" value="Foam Blue and Steel"><span class="scheme-name">Foam Blue &amp; Steel</span></span>
+                  <span class="scheme-desc">Cool blues with an orange call-to-action. Blue reads as insulation and energy efficiency, and most of your competitors aren't using it.</span>
+                </span>
+              </label>
+            </div>
+
+            <div class="form-group" style="margin-top: var(--spacing-lg);">
+              <label for="color-notes">Colors to use or avoid (optional)</label>
+              <input type="text" id="color-notes" name="color_notes" placeholder="Truck wrap colors, a competitor's site you like, anything you can't stand.">
+            </div>
+
+            <div class="wish-list">
+              <strong>One thing worth knowing.</strong> These are starting points, not final answers. Whatever you pick, your logo and truck colors stay the anchor - we build the palette around them, not over them. If you have the original logo files or a vinyl wrap color code lying around, send those along with your photos.
             </div>
           </div>
 
