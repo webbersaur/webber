@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Client onboarding form for Maine-ly Foam.">
+  <title>Maine-ly Foam - Project Kickoff | Webbersaurus</title>
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.webbersaurus.com/mainelyfoam-kickoff">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.webbersaurus.com/mainelyfoam-kickoff">
+  <meta property="og:title" content="Maine-ly Foam - Project Kickoff | Webbersaurus">
+  <meta property="og:description" content="Client onboarding form for Maine-ly Foam.">
+  <meta property="og:image" content="https://www.webbersaurus.com/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Webbersaurus">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://www.webbersaurus.com/mainelyfoam-kickoff">
+  <meta name="twitter:title" content="Maine-ly Foam - Project Kickoff | Webbersaurus">
+  <meta name="twitter:description" content="Client onboarding form for Maine-ly Foam.">
+  <meta name="twitter:image" content="https://www.webbersaurus.com/images/og-image.jpg">
+
+  <!-- Additional SEO -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.webbersaurus.com">
+  <link rel="preload" href="images/WebbersaurusW.png" as="image">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Critical CSS for faster FCP -->
+  <style>
+    @font-face{font-family:'Inter Fallback';src:local('Arial');size-adjust:107%;ascent-override:90%;descent-override:22%;line-gap-override:0%}
+    :root{--color-primary:#FF6B35;--color-dark:#1a1a2e;--color-text:#333340;--color-white:#fff;--font-family:'Inter','Inter Fallback',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;--font-size-sm:0.875rem;--font-size-base:1rem;--spacing-sm:0.5rem;--spacing-lg:1.5rem;--spacing-xl:2rem;--header-height:80px;--radius-full:9999px;--transition:all 0.3s ease}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:var(--font-family);font-size:var(--font-size-base);line-height:1.6;color:var(--color-text);background:var(--color-white)}
+    .header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:transparent;z-index:1000}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;height:100%;max-width:1200px;margin:0 auto;padding:0 var(--spacing-lg)}
+    .logo{display:flex;align-items:center}
+    .logo-img{height:200px;width:auto;margin-top:var(--spacing-lg)}
+    .nav{display:flex;align-items:center;gap:var(--spacing-xl);background:rgba(255,255,255,0.85);backdrop-filter:blur(12px);padding:var(--spacing-sm) var(--spacing-lg);border-radius:var(--radius-full)}
+    .nav-link{color:var(--color-text);font-weight:400;font-size:var(--font-size-sm)}
+    .menu-toggle{display:none}
+    .page-header{padding:120px 0 60px;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);color:white;text-align:center}
+    @media(max-width:768px){.nav{position:fixed;top:var(--header-height);left:0;right:0;flex-direction:column;transform:translateY(-100%);opacity:0}.menu-toggle{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer}.menu-toggle span{width:24px;height:2px;background:var(--color-white)}}
+  </style>
+
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* Client Kickoff Form Styles */
+    .kickoff-intro {
+      max-width: 760px;
+      margin: 0 auto var(--spacing-2xl);
+      text-align: center;
+    }
+
+    .kickoff-form-wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-gray-200);
+      padding: var(--spacing-2xl);
+    }
+
+    .form-block {
+      padding-bottom: var(--spacing-2xl);
+      margin-bottom: var(--spacing-2xl);
+      border-bottom: 1px solid var(--color-gray-200);
+    }
+    .form-block:last-of-type {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .block-label {
+      display: inline-block;
+      font-size: var(--font-size-sm);
+      font-weight: 700;
+      color: var(--color-primary);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: var(--spacing-sm);
+    }
+    .form-block h3 { margin-bottom: var(--spacing-sm); }
+    .form-block > p {
+      color: var(--color-text-light);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .town-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-2xl);
+    }
+
+    .town-col h4 {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: var(--spacing-sm);
+      padding-bottom: var(--spacing-sm);
+      margin-bottom: var(--spacing-sm);
+      border-bottom: 2px solid var(--color-gray-200);
+    }
+    .town-count {
+      font-size: var(--font-size-sm);
+      font-weight: 400;
+      color: var(--color-text-light);
+    }
+    .town-count.full { color: var(--color-primary); font-weight: 700; }
+
+    .town-list label {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      padding: 0.4rem 0;
+      font-weight: 400;
+      cursor: pointer;
+      border-bottom: 1px solid var(--color-gray-100, #f1f1f4);
+    }
+    .town-list input[type="checkbox"] {
+      width: auto;
+      accent-color: var(--color-primary);
+      flex-shrink: 0;
+    }
+
+    .write-in-label {
+      display: block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-text-light);
+      margin: var(--spacing-lg) 0 var(--spacing-sm);
+    }
+    .write-in-list { margin-bottom: 0; }
+    .write-in-list input[type="text"] { margin-bottom: var(--spacing-sm); }
+
+    .photo-options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--spacing-lg);
+    }
+    .photo-option {
+      display: block;
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-lg);
+      cursor: pointer;
+      font-weight: 400;
+      transition: var(--transition);
+    }
+    .photo-option:hover { border-color: var(--color-primary); }
+    .photo-option input[type="radio"] {
+      width: auto;
+      accent-color: var(--color-primary);
+      margin-right: var(--spacing-sm);
+    }
+    .photo-option .opt-title { font-weight: 700; }
+    .photo-option .opt-desc {
+      display: block;
+      font-size: var(--font-size-sm);
+      color: var(--color-text-light);
+      margin-top: 0.35rem;
+    }
+
+    .wish-list {
+      background: var(--color-gray-100, #f7f7f9);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-lg);
+      margin-top: var(--spacing-lg);
+      font-size: var(--font-size-sm);
+    }
+    .wish-list ul {
+      margin: var(--spacing-sm) 0 0 1.1rem;
+      color: var(--color-text-light);
+      line-height: 1.9;
+    }
+
+    .form-note {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-light);
+      text-align: center;
+      margin-top: var(--spacing-md);
+    }
+
+    @media (max-width: 768px) {
+      .town-columns { grid-template-columns: 1fr; }
+      .photo-options { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body class="inner-page">
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/WebbersaurusW.png" alt="Webbersaurus" class="logo-img" width="200" height="200">
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about-us.html" class="nav-link">About</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="reviews.html" class="nav-link">Reviews</a>
+        <div class="nav-dropdown">
+          <a href="services.html" class="nav-link nav-dropdown-toggle">Services</a>
+          <div class="nav-dropdown-menu">
+            <a href="seo.html">Search Engine Optimization</a>
+            <a href="gbp-management.html">Google Business Profile</a>
+            <a href="social-media-marketing.html">Social Media Marketing</a>
+            <a href="change-portal.html">Change Portal</a>
+            <a href="rate-your-experience.html">Reviews System</a>
+            <a href="realtors.html">Listing Pages for Realtors</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <span class="nav-link nav-dropdown-toggle">Case Studies</span>
+          <div class="nav-dropdown-menu">
+            <a href="case-study.html">Michael's Trattoria</a>
+            <a href="case-study-rollin-dough.html">Rollin Dough</a>
+          </div>
+        </div>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Maine-ly Foam - Project Kickoff</h1>
+      <p>Two quick things and we can start building. Takes about five minutes.</p>
+    </div>
+  </section>
+
+  <!-- Kickoff Form -->
+  <section class="section">
+    <div class="container">
+      <div class="kickoff-intro">
+        <h2>Let's Get Started</h2>
+        <p>Your Growth build includes 10 dedicated Maine town pages and 10 New Hampshire town pages, each written with real local detail. Tell us which towns to target and how you'd like to send photos, and we'll take it from there.</p>
+      </div>
+
+      <div class="kickoff-form-wrapper">
+        <form id="kickoffForm" action="https://formsubmit.co/chrishauman@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Maine-ly Foam - Kickoff Form Submitted">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" style="display:none">
+
+          <!-- Who -->
+          <div class="form-block">
+            <span class="block-label">First</span>
+            <h3>Who's filling this out?</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name">Your Name</label>
+                <input type="text" id="contact-name" name="your_name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+            </div>
+          </div>
+
+          <!-- Towns -->
+          <div class="form-block">
+            <span class="block-label">Step 1</span>
+            <h3>Which towns should we target?</h3>
+            <p>Pick 10 in each state. Worth thinking about: which towns do you already get the most calls from, and which towns do you <em>want</em> more work in but aren't getting it? The second group is usually where these pages pay off fastest. The lists below are suggestions - uncheck anything you don't want and write in whatever you'd rather have.</p>
+
+            <div class="town-columns">
+              <div class="town-col">
+                <h4>Maine <span class="town-count" data-count-for="me_towns">0 of 10</span></h4>
+                <div class="town-list">
+                  <label><input type="checkbox" name="maine_towns[]" value="Portland"> Portland</label>
+                  <label><input type="checkbox" name="maine_towns[]" value="Bridgton"> Bridgton</label>
+                  <label><input type="checkbox" name="maine_towns[]" value="Fryeburg"> Fryeburg</label>
+                  <label><input type="checkbox" name="maine_towns[]" value="Windham"> Windham</label>
+                  <label><input type="checkbox" name="maine_towns[]" value="Gorham"> Gorham</label>
+                  <label><input type="checkbox" name="maine_towns[]" value="Standish"> Standish</label>
+                  <label><input type="checkbox" name="maine_towns[]" value="Brunswick"> Brunswick</label>
+                  <label><input type="checkbox" name="maine_towns[]" value="Lewiston"> Lewiston</label>
+                  <label><input type="checkbox" name="maine_towns[]" value="Scarborough"> Scarborough</label>
+                  <label><input type="checkbox" name="maine_towns[]" value="Sanford"> Sanford</label>
+                </div>
+                <span class="write-in-label">Or write in your own</span>
+                <div class="write-in-list form-group">
+                  <input type="text" name="maine_write_in_1" placeholder="Another Maine town">
+                  <input type="text" name="maine_write_in_2" placeholder="Another Maine town">
+                  <input type="text" name="maine_write_in_3" placeholder="Another Maine town">
+                </div>
+              </div>
+
+              <div class="town-col">
+                <h4>New Hampshire <span class="town-count" data-count-for="nh_towns">0 of 10</span></h4>
+                <div class="town-list">
+                  <label><input type="checkbox" name="nh_towns[]" value="Conway"> Conway</label>
+                  <label><input type="checkbox" name="nh_towns[]" value="North Conway"> North Conway</label>
+                  <label><input type="checkbox" name="nh_towns[]" value="Ossipee"> Ossipee</label>
+                  <label><input type="checkbox" name="nh_towns[]" value="Wolfeboro"> Wolfeboro</label>
+                  <label><input type="checkbox" name="nh_towns[]" value="Rochester"> Rochester</label>
+                  <label><input type="checkbox" name="nh_towns[]" value="Dover"> Dover</label>
+                  <label><input type="checkbox" name="nh_towns[]" value="Portsmouth"> Portsmouth</label>
+                  <label><input type="checkbox" name="nh_towns[]" value="Laconia"> Laconia</label>
+                  <label><input type="checkbox" name="nh_towns[]" value="Bartlett"> Bartlett</label>
+                  <label><input type="checkbox" name="nh_towns[]" value="Jackson"> Jackson</label>
+                </div>
+                <span class="write-in-label">Or write in your own</span>
+                <div class="write-in-list form-group">
+                  <input type="text" name="nh_write_in_1" placeholder="Another NH town">
+                  <input type="text" name="nh_write_in_2" placeholder="Another NH town">
+                  <input type="text" name="nh_write_in_3" placeholder="Another NH town">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Photos -->
+          <div class="form-block">
+            <span class="block-label">Step 2</span>
+            <h3>How would you like to send photos?</h3>
+            <p>Pick whichever is easiest. Any of these is fine.</p>
+
+            <div class="photo-options">
+              <label class="photo-option">
+                <input type="radio" name="photo_method" value="Google Drive" required>
+                <span class="opt-title">Google Drive</span>
+                <span class="opt-desc">We send a link, you drag photos in from your phone or computer. Nothing to install, no account needed.</span>
+              </label>
+              <label class="photo-option">
+                <input type="radio" name="photo_method" value="Email">
+                <span class="opt-title">Email</span>
+                <span class="opt-desc">Send them to chrishauman@gmail.com, a few at a time.</span>
+              </label>
+              <label class="photo-option">
+                <input type="radio" name="photo_method" value="Something else">
+                <span class="opt-title">Something else</span>
+                <span class="opt-desc">Dropbox, a USB drive, whatever you already use. Tell us below.</span>
+              </label>
+            </div>
+
+            <div class="wish-list">
+              <strong>What we're hoping for.</strong> Real photos of your own work beat stock images every time, and Google rewards them. Don't worry about quality - phone photos are perfectly fine.
+              <ul>
+                <li>Before and after shots of the same job</li>
+                <li>Crew on site, rigs and spray equipment in action</li>
+                <li>Attics, crawl spaces, basements, and rim joists</li>
+                <li>Your trucks, with the name visible</li>
+                <li>Any completed job you're proud of</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Notes -->
+          <div class="form-block">
+            <span class="block-label">Last</span>
+            <h3>Anything else we should know?</h3>
+            <div class="form-group">
+              <label for="notes">Optional</label>
+              <textarea id="notes" name="notes" rows="4" placeholder="Services you want featured, towns to avoid, jobs worth writing about, or how you'd rather send photos."></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">Send It Over</button>
+          <p class="form-note">Questions? Call Chris at 203.530.7396 or email chrishauman@gmail.com.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Success state -->
+  <section class="section" id="kickoffSuccess" style="display:none;">
+    <div class="container">
+      <div class="kickoff-form-wrapper" style="text-align:center;">
+        <h3>Got it - thank you!</h3>
+        <p>Your town list is on its way to Chris. If you picked Google Drive, you'll get the upload link by email shortly. Otherwise just send the photos whenever you get a chance.</p>
+        <p style="margin-bottom:0;">Questions in the meantime? Call 203.530.7396.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: var(--spacing-md);">
+            <a href="index.html" style="flex-shrink: 0;">
+              <img loading="lazy" decoding="async" src="images/dinowords.png" alt="Webbersaurus" width="160" height="123" style="max-width: 160px;">
+            </a>
+            <p style="margin: 0;">Proudly serving the Shoreline community and beyond since 2007.</p>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="affiliate.html">Affiliate Program</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="contact.html">Web Development</a></li>
+            <li><a href="seo.html">Search Engine Optimization</a></li>
+            <li><a href="gbp-management.html">Google Business Profile Mgt</a></li>
+            <li><a href="social-media-marketing.html">Social Media Marketing</a></li>
+            <li><a href="change-portal.html">Change Portal</a></li>
+            <li><a href="realtors.html">Listing Pages for Realtors</a></li>
+            <li><a href="contact.html">Website Maintenance</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:203-530-7396">203.530.7396</a></li>
+            <li><a href="mailto:chris@webbersaur.us">chris@webbersaur.us</a></li>
+            <li>Branford, CT</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Webbersaurus. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+  <script>
+    (function () {
+      var form = document.getElementById('kickoffForm');
+      if (!form) return;
+
+      // Live "n of 10" counters
+      document.querySelectorAll('.town-count').forEach(function (counter) {
+        var group = counter.getAttribute('data-count-for') === 'me_towns' ? 'maine_towns[]' : 'nh_towns[]';
+        var boxes = form.querySelectorAll('input[name="' + group + '"]');
+        function update() {
+          var n = 0;
+          boxes.forEach(function (b) { if (b.checked) n++; });
+          counter.textContent = n + ' of 10';
+          counter.classList.toggle('full', n >= 10);
+        }
+        boxes.forEach(function (b) { b.addEventListener('change', update); });
+        update();
+      });
+
+      // Submit without leaving the page
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var btn = form.querySelector('button[type="submit"]');
+        var original = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        }).then(function (response) {
+          if (!response.ok) throw new Error('Bad response');
+          form.closest('.section').style.display = 'none';
+          document.getElementById('kickoffSuccess').style.display = '';
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }).catch(function () {
+          btn.disabled = false;
+          btn.textContent = original;
+          alert('Sorry, something went wrong sending that. Please call Chris at 203.530.7396 or email chrishauman@gmail.com.');
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
