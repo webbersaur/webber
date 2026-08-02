@@ -22,6 +22,18 @@ Local SEO services including keyword research, on-page optimization, technical S
 ### Google Business Profile Management
 Complete GBP setup and optimization including profile creation, photo management, review response strategy, post scheduling, and local search optimization.
 
+### Change Portal
+An AI-powered portal built into the client's own website that lets business owners submit changes by voice, text, or photo from any phone. Submissions are transcribed and drafted by AI, reviewed by Webbersaurus, and published to the live site in seconds. Unlimited changes are included in the monthly plan.
+
+### Daily Specials
+A managed system for restaurants to post daily and weekly specials to their own website in under a minute. Specials can be typed, dictated, or photographed from a phone, are formatted automatically to match the site, and expire on their own so nothing goes stale. Every special published is saved to a reusable list, so recurring dishes are ticked off rather than retyped. The same list can be exported as a printable PDF for table cards and emailed to a confirmed subscriber list. Live on Longley's, The Courtyard Restaurant, and Michael's Trattoria.
+
+### Social Media Marketing
+Social media management and content for local businesses, keeping profiles active and aligned with the rest of the client's online presence.
+
+### Listing Pages for Realtors
+Individual property listing pages built for real estate agents, designed to showcase a single property and be shared directly with buyers.
+
 ### Rate Your Experience (Online Review System)
 A simple, powerful online review system that helps businesses turn customer feedback into growth and boost their online reputation.
 
@@ -52,7 +64,12 @@ Webbersaurus has designed websites for businesses including:
 - [About Us](https://www.webbersaurus.com/about-us)
 - [Portfolio](https://www.webbersaurus.com/portfolio)
 - [Reviews](https://www.webbersaurus.com/reviews)
+- [Services](https://www.webbersaurus.com/services)
 - [SEO Services](https://www.webbersaurus.com/seo)
 - [GBP Management](https://www.webbersaurus.com/gbp-management)
+- [Social Media Marketing](https://www.webbersaurus.com/social-media-marketing)
+- [Change Portal](https://www.webbersaurus.com/change-portal)
+- [Daily Specials](https://www.webbersaurus.com/daily-specials)
+- [Listing Pages for Realtors](https://www.webbersaurus.com/realtors)
 - [Rate Your Experience](https://www.webbersaurus.com/rate-your-experience)
 - [Contact](https://www.webbersaurus.com/contact)

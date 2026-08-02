@@ -210,8 +210,74 @@
       font-weight: 700;
       white-space: nowrap;
     }
+    .specials-split {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: var(--spacing-xl);
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    /* Static mockup of the live specials band on longleysct.com. Full
+       walkthrough of the feature lives on daily-specials.html. */
+    .specials-mock {
+      background: #1a5632;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+      border: 1px solid rgba(212, 168, 67, 0.5);
+      border-radius: 8px;
+      padding: var(--spacing-lg);
+      color: var(--color-white);
+      text-align: left;
+    }
+    .specials-mock-heading {
+      margin: 0 0 0.75rem;
+      font-size: var(--font-size-lg);
+      color: #d4a843;
+      text-align: center;
+    }
+    .specials-mock-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.5rem;
+    }
+    .specials-mock-list li {
+      position: relative;
+      padding-left: 1.25rem;
+      font-size: var(--font-size-sm);
+      line-height: 1.4;
+      color: var(--color-white);
+    }
+    .specials-mock-list li::before {
+      content: "\2022";
+      position: absolute;
+      left: 0;
+      color: #8bc34a;
+      font-weight: 700;
+    }
+    .specials-mock-price {
+      margin-left: 0.5rem;
+      white-space: nowrap;
+      color: #d4a843;
+      font-weight: 700;
+    }
+    .specials-mock-posted {
+      margin: var(--spacing-md) 0 0;
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      text-align: center;
+      color: var(--color-white);
+    }
     @media (max-width: 768px) {
       .demo-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        max-width: 420px;
+      }
+      .specials-split {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
         max-width: 420px;
@@ -238,6 +304,7 @@
             <a href="gbp-management.html">Google Business Profile</a>
             <a href="social-media-marketing.html">Social Media Marketing</a>
             <a href="change-portal.html">Change Portal</a>
+            <a href="daily-specials.html">Daily Specials</a>
             <a href="rate-your-experience.html">Reviews System</a>
             <a href="realtors.html">Listing Pages for Realtors</a>
           </div>
@@ -289,7 +356,7 @@
           <p class="specials-eyebrow">Live on a real client site</p>
           <h3>Today's Specials &mdash; The Courtyard, Old Saybrook</h3>
           <a class="specials-photo-link" href="https://www.courtyardoldsaybrook.com/#specials" target="_blank" rel="noopener">
-            <img id="courtyardSpecials" alt="The Courtyard's specials board, updated today" src="https://www.courtyardoldsaybrook.com/images/1781869787597-8d4e2a1a.webp" loading="lazy" decoding="async">
+            <img id="courtyardSpecials" alt="The Courtyard's specials board, updated today" src="https://www.courtyardoldsaybrook.com/images/1785501698087-27f17a53.webp" loading="lazy" decoding="async">
           </a>
           <p class="specials-note">&#9889; This one's set to <strong>auto-approve</strong> &mdash; snap a pic, confirm, and it's live. 2 steps, about 10 seconds.</p>
           <p class="specials-caption">&#128247; Snapped on a phone and published through the Change Portal &mdash; updated by the kitchen each morning. <a class="specials-live" href="https://www.courtyardoldsaybrook.com/#specials" target="_blank" rel="noopener">See it live &rarr;</a></p>
@@ -368,7 +435,7 @@
           <h3>Instant Photo Drops</h3>
           <p>Set up photo spots like "Today's Specials" that go live the moment you upload.</p>
           <ul class="feature-list">
-            <li>Perfect for daily specials and fresh photos</li>
+            <li>Perfect for <a href="daily-specials.html">daily specials</a> and fresh photos</li>
             <li>Auto-publishes in seconds, no review needed</li>
             <li>Crop and adjust right on your phone</li>
           </ul>
@@ -397,8 +464,35 @@
     </div>
   </section>
 
-  <!-- Proof -->
+  <!-- Daily Specials tie-in -->
   <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Daily Specials, Handled</h2>
+        <p>Of everything the portal does, this is the one restaurants reach for most.</p>
+      </div>
+      <div class="specials-split">
+        <div class="specials-mock">
+          <h3 class="specials-mock-heading">This Week's Specials</h3>
+          <ul class="specials-mock-list">
+            <li>Sesame Encrusted Ahi Tuna Over Seaweed Salad<span class="specials-mock-price">15</span></li>
+            <li>Chipotle Chicken Panini<span class="specials-mock-price">14</span></li>
+            <li>Blackened Salmon Burger<span class="specials-mock-price">16</span></li>
+            <li>Short Rib Grilled Cheese<span class="specials-mock-price">15</span></li>
+          </ul>
+          <p class="specials-mock-posted">Posted July 23, 2026</p>
+        </div>
+        <div>
+          <p>Say the list into your phone before the doors open, or snap the chalkboard. It lands on your homepage styled to match your site, prices and all.</p>
+          <p>Then it takes itself down. Every special carries an expiration, so a Tuesday feature never sits on your site through Friday and nobody has to call us on a Sunday.</p>
+          <a href="daily-specials.html#walkthrough" class="btn btn-secondary">See How Specials Work &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proof -->
+  <section class="section" style="background: var(--color-gray-50);">
     <div class="container">
       <div class="section-header">
         <h2>Already Powering Local Businesses</h2>
@@ -408,6 +502,7 @@
         <span class="proof-chip">Michael's Trattoria</span>
         <span class="proof-chip">Robinson Aviation</span>
         <span class="proof-chip">The Courtyard Restaurant</span>
+        <span class="proof-chip">Longley's</span>
       </div>
     </div>
   </section>
@@ -452,6 +547,7 @@
             <li><a href="gbp-management.html">Google Business Profile Mgt</a></li>
             <li><a href="social-media-marketing.html">Social Media Marketing</a></li>
             <li><a href="change-portal.html">Change Portal</a></li>
+            <li><a href="daily-specials.html">Daily Specials</a></li>
             <li><a href="realtors.html">Listing Pages for Realtors</a></li>
             <li><a href="contact.html">Website Maintenance</a></li>
           </ul>

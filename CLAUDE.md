@@ -17,7 +17,9 @@ Deployed via Vercel. Platform config lives in `vercel.json` (clean URLs, redirec
 
 ## Architecture
 
-**Pages:** HTML files in root. Public/indexable: `index.html`, `about-us.html`, `portfolio.html`, `reviews.html`, `contact.html`, `seo.html`, `gbp-management.html`, `affiliate.html`, `case-study.html`, `case-study-rollin-dough.html`, `local-partners.html`, `rate-your-experience.html`. Gated/utility (carry `noindex`): `404.html`, `affiliate-login.html`, `affiliate-portal.html`, `affiliate-reset-password.html`, `affiliate-tos.html`, `change-portal-test.html`, `weekly-specials-test.html`. Standalone listing: `avalanche.html` (+ `avalanche-share.html`, `avalanche-sheet.html`, `avalanche-sheet-window.html`).
+**Pages:** HTML files in root. Public/indexable: `index.html`, `about-us.html`, `portfolio.html`, `reviews.html`, `contact.html`, `services.html`, `seo.html`, `gbp-management.html`, `social-media-marketing.html`, `change-portal.html`, `daily-specials.html`, `realtors.html`, `affiliate.html`, `case-study.html`, `case-study-rollin-dough.html`, `local-partners.html`, `rate-your-experience.html`.
+
+`change-portal.html` and `daily-specials.html` are a hub/spoke pair: the portal page is the general pitch, the specials page is the restaurant-specific deep dive. They cross-link in both directions. Their static specials mockups mirror `longleys-static/css/styles.css` (the `.hero-specials` band) on purpose; the live, data-driven version lives only in `weekly-specials-test.html`. Gated/utility (carry `noindex`): `404.html`, `affiliate-login.html`, `affiliate-portal.html`, `affiliate-reset-password.html`, `affiliate-tos.html`, `change-portal-test.html`, `weekly-specials-test.html`. Standalone listing: `avalanche.html` (+ `avalanche-share.html`, `avalanche-sheet.html`, `avalanche-sheet-window.html`).
 
 **Styles:** Single CSS file `css/styles.css` using CSS custom properties (variables) for theming. Key design tokens defined in `:root` include colors (`--color-primary: #FF6B35`), typography scales, and spacing.
 
