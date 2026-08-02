@@ -283,9 +283,20 @@
 
     /* ---- Three-box editor walkthrough --------------------------------
        Hand-drawn mockups of the real editor (change-portal/client/
-       specials.html). Kept deliberately dumb: spans and list items, so
-       nothing is focusable, nothing submits, and nothing can render
-       blank. Same reasoning as .specials-mock above. */
+       specials.html), wired up as a working demo by the script at the
+       bottom of this page.
+
+       The controls that do something are real and focusable: the library
+       checkboxes and the three buttons. Everything decorative stays a
+       span and is kept out of the tab order and, where it looks
+       actionable (Edit / Delete), out of the accessibility tree too.
+       The week's list is a div, never a textarea -- it is driven by the
+       ticks, and a box you can type into that throws the typing away is
+       worse than no box.
+
+       The markup ships the correct starting state, so the section still
+       reads with JS off. Same never-render-blank reasoning as
+       .specials-mock above. */
     .editor-walk {
       max-width: 760px;
       margin: 0 auto;
@@ -333,14 +344,6 @@
       line-height: 1.5;
       color: var(--color-text);
     }
-    .editor-caret {
-      display: inline-block;
-      width: 2px;
-      height: 1em;
-      margin-left: 2px;
-      vertical-align: text-bottom;
-      background: var(--color-primary);
-    }
     .editor-tag {
       display: inline-block;
       margin-left: var(--spacing-sm);
@@ -370,20 +373,26 @@
     .editor-rows li:last-child {
       border-bottom: none;
     }
+    /* A real checkbox, stripped back to the drawn box above. appearance:none
+       keeps the platform control from fighting the mockup styling. */
     .mock-check {
+      appearance: none;
+      -webkit-appearance: none;
+      margin: 0;
       flex: 0 0 18px;
       width: 18px;
       height: 18px;
       border: 2px solid var(--color-gray-300);
       border-radius: var(--radius-sm);
       background: var(--color-white);
+      cursor: pointer;
     }
-    .mock-check.is-on {
+    .mock-check:checked {
       position: relative;
       background: var(--color-primary);
       border-color: var(--color-primary);
     }
-    .mock-check.is-on::after {
+    .mock-check:checked::after {
       content: "\2713";
       position: absolute;
       inset: 0;
@@ -392,6 +401,11 @@
       line-height: 14px;
       text-align: center;
       color: var(--color-white);
+    }
+    .mock-check:focus-visible,
+    .editor-btn:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
     }
     .editor-price {
       font-weight: 700;
@@ -431,6 +445,10 @@
       align-items: center;
       gap: var(--spacing-sm);
     }
+    /* Labels the checkbox, so tapping the dish name toggles it too. */
+    .editor-row-name {
+      cursor: pointer;
+    }
     .editor-btn {
       border: 1px solid var(--color-gray-300);
       border-radius: var(--radius-sm);
@@ -438,6 +456,27 @@
       font-size: var(--font-size-sm);
       font-weight: 700;
       color: var(--color-text);
+      font-family: inherit;
+      background: var(--color-white);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .editor-btn:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+    .editor-btn.is-primary:hover {
+      background: var(--color-primary-dark);
+      border-color: var(--color-primary-dark);
+      color: var(--color-white);
+    }
+    .editor-btn.is-link:hover {
+      background: none;
+      color: var(--color-primary);
+    }
+    .editor-btn[disabled] {
+      opacity: 0.6;
+      cursor: default;
     }
     .editor-btn.is-primary {
       background: var(--color-primary);
@@ -476,6 +515,59 @@
     .editor-step + .editor-flow {
       margin-top: var(--spacing-xl);
     }
+
+    /* ---- Live demo affordances -------------------------------------- */
+    .ds-badge {
+      display: inline-block;
+      margin-left: var(--spacing-sm);
+      padding: 2px var(--spacing-sm);
+      border-radius: var(--radius-full);
+      background: rgba(255, 107, 53, 0.12);
+      font-size: var(--font-size-xs);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-primary-dark);
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+    .ds-hint {
+      margin: var(--spacing-sm) 0 0;
+      font-size: var(--font-size-sm);
+      font-style: italic;
+      color: var(--color-primary-dark);
+    }
+    .ds-msg {
+      margin: var(--spacing-md) 0 0;
+      font-size: var(--font-size-sm);
+      color: var(--color-text-light);
+    }
+    .ds-msg.is-error {
+      font-weight: 700;
+      color: var(--color-primary-dark);
+    }
+    .ds-empty {
+      color: var(--color-text-light);
+      font-style: italic;
+    }
+    /* The published band, revealed by the Publish button. */
+    .ds-published {
+      max-width: 760px;
+      margin: var(--spacing-xl) auto 0;
+    }
+    .ds-published-label {
+      margin: 0 0 var(--spacing-sm);
+      font-size: var(--font-size-sm);
+      font-weight: 700;
+      text-align: center;
+      color: var(--color-text);
+    }
+
+    /* ---- Printable sheet ---------------------------------------------
+       Built off-screen and revealed only by the print stylesheet. Unlike
+       the real portal, this is gated behind a body class: on a marketing
+       page a plain Cmd+P must still print the page, not a specials sheet. */
+    #print-sheet { display: none; }
 
     /* ---- A real week ------------------------------------------------ */
     .week-timeline {
@@ -543,6 +635,73 @@
       }
       .week-timeline dd {
         margin-bottom: var(--spacing-md);
+      }
+    }
+
+    /* This page has no <main>, so the sheet is revealed by hiding body's
+       other children. @page can't be scoped to a class, so letter/0.7in
+       applies to an ordinary page print too -- a sane default either way. */
+    @media print {
+      body.ds-printing > *:not(#print-sheet) { display: none !important; }
+      body.ds-printing { background: #fff !important; }
+      body.ds-printing #print-sheet {
+        display: block !important;
+        font-family: Georgia, 'Times New Roman', serif;
+        color: #000;
+      }
+      .print-logo {
+        display: block;
+        margin: 0 auto 0.55in;
+        max-width: 3.2in;
+        max-height: 1.15in;
+        width: auto;
+        height: auto;
+      }
+      .print-wordmark {
+        text-align: center;
+        font-size: 26pt;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        margin: 0 0 0.5in;
+      }
+      .print-heading {
+        text-align: center;
+        font-size: 15pt;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        margin: 0 0 0.06in;
+      }
+      .print-rule {
+        border: none;
+        border-top: 1.5pt solid #000;
+        width: 2.2in;
+        margin: 0.14in auto 0.42in;
+      }
+      .print-items { list-style: none; margin: 0; padding: 0; }
+      /* Each line prints verbatim. Prices live inside the client's own wording
+         ("Steak Night - $20, 5-10 PM"), so there is no price column to align. */
+      .print-items li {
+        font-size: 14pt;
+        line-height: 1.4;
+        text-align: center;
+        margin: 0 0 0.22in;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      .print-items li:last-child { margin-bottom: 0; }
+      .print-foot {
+        margin-top: 0.5in;
+        padding-top: 0.16in;
+        border-top: 0.75pt solid #999;
+        text-align: center;
+        font-size: 9.5pt;
+        color: #444;
+        font-family: Georgia, 'Times New Roman', serif;
+      }
+      @page {
+        size: letter portrait;
+        margin: 0.7in;
       }
     }
   </style>
@@ -664,8 +823,8 @@
   <section class="section" id="walkthrough" style="background: var(--color-gray-50);">
     <div class="container">
       <div class="section-header">
-        <h2>The Same Three Steps, In The Actual Tool</h2>
-        <p>Those three steps are three boxes on one screen. You get a link in your email, tap it, and you're in &mdash; no password to remember. This is what you see.</p>
+        <h2>The Same Three Steps, In The Actual Tool <span class="ds-badge">Live demo &mdash; try it</span></h2>
+        <p>Those three steps are three boxes on one screen. You get a link in your email, tap it, and you're in &mdash; no password to remember. This is what you see &mdash; and these three boxes really work, so click around.</p>
       </div>
 
       <div class="editor-walk">
@@ -681,10 +840,13 @@
           </div>
           <div class="editor-mock">
             <p class="editor-mock-label">This week's specials</p>
-            <div class="editor-textarea">
-              <span>Sesame Encrusted Ahi Tuna Over Seaweed Salad 15</span>
-              <span>Chipotle Chicken Panini 14</span>
-              <span>Blackened Salmon Burger 16<span class="editor-caret" aria-hidden="true"></span><span class="editor-tag">just typed</span></span>
+            <!-- A div, never a textarea: the list is driven by the checkboxes
+                 below, so there is nothing here to type into. Ships with the
+                 correct state so the mockup still reads with JS off. -->
+            <div class="editor-textarea" id="dsWeek">
+              <span>Sesame Encrusted Ahi Tuna Over Seaweed Salad - 15</span>
+              <span>Chipotle Chicken Panini - 14</span>
+              <span>Blackened Salmon Burger - 16</span>
             </div>
           </div>
           <p class="editor-note">No formatting to fuss with. Prices are whatever you type &mdash; 15, $15, market price. We don't touch them.</p>
@@ -706,15 +868,18 @@
           </div>
           <div class="editor-mock">
             <p class="editor-mock-label">Your saved specials</p>
-            <ul class="editor-rows">
-              <li><span class="mock-check is-on" aria-hidden="true"></span><span class="editor-row-name">Sesame Encrusted Ahi Tuna Over Seaweed Salad</span><span class="editor-price">15</span><span class="editor-row-actions">Edit &middot; Delete</span></li>
-              <li><span class="mock-check is-on" aria-hidden="true"></span><span class="editor-row-name">Chipotle Chicken Panini</span><span class="editor-price">14</span><span class="editor-row-actions">Edit &middot; Delete</span></li>
-              <li><span class="mock-check is-on" aria-hidden="true"></span><span class="editor-row-name">Blackened Salmon Burger</span><span class="editor-price">16</span><span class="editor-tag">saved automatically</span></li>
-              <li><span class="mock-check" aria-hidden="true"></span><span class="editor-row-name">Short Rib Grilled Cheese</span><span class="editor-price">15</span><span class="editor-row-actions">Edit &middot; Delete</span></li>
-              <li><span class="mock-check" aria-hidden="true"></span><span class="editor-row-name">Lobster Roll, Hot or Cold</span><span class="editor-price">Market Price</span><span class="editor-row-actions">Edit &middot; Delete</span></li>
+            <!-- Real checkboxes. Edit/Delete stay decorative text and are
+                 hidden from screen readers so they don't read as actionable. -->
+            <ul class="editor-rows" id="dsLibrary">
+              <li><input type="checkbox" class="mock-check" id="ds-row-1" checked><label class="editor-row-name" for="ds-row-1">Sesame Encrusted Ahi Tuna Over Seaweed Salad</label><span class="editor-price">15</span><span class="editor-row-actions" aria-hidden="true">Edit &middot; Delete</span></li>
+              <li><input type="checkbox" class="mock-check" id="ds-row-2" checked><label class="editor-row-name" for="ds-row-2">Chipotle Chicken Panini</label><span class="editor-price">14</span><span class="editor-row-actions" aria-hidden="true">Edit &middot; Delete</span></li>
+              <li><input type="checkbox" class="mock-check" id="ds-row-3" checked><label class="editor-row-name" for="ds-row-3">Blackened Salmon Burger</label><span class="editor-price">16</span><span class="editor-tag">new addition</span></li>
+              <li><input type="checkbox" class="mock-check" id="ds-row-4"><label class="editor-row-name" for="ds-row-4">Short Rib Grilled Cheese</label><span class="editor-price">15</span><span class="editor-row-actions" aria-hidden="true">Edit &middot; Delete</span></li>
+              <li><input type="checkbox" class="mock-check" id="ds-row-5"><label class="editor-row-name" for="ds-row-5">Lobster Roll, Hot or Cold</label><span class="editor-price">Market Price</span><span class="editor-row-actions" aria-hidden="true">Edit &middot; Delete</span></li>
             </ul>
           </div>
-          <p class="editor-note">The top three are ticked because those three lines are sitting in the box above &mdash; that's the only thing a tick means. The salmon burger saved itself the second it was typed. Got a dish wrong, or done with one for good? Edit and Delete are right on the row.</p>
+          <p class="ds-hint">Go ahead &mdash; tick one and watch the box above.</p>
+          <p class="editor-note">The top three are ticked because those three lines are sitting in the box above &mdash; that's the only thing a tick means. The salmon burger is the new addition: publish something you've never run before and it saves itself down here, ready to tick next week. Got a dish wrong, or done with one for good? Edit and Delete are right on the row.</p>
         </div>
 
         <div class="editor-flow">
@@ -743,12 +908,27 @@
               </div>
             </div>
             <div class="editor-buttons">
-              <span class="editor-btn is-primary">Publish to Homepage</span>
-              <span class="editor-btn">Export PDF</span>
-              <span class="editor-btn is-link">Clear this week's specials</span>
+              <button type="button" class="editor-btn is-primary" id="dsPublish">Publish to Homepage</button>
+              <button type="button" class="editor-btn" id="dsExport">Export PDF</button>
+              <button type="button" class="editor-btn is-link" id="dsClear">Clear this week's specials</button>
             </div>
+            <!-- Single live region: the running count normally, errors when
+                 there's nothing to publish. One region so tick announcements
+                 and messages can't talk over each other. -->
+            <p class="ds-msg" id="dsMsg" role="status">3 specials will go on the homepage.</p>
           </div>
+          <p class="ds-hint">Export PDF opens your browser's print dialog, exactly like it does for the restaurant.</p>
           <p class="editor-note">"Clear them after" fills itself in with the coming Sunday, so most weeks you don't touch it. Up to 40 specials at a time, about 200 characters a line &mdash; more room than any special we've ever seen.</p>
+        </div>
+
+        <!-- Revealed by Publish: how the current list lands on the homepage. -->
+        <div class="ds-published" id="dsPublished" role="status" hidden>
+          <p class="ds-published-label">&#8595; And here's how it lands on your homepage</p>
+          <div class="specials-mock">
+            <h3 class="specials-mock-heading" id="dsBandHeading">This Week's Specials</h3>
+            <ul class="specials-mock-list" id="dsBandList"></ul>
+            <p class="specials-mock-posted" id="dsBandPosted"></p>
+          </div>
         </div>
 
       </div>
@@ -999,6 +1179,282 @@
     </div>
   </footer>
 
+  <!-- Print target. Populated on demand and visible only to the print
+       stylesheet; a direct child of <body> because the print rule reveals it
+       by hiding body's other children. -->
+  <div id="print-sheet" aria-hidden="true"></div>
+
   <script src="js/main.js"></script>
+
+  <!-- Makes the three walkthrough boxes a working demo: the checkboxes drive
+       the week's list, Publish shows the homepage band, Export PDF really
+       prints. Mirrors change-portal/client/specials.html, including its
+       "Name - Price" line format and append-on-tick ordering.
+
+       Progressive enhancement: the markup above already ships the correct
+       state, so nothing here runs on load except wiring and seeding. The
+       first re-render happens on the first click. -->
+  <script>
+    (function () {
+      var weekBox = document.getElementById('dsWeek');
+      var library = document.getElementById('dsLibrary');
+      var msgEl = document.getElementById('dsMsg');
+      var published = document.getElementById('dsPublished');
+      var bandList = document.getElementById('dsBandList');
+      var bandPosted = document.getElementById('dsBandPosted');
+      var btnPublish = document.getElementById('dsPublish');
+      var btnExport = document.getElementById('dsExport');
+      var btnClear = document.getElementById('dsClear');
+      var sheet = document.getElementById('print-sheet');
+      if (!weekBox || !library || !sheet) return;
+
+      var LOGO = 'images/WebbersaurusB.png';
+      var HEADING = "This Week's Specials";
+      var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June',
+                    'July', 'August', 'September', 'October', 'November', 'December'];
+      var DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+      function pad(n) { return String(n).length < 2 ? '0' + n : String(n); }
+
+      // The coming Sunday, same default as the real tool -- so the date in the
+      // mockup is never stale and the note below it ("fills itself in with the
+      // coming Sunday") is literally true.
+      function nextSunday() {
+        var d = new Date();
+        d.setDate(d.getDate() + (d.getDay() === 0 ? 7 : 7 - d.getDay()));
+        return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+      }
+      var CLEARS = nextSunday();
+
+      // Case- and whitespace-insensitive identity for a line.
+      function normKey(s) {
+        return String(s).replace(/\s+/g, ' ').trim().toLowerCase();
+      }
+      // "Ahi Tuna - 15" / "Ahi Tuna". Price verbatim, no currency added.
+      function itemLabel(row) {
+        return row.price ? row.name + ' - ' + row.price : row.name;
+      }
+      // Split by regex, never new Date("2026-08-09"): the bare form parses as
+      // UTC midnight and prints as the day before in every US timezone.
+      function formatSheetDate(value) {
+        var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(value || '').trim());
+        if (!m) return '';
+        var d = new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
+        return DAYS[d.getDay()] + ', ' + MONTHS[d.getMonth()] + ' ' + d.getDate();
+      }
+
+      // Read the library once. Name and price come from the visible text, so
+      // editing the markup changes behaviour with it.
+      var rows = [];
+      Array.prototype.forEach.call(library.querySelectorAll('li'), function (li) {
+        var nameEl = li.querySelector('.editor-row-name');
+        var priceEl = li.querySelector('.editor-price');
+        var cb = li.querySelector('input[type="checkbox"]');
+        if (!nameEl || !cb) return;
+        var row = {
+          name: nameEl.textContent.trim(),
+          price: priceEl ? priceEl.textContent.trim() : '',
+          cb: cb
+        };
+        row.label = itemLabel(row);
+        row.key = normKey(row.label);
+        rows.push(row);
+      });
+
+      // Seed the week's list from what the static markup already shows, so the
+      // starting order survives and the ticks stay truthful.
+      var week = [];
+      Array.prototype.forEach.call(weekBox.querySelectorAll(':scope > span'), function (span) {
+        var key = normKey(span.textContent);
+        for (var i = 0; i < rows.length; i++) {
+          if (rows[i].key === key && week.indexOf(rows[i]) === -1) { week.push(rows[i]); return; }
+        }
+      });
+
+      function setMsg(text, isError) {
+        if (!msgEl) return;
+        msgEl.textContent = text;
+        msgEl.classList.toggle('is-error', !!isError);
+      }
+      function countText(n) {
+        return n
+          ? n + ' special' + (n === 1 ? '' : 's') + ' will go on the homepage.'
+          : 'Nothing ticked yet.';
+      }
+
+      function render() {
+        weekBox.replaceChildren();
+        if (!week.length) {
+          var empty = document.createElement('span');
+          empty.className = 'ds-empty';
+          empty.textContent = 'Nothing here yet — tick a special from the saved list below.';
+          weekBox.appendChild(empty);
+        } else {
+          week.forEach(function (row) {
+            var line = document.createElement('span');
+            line.textContent = row.label;
+            weekBox.appendChild(line);
+          });
+        }
+        // A tick means nothing more than "this line is in the box above".
+        rows.forEach(function (row) { row.cb.checked = week.indexOf(row) !== -1; });
+        setMsg(countText(week.length), false);
+        // The band deliberately does NOT follow along. Your homepage only
+        // changes when you publish, and that is the thing this page teaches.
+      }
+
+      function renderBand() {
+        if (!bandList) return;
+        bandList.replaceChildren();
+        week.forEach(function (row) {
+          var li = document.createElement('li');
+          li.textContent = row.name;
+          if (row.price) {
+            var p = document.createElement('span');
+            p.className = 'specials-mock-price';
+            p.textContent = row.price;
+            li.appendChild(p);
+          }
+          bandList.appendChild(li);
+        });
+        if (bandPosted) {
+          var clears = formatSheetDate(CLEARS);
+          bandPosted.textContent = clears ? 'Clears ' + clears + ' night' : '';
+        }
+      }
+
+      rows.forEach(function (row) {
+        // Matches the real editor's label verbatim.
+        row.cb.setAttribute('aria-label', 'Add ' + row.label + " to this week's list");
+        row.cb.addEventListener('change', function () {
+          if (row.cb.checked) {
+            if (week.indexOf(row) === -1) { week.push(row); } // appends to the end
+          } else {
+            week = week.filter(function (r) { return r !== row; });
+          }
+          render();
+        });
+      });
+
+      if (btnClear) {
+        btnClear.addEventListener('click', function () {
+          week = [];
+          if (published) { published.hidden = true; }
+          render();
+          setMsg('Cleared. Off the site, and your saved list below is untouched.', false);
+        });
+      }
+
+      if (btnPublish && published) {
+        btnPublish.addEventListener('click', function () {
+          if (!week.length) {
+            published.hidden = true;
+            setMsg('Nothing ticked — publishing an empty list is how you take the band off your homepage.', false);
+            return;
+          }
+          renderBand();
+          published.hidden = false;
+          setMsg(week.length + ' special' + (week.length === 1 ? '' : 's') + ' on the homepage now.', false);
+        });
+      }
+
+      // Resolves false rather than rejecting: a missing logo should quietly
+      // fall back to the wordmark, never block the export.
+      function loadLogo(src) {
+        return new Promise(function (resolve) {
+          var img = new Image();
+          img.onload = function () { resolve(true); };
+          img.onerror = function () { resolve(false); };
+          img.src = src;
+        });
+      }
+
+      function buildSheet(logoOk) {
+        sheet.replaceChildren();
+        if (logoOk) {
+          var img = document.createElement('img');
+          img.className = 'print-logo';
+          img.src = LOGO;
+          img.alt = 'Webbersaurus';
+          sheet.appendChild(img);
+        } else {
+          var mark = document.createElement('div');
+          mark.className = 'print-wordmark';
+          mark.textContent = 'Your Restaurant';
+          sheet.appendChild(mark);
+        }
+        var heading = document.createElement('div');
+        heading.className = 'print-heading';
+        heading.textContent = HEADING;
+        sheet.appendChild(heading);
+
+        var rule = document.createElement('hr');
+        rule.className = 'print-rule';
+        sheet.appendChild(rule);
+
+        var ul = document.createElement('ul');
+        ul.className = 'print-items';
+        week.forEach(function (row) {
+          var li = document.createElement('li');
+          li.textContent = row.label;
+          ul.appendChild(li);
+        });
+        sheet.appendChild(ul);
+
+        var expires = formatSheetDate(CLEARS);
+        if (expires) {
+          var foot = document.createElement('div');
+          foot.className = 'print-foot';
+          foot.textContent = 'Available through ' + expires;
+          sheet.appendChild(foot);
+        }
+      }
+
+      /* The print gate. The class must survive for as long as the dialog or
+         preview is open: some browsers return from print() immediately, and
+         dropping the class there would swap a live preview back to the
+         marketing page. So teardown happens on afterprint, on the print media
+         query going false (old Safari never fires afterprint), and on a long
+         backstop timer. The timer is 60s on purpose -- a short one would fire
+         while Chrome's preview is still open, since that re-renders on every
+         paper-size change. */
+      var printTimer = null;
+      function stopPrinting() {
+        document.body.classList.remove('ds-printing');
+        if (printTimer) { window.clearTimeout(printTimer); printTimer = null; }
+      }
+      window.addEventListener('afterprint', stopPrinting);
+      var printMql = window.matchMedia ? window.matchMedia('print') : null;
+      if (printMql && printMql.addEventListener) {
+        printMql.addEventListener('change', function (e) { if (!e.matches) stopPrinting(); });
+      }
+
+      if (btnExport) {
+        btnExport.addEventListener('click', function () {
+          if (!week.length) {
+            setMsg("There's nothing in this week's list to export yet.", true);
+            return;
+          }
+          setMsg(countText(week.length), false);
+          var original = btnExport.textContent;
+          btnExport.disabled = true;
+          btnExport.textContent = 'Preparing…';
+          function restore() {
+            btnExport.textContent = original;
+            btnExport.disabled = false;
+          }
+          // Await the logo before printing so the dialog can't open on a
+          // half-loaded sheet -- a missing logo in the preview is
+          // indistinguishable from a broken feature.
+          loadLogo(LOGO).then(function (logoOk) {
+            buildSheet(logoOk);
+            document.body.classList.add('ds-printing');
+            printTimer = window.setTimeout(stopPrinting, 60000);
+            window.print();
+          }).then(restore, restore);
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
