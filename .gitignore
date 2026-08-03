@@ -5,3 +5,13 @@
 # macOS
 .DS_Store
 **/.DS_Store
+
+# Vehicle-listing source material. The listing pages ship optimised copies in
+# images/avalanche/; these are the originals and the scanned service records,
+# and they have no business in a repo whose root is served publicly.
+avalanche pictures/
+some service records/
+
+# Client documents live outside this repo, in ../client-documents/ -- anything
+# committed here is downloadable from the live site.
+domain_list_filtered.csv
