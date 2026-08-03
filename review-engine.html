@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="You already email the invoice. BCC one address and the Review Engine asks every customer for a Google review - automatically, in your name, three times and never a fourth.">
+  <title>The Review Engine | Automated Google Review Requests | Webbersaurus</title>
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.webbersaurus.com/review-engine">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.webbersaurus.com/review-engine">
+  <meta property="og:title" content="The Review Engine | Webbersaurus">
+  <meta property="og:description" content="You already email the invoice. BCC one address and every customer gets asked for a Google review - automatically, in your name.">
+  <meta property="og:image" content="https://www.webbersaurus.com/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Webbersaurus">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://www.webbersaurus.com/review-engine">
+  <meta name="twitter:title" content="The Review Engine | Webbersaurus">
+  <meta name="twitter:description" content="You already email the invoice. BCC one address and every customer gets asked for a Google review - automatically, in your name.">
+  <meta name="twitter:image" content="https://www.webbersaurus.com/images/og-image.jpg">
+
+  <!-- Additional SEO -->
+  <meta name="robots" content="index, follow">
+
+  <!-- Schema.org Service markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Review Engine",
+    "description": "An automated Google review request service. The business owner BCCs one address on the invoice or confirmation email they already send, and the Review Engine sends a three-email review request sequence in the owner's name, stopping the moment the customer clicks, unsubscribes, or leaves a review.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "@id": "https://www.webbersaurus.com/#business",
+      "name": "Webbersaurus",
+      "telephone": "+1-203-530-7396",
+      "email": "chris@webbersaur.us",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Branford",
+        "addressRegion": "CT",
+        "addressCountry": "US"
+      }
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "Connecticut"
+    },
+    "serviceType": "Online Reputation Management",
+    "url": "https://www.webbersaurus.com/review-engine"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .hero-cta {
+      display: flex;
+      gap: var(--spacing-md);
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: var(--spacing-lg);
+    }
+    /* ---------- prose column ---------- */
+    .re-prose {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .re-prose p {
+      margin-bottom: var(--spacing-md);
+    }
+    .re-prose p:last-child {
+      margin-bottom: 0;
+    }
+    .re-pull {
+      border-left: 3px solid var(--color-primary);
+      padding: var(--spacing-xs) 0 var(--spacing-xs) var(--spacing-lg);
+      margin: var(--spacing-lg) 0;
+      font-size: var(--font-size-lg);
+      font-weight: 700;
+      line-height: 1.5;
+      color: var(--color-text);
+    }
+    .re-pull em {
+      font-style: italic;
+      color: var(--color-text-light);
+    }
+    .re-aside {
+      background: #fff5f2;
+      border-left: 3px solid var(--color-primary);
+      border-radius: var(--radius-sm);
+      padding: var(--spacing-md) var(--spacing-lg);
+      margin: var(--spacing-lg) 0 var(--spacing-md);
+      font-size: var(--font-size-sm);
+      line-height: 1.7;
+      color: var(--color-text);
+    }
+    .re-aside strong {
+      display: block;
+      margin-bottom: var(--spacing-xs);
+      color: var(--color-primary);
+    }
+    /* ---------- the numbered flow ---------- */
+    .re-flow {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      max-width: 760px;
+      background: var(--color-white);
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+    }
+    .re-flow li {
+      display: grid;
+      grid-template-columns: 40px minmax(0, 1fr);
+      gap: 0 var(--spacing-md);
+      padding: var(--spacing-lg);
+    }
+    .re-flow li + li {
+      border-top: 1px solid var(--color-gray-200);
+    }
+    .re-flow .n {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-full);
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+      color: var(--color-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--font-size-sm);
+      font-weight: 700;
+    }
+    .re-flow .what {
+      font-weight: 700;
+      color: var(--color-text);
+      line-height: 1.4;
+    }
+    .re-flow .actor {
+      display: inline-block;
+      margin-left: var(--spacing-sm);
+      padding: 0.1rem 0.5rem;
+      border: 1px solid var(--color-gray-300);
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-xs);
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-text-light);
+      vertical-align: 0.1em;
+    }
+    .re-flow .how {
+      grid-column: 2;
+      margin-top: var(--spacing-xs);
+      font-size: var(--font-size-sm);
+      line-height: 1.7;
+      color: var(--color-text-light);
+    }
+    .re-flow .how code {
+      background: #fff5f2;
+      color: var(--color-primary-dark);
+      padding: 0.1em 0.4em;
+      border-radius: var(--radius-sm);
+      font-size: 0.95em;
+      word-break: break-all;
+    }
+    /* ---------- tables ---------- */
+    .re-tablewrap {
+      max-width: 800px;
+      margin: 0 auto;
+      overflow-x: auto;
+      background: var(--color-white);
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      -webkit-overflow-scrolling: touch;
+    }
+    .re-tablewrap table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 34rem;
+    }
+    .re-tablewrap th,
+    .re-tablewrap td {
+      text-align: left;
+      padding: var(--spacing-md);
+      vertical-align: top;
+    }
+    .re-tablewrap thead th {
+      font-size: var(--font-size-xs);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-text-light);
+      border-bottom: 1px solid var(--color-gray-200);
+    }
+    .re-tablewrap tbody tr + tr td {
+      border-top: 1px solid var(--color-gray-100);
+    }
+    .re-tablewrap tbody td {
+      font-size: var(--font-size-sm);
+      line-height: 1.6;
+      color: var(--color-text-light);
+    }
+    .re-tablewrap tbody td:first-child {
+      font-weight: 700;
+      color: var(--color-primary);
+      white-space: nowrap;
+    }
+    .re-tablewrap tbody td:nth-child(2) {
+      font-weight: 700;
+      color: var(--color-text);
+      white-space: nowrap;
+    }
+    /* ---------- email mockups ---------- */
+    .re-emails {
+      display: grid;
+      gap: var(--spacing-lg);
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .re-email {
+      background: var(--color-white);
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      text-align: left;
+    }
+    .re-email .ehead {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: var(--spacing-xs) var(--spacing-md);
+      padding: var(--spacing-sm) var(--spacing-lg);
+      background: #fff5f2;
+      border-bottom: 1px solid var(--color-gray-200);
+    }
+    .re-email .ewhen {
+      font-size: var(--font-size-xs);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+    }
+    .re-email .esubj {
+      font-weight: 700;
+      font-size: var(--font-size-sm);
+      color: var(--color-text);
+    }
+    .re-email .esubj::before {
+      content: "Subject: ";
+      color: var(--color-text-light);
+    }
+    .re-email .ebody {
+      display: grid;
+      gap: var(--spacing-md);
+      padding: var(--spacing-lg);
+      font-size: var(--font-size-sm);
+      line-height: 1.7;
+    }
+    .re-email .ebody p {
+      margin: 0;
+    }
+    .re-email .ebtn {
+      justify-self: start;
+      background: var(--color-primary);
+      color: var(--color-white);
+      font-weight: 700;
+      font-size: var(--font-size-sm);
+      padding: var(--spacing-sm) var(--spacing-lg);
+      border-radius: var(--radius-sm);
+    }
+    .re-email .epriv,
+    .re-email .esign {
+      color: var(--color-text-light);
+    }
+    .re-email .epriv u {
+      color: var(--color-primary);
+    }
+    .re-email .eprompts {
+      margin: 0;
+      padding-left: var(--spacing-md);
+      line-height: 2;
+      color: var(--color-text-light);
+    }
+    .var {
+      font-weight: 700;
+      color: #9a7118;
+      border-bottom: 1px dotted #9a7118;
+      white-space: nowrap;
+    }
+    .varkey {
+      max-width: 760px;
+      margin: 0 auto var(--spacing-lg);
+      font-size: var(--font-size-sm);
+      color: var(--color-text-light);
+    }
+    .varkey .swatch {
+      font-weight: 700;
+      color: #9a7118;
+      border-bottom: 1px dotted #9a7118;
+    }
+    /* ---------- the math ---------- */
+    .re-math {
+      max-width: 560px;
+      margin: var(--spacing-lg) auto var(--spacing-sm);
+      padding: var(--spacing-lg);
+      background: var(--color-white);
+      border: 1px solid var(--color-gray-200);
+      border-left: 3px solid var(--color-primary);
+      border-radius: var(--radius-sm);
+      overflow-x: auto;
+      font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: var(--font-size-sm);
+      line-height: 2;
+      font-variant-numeric: tabular-nums;
+      white-space: pre;
+      color: var(--color-text-light);
+    }
+    .re-math b {
+      color: var(--color-primary);
+    }
+    .re-caption {
+      text-align: center;
+      font-size: var(--font-size-xs);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-text-light);
+    }
+    /* ---------- what it is not ---------- */
+    .re-nots {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      max-width: 800px;
+      display: grid;
+      gap: var(--spacing-md);
+    }
+    .re-nots li {
+      display: grid;
+      grid-template-columns: 1.5rem minmax(0, 1fr);
+      gap: var(--spacing-md);
+      align-items: baseline;
+      background: var(--color-white);
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-md);
+      padding: var(--spacing-lg);
+      text-align: left;
+      color: var(--color-text-light);
+    }
+    .re-nots .x {
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+    .re-nots b {
+      color: var(--color-text);
+    }
+    /* ---------- the fit ---------- */
+    .re-fit {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--spacing-lg);
+      max-width: 900px;
+      margin: 0 auto var(--spacing-lg);
+    }
+    .re-fit > div {
+      background: var(--color-white);
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-md);
+      padding: var(--spacing-lg);
+      text-align: left;
+    }
+    .re-fit h3 {
+      font-size: var(--font-size-xs);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: var(--spacing-md);
+    }
+    .re-fit .no h3 {
+      color: var(--color-text-light);
+    }
+    .re-fit ul {
+      /* css/styles.css resets all lists to list-style: none */
+      list-style: disc;
+      margin: 0;
+      padding-left: var(--spacing-lg);
+      font-size: var(--font-size-sm);
+      line-height: 1.7;
+      color: var(--color-text-light);
+    }
+    .re-fit li + li {
+      margin-top: var(--spacing-sm);
+    }
+    /* ---------- getting started ---------- */
+    .step-number {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto var(--spacing-md);
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+      color: var(--color-white);
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--font-size-xl);
+      font-weight: 700;
+    }
+    /* ---------- CTA buttons ---------- */
+    .re-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-xl);
+    }
+    .re-cta-row .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+    }
+    @media (max-width: 768px) {
+      .re-fit {
+        grid-template-columns: 1fr;
+      }
+      .re-flow li {
+        grid-template-columns: 32px minmax(0, 1fr);
+        gap: 0 var(--spacing-sm);
+        padding: var(--spacing-md);
+      }
+      .re-flow .n {
+        width: 28px;
+        height: 28px;
+        font-size: var(--font-size-xs);
+      }
+      .re-flow .actor {
+        margin-left: 0;
+        display: block;
+        width: fit-content;
+        margin-top: var(--spacing-xs);
+      }
+    }
+  </style>
+</head>
+<body class="inner-page">
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/WebbersaurusW.png" alt="Webbersaurus" class="logo-img" width="200" height="200">
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about-us.html" class="nav-link">About</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="reviews.html" class="nav-link">Reviews</a>
+        <div class="nav-dropdown">
+          <a href="services.html" class="nav-link nav-dropdown-toggle">Services</a>
+          <div class="nav-dropdown-menu">
+            <a href="seo.html">Search Engine Optimization</a>
+            <a href="gbp-management.html">Google Business Profile</a>
+            <a href="social-media-marketing.html">Social Media Marketing</a>
+            <a href="change-portal.html">Change Portal</a>
+            <a href="daily-specials.html">Daily Specials</a>
+            <a href="review-engine.html">Review Engine</a>
+            <a href="realtors.html">Listing Pages for Realtors</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <span class="nav-link nav-dropdown-toggle">Case Studies</span>
+          <div class="nav-dropdown-menu">
+            <a href="case-study.html">Michael's Trattoria</a>
+            <a href="case-study-rollin-dough.html">Rollin Dough</a>
+          </div>
+        </div>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>The Review Engine</h1>
+      <p>You know you should ask every customer for a Google review. You don't. Almost nobody does. So we stopped asking you to.</p>
+      <div class="hero-cta">
+        <a href="#how-it-works" class="btn btn-primary">See How It Works</a>
+        <a href="contact.html" class="btn btn-secondary">Talk to Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- The problem -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Everyone Knows Reviews Matter. Almost Nobody Asks.</h2>
+      </div>
+      <div class="re-prose">
+        <p>When somebody searches for what you do, Google shows a map with three businesses on it. Getting into that map is worth more than any other thing on your website, and your star rating and review count are among the strongest signals deciding who lands there.</p>
+        <p>Every owner already knows this. And still the reviews do not come, because the moment a job ends you are already loading the truck for the next one. Asking means stopping, remembering, digging up an email address, and finding the words.</p>
+        <p class="re-pull">Any system that needs you to <em>start</em> something after a job is finished will be dead by week three. Reminder cards, checklists, a note on the invoice, the best intentions in the world. We have watched it happen over and over.</p>
+        <p>So we stopped trying to build a better reminder. The reminder was never the problem.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The idea -->
+  <section class="section" style="background: var(--color-gray-50);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Don't Add a Step. Attach to One That Already Happens.</h2>
+      </div>
+      <div class="re-prose">
+        <p>You already email your customer something when the work is done. An invoice, a quote, a receipt, a confirmation. That email already has their name on it and their address in it.</p>
+        <p class="re-pull">So put one more address in the BCC line. That is the entire new habit.</p>
+        <p>Nothing to log into. Nothing to remember later. Nothing to type twice. Your customer never sees it, because the BCC line is invisible to them by design. From there, the engine takes over.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <h2>What Actually Happens</h2>
+        <p>From the invoice you were sending anyway to a review on your Google profile.</p>
+      </div>
+      <ol class="re-flow">
+        <li>
+          <span class="n">1</span>
+          <span class="what">You send the invoice<span class="actor">You</span></span>
+          <span class="how">Exactly as you always have. One extra address in the BCC field: <code>yourbusiness@reviewengine.email</code></span>
+        </li>
+        <li>
+          <span class="n">2</span>
+          <span class="what">We read the customer off the message<span class="actor">Engine</span></span>
+          <span class="how">Their name and email come straight from the email you just sent. You never type a customer's details into anything.</span>
+        </li>
+        <li>
+          <span class="n">3</span>
+          <span class="what">The request goes out in your name<span class="actor">Engine</span></span>
+          <span class="how">From your email address, in your branding, worded like you. Not from us, and not from some tool your customer has never heard of.</span>
+        </li>
+        <li>
+          <span class="n">4</span>
+          <span class="what">One button. We count the click.<span class="actor">Customer</span></span>
+          <span class="how">The email has a single button that drops them straight onto your Google review form. No account to make, no hoops.</span>
+        </li>
+        <li>
+          <span class="n">5</span>
+          <span class="what">Review posted. Engine goes quiet.<span class="actor">Customer</span></span>
+          <span class="how">The moment they act, the rest of the sequence is cancelled. They are never asked twice for the same job.</span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- The cadence -->
+  <section class="section" style="background: var(--color-gray-50);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Three Emails. Never a Fourth.</h2>
+      </div>
+      <div class="re-tablewrap">
+        <table>
+          <thead>
+            <tr><th scope="col">When</th><th scope="col">Touch</th><th scope="col">What it says</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>+2 hrs</td>
+              <td>The ask</td>
+              <td>Warm, branded, one button. It names the actual work you did for them.</td>
+            </tr>
+            <tr>
+              <td>+48 hrs</td>
+              <td>The nudge</td>
+              <td>Three lines. Assumes they meant to and forgot, because they did.</td>
+            </tr>
+            <tr>
+              <td>+7 days</td>
+              <td>The last one</td>
+              <td>Plain text, from you personally. "I won't ask again." And then we don't.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="re-prose" style="margin-top: var(--spacing-xl);">
+        <p>It stops early on any signal at all: they click, they unsubscribe, or you tell us they already left one. <strong>Your customer list is the most valuable thing you own, and we treat it that way.</strong> This is a polite tap on the shoulder, not a campaign.</p>
+        <div class="re-aside">
+          <strong>Why email and not text?</strong>
+          Text converts better, and we would rather tell you that than pretend otherwise. But sending business texts legally means registering your number with the phone carriers, which takes weeks and costs money before you have sent a single message. Email works today, from the domain you already own. When text is worth the paperwork for you, the engine will send those too.
+        </div>
+        <p><strong>Still want to explore the text route?</strong> Just <a href="contact.html">let us know</a> and we'll walk you through what it takes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Word for word -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Here Is Exactly What Your Customer Gets</h2>
+        <p>No mystery, no "AI voice." Three short emails, from your address, written to sound like a person - because a review request that reads like marketing gets deleted like marketing.</p>
+      </div>
+      <p class="varkey"><span class="swatch">Highlighted</span> parts fill in automatically from the invoice you BCC'd - your business name, the customer's name, and the job you did.</p>
+
+      <div class="re-emails">
+        <div class="re-email">
+          <div class="ehead">
+            <span class="ewhen">+2 hrs &middot; the ask</span>
+            <span class="esubj">How did we do?</span>
+          </div>
+          <div class="ebody">
+            <p>Hi <span class="var">Shawnna</span>,</p>
+            <p>Thanks again for choosing <span class="var">your business</span> for <span class="var">the driveway sealcoating</span>. If you were happy with how it went, would you mind leaving us a quick review on Google? It takes about thirty seconds, and it genuinely helps other people nearby decide who to trust.</p>
+            <span class="ebtn">Leave a Google Review</span>
+            <p class="epriv">Something wasn't right? <u>Tell us privately instead</u> and we'll make it right.</p>
+            <p class="esign">Thanks,<br><span class="var">Chris at your business</span></p>
+          </div>
+        </div>
+
+        <div class="re-email">
+          <div class="ehead">
+            <span class="ewhen">+48 hrs &middot; the nudge</span>
+            <span class="esubj">A quick favor?</span>
+          </div>
+          <div class="ebody">
+            <p>Hi <span class="var">Shawnna</span>,</p>
+            <p>Just floating this back up in case it got buried. If you have a moment, a quick Google review would mean a lot to us.</p>
+            <span class="ebtn">Leave a Google Review</span>
+            <p class="epriv">Something wasn't right? <u>Tell us privately instead</u> and we'll make it right.</p>
+            <p class="esign">Thanks,<br><span class="var">Chris at your business</span></p>
+          </div>
+        </div>
+
+        <div class="re-email">
+          <div class="ehead">
+            <span class="ewhen">+7 days &middot; the last one</span>
+            <span class="esubj">Last note from <span class="var">your business</span>, I promise</span>
+          </div>
+          <div class="ebody">
+            <p>Hi <span class="var">Shawnna</span>,</p>
+            <p>Last time I'll ask, I promise.</p>
+            <p>Reviews are how a small business like ours gets found, so if you have thirty seconds, it really does make a difference. And if you'd rather not, that's completely fine - you won't hear from me about this again either way.</p>
+            <span class="ebtn">Leave a Google Review</span>
+            <p class="epriv">Something wasn't right? <u>Tell us privately instead</u> and we'll make it right.</p>
+            <p class="esign">Thanks either way,<br><span class="var">Chris at your business</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="re-prose" style="margin-top: var(--spacing-xl);">
+        <p>Every one carries a quiet "tell us privately instead" link that goes straight to you, not to Google. An unhappy customer gets a way to be heard without it becoming a public star - and the moment anyone clicks, unsubscribes, or leaves a review, the rest of the sequence stops for good.</p>
+        <h3 style="margin: var(--spacing-xl) 0 var(--spacing-md);">For the ones who want to help but freeze at the blank box</h3>
+        <p>Most people who never leave a review are not unwilling. They open the box, do not know what to write, and close it. So right under the button, the email offers a few gentle prompts - things they might mention, in their own words:</p>
+      </div>
+
+      <div class="re-emails" style="margin-top: var(--spacing-lg);">
+        <div class="re-email">
+          <div class="ehead">
+            <span class="ewhen">Right under the button, in the email</span>
+          </div>
+          <div class="ebody">
+            <p class="epriv">Not sure what to write? You could mention:</p>
+            <p class="eprompts">
+              &bull; Were we on time and easy to work with?<br>
+              &bull; How did the finished work turn out?<br>
+              &bull; Would you use us again, or recommend us to a neighbor?
+            </p>
+            <p class="epriv"><em>A sentence or two in your own words is all it takes.</em></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="re-prose" style="margin-top: var(--spacing-xl);">
+        <p>Note what this is <strong>not</strong>: a canned review you paste. Google filters identical, templated review text - so a script handed to every customer gets the very reviews you generated quietly removed. These are prompts, not words in their mouth. Everyone still writes their own, and everyone still goes to the same Google form.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The math -->
+  <section class="section" style="background: var(--color-gray-50);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Volume Is the Only Thing That Moves a Rating</h2>
+      </div>
+      <div class="re-prose">
+        <p>Businesses lose the map spot on their star rating more often than on anything else. And a rating is an average, which means it is stubborn: you cannot argue it upward, you can only outvote it. Every genuinely happy customer who never got asked is a vote you left on the table.</p>
+      </div>
+      <div class="re-math">22 reviews at 4.1 stars    =  <b>4.10 average</b>
++ 20 new 5-star reviews    =  <b>4.53 average</b></div>
+      <p class="re-caption">Illustrative, not a promise</p>
+      <div class="re-prose" style="margin-top: var(--spacing-xl);">
+        <p>That gap is often the whole difference between showing up in the map and being invisible in it. There is no clever way to get there. You get there by asking every single customer, every single time, which is exactly the thing no human being reliably does by hand, and exactly the thing a machine is good at.</p>
+        <p>The other half is <strong>recency</strong>. A steady trickle of new reviews reads as a business that is busy right now. Twenty reviews from three years ago read as a business that used to be.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What you see -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>You Finally Get to Watch It Work</h2>
+        <p>Most review advice ends with a shrug and a hope. This one reports. Every month you get four numbers.</p>
+      </div>
+      <div class="re-tablewrap">
+        <table>
+          <thead>
+            <tr><th scope="col">Number</th><th scope="col">Means</th><th scope="col">Tells you</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Captured</td><td>Jobs picked up</td><td>How many invoices got BCC'd. Your only job, and you can see it.</td></tr>
+            <tr><td>Sent</td><td>Requests delivered</td><td>That the mail is landing in inboxes, not junk folders.</td></tr>
+            <tr><td>Clicked</td><td>Customers who tapped through</td><td>How compelling the ask actually is, in real numbers.</td></tr>
+            <tr><td>Posted</td><td>New Google reviews</td><td><strong>This is the whole product.</strong> Everything above it is plumbing.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plain terms -->
+  <section class="section" style="background: var(--color-gray-50);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Three Promises About What We Won't Do</h2>
+      </div>
+      <ul class="re-nots">
+        <li>
+          <span class="x" aria-hidden="true">&times;</span>
+          <span><b>Not another app to log into.</b> There is no dashboard you are expected to check, no password to lose. If you never open anything, it still works.</span>
+        </li>
+        <li>
+          <span class="x" aria-hidden="true">&times;</span>
+          <span><b>Not a blast to your whole customer list.</b> Only the person on the job you just finished, and only three times, ever.</span>
+        </li>
+        <li>
+          <span class="x" aria-hidden="true">&times;</span>
+          <span><b>Not a contract you are stuck in.</b> Stop it any month. The reviews you earned are yours, permanently, and they stay on your profile whatever you decide about us.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- The fit -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>It Does Not Work for Everybody</h2>
+        <p>We would rather tell you it is the wrong fit than sell it to you twice.</p>
+      </div>
+      <div class="re-fit">
+        <div class="yes">
+          <h3>Built for this</h3>
+          <ul>
+            <li>Trades and home services: plumbing, HVAC, roofing, siding, paving, landscaping, remodeling</li>
+            <li>Practices that book appointments: dental, medical, physical therapy, legal, insurance</li>
+            <li><a href="realtors.html">Real estate agents</a>: a review after every closing is what wins the next listing</li>
+            <li>Anyone who finishes a job and emails a bill</li>
+          </ul>
+        </div>
+        <div class="no">
+          <h3>Wrong tool</h3>
+          <ul>
+            <li>Walk-in restaurants and retail. You never captured a name or an email, so there is nothing to work with. You want a QR code on the table instead, and we will build you one.</li>
+            <li>Businesses selling nationally to other businesses, where a local map listing is not how anyone finds you.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Getting started -->
+  <section class="section" style="background: var(--color-gray-50);">
+    <div class="container">
+      <div class="section-header">
+        <h2>What It Takes to Turn On</h2>
+        <p>Roughly a day of work on our end, and one new habit on yours.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="step-number">1</div>
+          <h3>We Set It Up</h3>
+          <p>We create your private address, connect it to your <a href="gbp-management.html">Google profile</a>, verify your email domain so the requests land in inboxes rather than spam, and write the three emails in your voice for you to approve.</p>
+        </div>
+        <div class="service-card">
+          <div class="step-number">2</div>
+          <h3>You BCC One Address</h3>
+          <p>On your next invoice. Then the one after that. Within a week it is muscle memory, because it lives inside something you were already doing.</p>
+        </div>
+        <div class="service-card">
+          <div class="step-number">3</div>
+          <h3>You Watch the Reviews Arrive</h3>
+          <p>We send you the numbers every month. If they are not moving, that is our problem to fix, and we will tell you before you have to ask.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta">
+    <div class="container">
+      <h2>The Happiest Customer You Ever Had Is the One You Forgot to Ask</h2>
+      <p>Happy to walk you through it on a quick call, or to tell you straight out that it is not right for your business. No pressure either way.</p>
+      <div class="re-cta-row">
+        <a href="tel:203-530-7396" class="btn">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          Call 203.530.7396
+        </a>
+        <a href="https://calendly.com/chrishauman/15min" target="_blank" rel="noopener noreferrer" class="btn">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>
+          Schedule a Call
+        </a>
+        <a href="mailto:chris@webbersaur.us" class="btn">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          Email Us
+        </a>
+      </div>
+      <a href="contact.html" class="btn btn-large">Get Started</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: var(--spacing-md);">
+            <a href="index.html" style="flex-shrink: 0;">
+              <img loading="lazy" decoding="async" src="images/dinowords.png" alt="Webbersaurus" width="160" height="123" style="max-width: 160px;">
+            </a>
+            <p style="margin: 0;">Proudly serving the Shoreline community and beyond since 2007.</p>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="affiliate.html">Affiliate Program</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="contact.html">Web Development</a></li>
+            <li><a href="seo.html">Search Engine Optimization</a></li>
+            <li><a href="gbp-management.html">Google Business Profile Mgt</a></li>
+            <li><a href="social-media-marketing.html">Social Media Marketing</a></li>
+            <li><a href="change-portal.html">Change Portal</a></li>
+            <li><a href="daily-specials.html">Daily Specials</a></li>
+            <li><a href="review-engine.html">Review Engine</a></li>
+            <li><a href="realtors.html">Listing Pages for Realtors</a></li>
+            <li><a href="contact.html">Website Maintenance</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:203-530-7396">203.530.7396</a></li>
+            <li><a href="mailto:chris@webbersaur.us">chris@webbersaur.us</a></li>
+            <li>Branford, CT</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Webbersaurus. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

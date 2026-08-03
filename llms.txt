@@ -34,8 +34,8 @@ Social media management and content for local businesses, keeping profiles activ
 ### Listing Pages for Realtors
 Individual property listing pages built for real estate agents, designed to showcase a single property and be shared directly with buyers.
 
-### Rate Your Experience (Online Review System)
-A simple, powerful online review system that helps businesses turn customer feedback into growth and boost their online reputation.
+### Review Engine
+An automated Google review request service. The business owner BCCs one private address on the invoice, quote, or confirmation email they were already sending, and the engine reads the customer's name and address off that message and sends a three-email review request in the owner's name and branding: the ask at +2 hours, a nudge at +48 hours, and a final note at +7 days. There is never a fourth. The sequence stops the moment the customer clicks, unsubscribes, or leaves a review, and every email carries a private feedback link that routes an unhappy customer to the owner instead of to Google. No app, no dashboard, no contract. Reported monthly as four numbers: Captured, Sent, Clicked, Posted. Built for trades, home services, appointment-based practices, and real estate agents - anyone who finishes a job and emails a bill.
 
 ## Portfolio
 
@@ -71,5 +71,5 @@ Webbersaurus has designed websites for businesses including:
 - [Change Portal](https://www.webbersaurus.com/change-portal)
 - [Daily Specials](https://www.webbersaurus.com/daily-specials)
 - [Listing Pages for Realtors](https://www.webbersaurus.com/realtors)
-- [Rate Your Experience](https://www.webbersaurus.com/rate-your-experience)
+- [Review Engine](https://www.webbersaurus.com/review-engine)
 - [Contact](https://www.webbersaurus.com/contact)

@@ -14,6 +14,11 @@
       "permanent": true
     },
     {
+      "source": "/rate-your-experience",
+      "destination": "/review-engine",
+      "permanent": true
+    },
+    {
       "source": "/demo",
       "destination": "/",
       "permanent": true

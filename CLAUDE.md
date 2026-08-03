@@ -17,7 +17,9 @@ Deployed via Vercel. Platform config lives in `vercel.json` (clean URLs, redirec
 
 ## Architecture
 
-**Pages:** HTML files in root. Public/indexable: `index.html`, `about-us.html`, `portfolio.html`, `reviews.html`, `contact.html`, `services.html`, `seo.html`, `gbp-management.html`, `social-media-marketing.html`, `change-portal.html`, `daily-specials.html`, `realtors.html`, `affiliate.html`, `case-study.html`, `case-study-rollin-dough.html`, `local-partners.html`, `rate-your-experience.html`.
+**Pages:** HTML files in root. Public/indexable: `index.html`, `about-us.html`, `portfolio.html`, `reviews.html`, `contact.html`, `services.html`, `seo.html`, `gbp-management.html`, `social-media-marketing.html`, `change-portal.html`, `daily-specials.html`, `realtors.html`, `affiliate.html`, `case-study.html`, `case-study-rollin-dough.html`, `local-partners.html`, `review-engine.html`.
+
+`review-engine.html` replaced the retired `rate-your-experience.html` (301 in `vercel.json`). Its copy is ported from the master at `../review-engine/src/onepager-client.html` (the no-pricing variant) - edit the copy there first so the two don't drift, then re-port. The separate `review-engine` repo deploys its own `noindex` one-pagers for sales outreach; this page is the public, indexable version.
 
 `change-portal.html` and `daily-specials.html` are a hub/spoke pair: the portal page is the general pitch, the specials page is the restaurant-specific deep dive. They cross-link in both directions. Their static specials mockups mirror `longleys-static/css/styles.css` (the `.hero-specials` band) on purpose; the live, data-driven version lives only in `weekly-specials-test.html`. Gated/utility (carry `noindex`): `404.html`, `affiliate-login.html`, `affiliate-portal.html`, `affiliate-reset-password.html`, `affiliate-tos.html`, `change-portal-test.html`, `weekly-specials-test.html`. Standalone listing: `avalanche.html` (+ `avalanche-share.html`, `avalanche-sheet.html`, `avalanche-sheet-window.html`).
 
