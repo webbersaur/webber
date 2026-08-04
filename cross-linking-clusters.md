@@ -42,7 +42,7 @@ Strategy for creating "Trusted Partners" / "Businesses We Recommend" pages acros
 - branfordpropane.com
 - theblackharp.com
 
-*Local directory — this domain was literally made for this.*
+*Local directory - this domain was literally made for this.*
 
 ## 4. Power Cord Products
 **Hub:** custompowercord.com
@@ -97,7 +97,7 @@ Strategy for creating "Trusted Partners" / "Businesses We Recommend" pages acros
 - cannolitruck.com
 - abiteofnutmeg.com
 
-*"Restaurants we love" — could split further by geography.*
+*"Restaurants we love" - could split further by geography.*
 
 ## 8. Beauty & Retail
 - allusionshairsalon.com
@@ -124,14 +124,14 @@ Strategy for creating "Trusted Partners" / "Businesses We Recommend" pages acros
 
 - All client sites
 
-*Standard agency portfolio page — most natural link of all.*
+*Standard agency portfolio page - most natural link of all.*
 
 ---
 
 ## Notes
 
-- Some sites appear in multiple clusters (e.g., docksidebranford.com in both Branford Local and Marine) — that's fine and natural.
-- Clusters 5 (Home Services) and 7 (Restaurants) are large — consider sub-dividing by geography.
+- Some sites appear in multiple clusters (e.g., docksidebranford.com in both Branford Local and Marine) - that's fine and natural.
+- Clusters 5 (Home Services) and 7 (Restaurants) are large - consider sub-dividing by geography.
 - Clusters 1, 2, and 4 are the strongest because they have a clear parent brand as hub.
 - Each site's partners page should have unique copy (not duplicated across sites).
-- Keep each page's outbound links to 5–8 max for best results.
+- Keep each page's outbound links to 5-8 max for best results.
