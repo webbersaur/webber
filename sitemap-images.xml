@@ -45,6 +45,21 @@
   <url>
     <loc>https://www.webbersaurus.com/portfolio</loc>
     <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/rivers-edge-home-center.webp</image:loc>
+      <image:title>River's Edge Home Center Website Design</image:title>
+      <image:caption>Custom website for River's Edge Home Center, a design, build and remodel contractor in Haddam, CT</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/quail-hollow-nsb.webp</image:loc>
+      <image:title>Quail Hollow NSB Website Design</image:title>
+      <image:caption>Custom single-property listing site for a home in Quail Hollow, New Smyrna Beach, FL</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/longleys.webp</image:loc>
+      <image:title>Longley's Restaurant &amp; Bar Website Design</image:title>
+      <image:caption>Custom website for Longley's, a neighborhood restaurant and bar in Branford, CT</image:caption>
+    </image:image>
+    <image:image>
       <image:loc>https://www.webbersaurus.com/images/portfolio/merin-law.webp</image:loc>
       <image:title>Merin Law Website Design</image:title>
       <image:caption>Custom website for Merin Law, a family law firm on the Connecticut shoreline</image:caption>
