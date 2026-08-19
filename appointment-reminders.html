@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Automated text appointment reminders and confirmations that run off the Google Calendar your team already uses. Clients reply C to confirm or R to reschedule. About $4 a month to operate.">
+  <meta name="description" content="Automated text appointment reminders and confirmations that run off the Google Calendar your team already uses. Clients reply C to confirm or R to reschedule. $50 a month, everything included.">
   <title>Text Appointment Reminders &amp; Confirmations | Webbersaurus</title>
 
   <!-- Canonical URL -->
@@ -13,7 +13,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.webbersaurus.com/appointment-reminders">
   <meta property="og:title" content="Text Appointment Reminders | Webbersaurus">
-  <meta property="og:description" content="Your team keeps using Google Calendar. Clients get a text, reply C to confirm or R to reschedule, and the calendar updates itself. About $4 a month to run.">
+  <meta property="og:description" content="Your team keeps using Google Calendar. Clients get a text, reply C to confirm or R to reschedule, and the calendar updates itself. $50 a month, everything included.">
   <meta property="og:image" content="https://www.webbersaurus.com/images/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -24,7 +24,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://www.webbersaurus.com/appointment-reminders">
   <meta name="twitter:title" content="Text Appointment Reminders | Webbersaurus">
-  <meta name="twitter:description" content="Your team keeps using Google Calendar. Clients get a text, reply C to confirm or R to reschedule, and the calendar updates itself. About $4 a month to run.">
+  <meta name="twitter:description" content="Your team keeps using Google Calendar. Clients get a text, reply C to confirm or R to reschedule, and the calendar updates itself. $50 a month, everything included.">
   <meta name="twitter:image" content="https://www.webbersaurus.com/images/og-image.jpg">
 
   <!-- Additional SEO -->
@@ -190,55 +190,27 @@
       color: var(--color-text-light);
     }
 
-    /* ---------- cost table ---------- */
-    .ar-tablewrap {
-      max-width: 800px;
-      margin: 0 auto;
-      overflow-x: auto;
-      background: var(--color-white);
-      border: 1px solid var(--color-gray-200);
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-md);
-      -webkit-overflow-scrolling: touch;
+    /* ---------- price block ---------- */
+    .ar-price {
+      text-align: center;
+      padding-bottom: var(--spacing-lg);
+      margin-bottom: var(--spacing-lg);
+      border-bottom: 1px solid var(--color-gray-200);
     }
-    .ar-tablewrap table {
-      border-collapse: collapse;
-      width: 100%;
-      min-width: 34rem;
+    .ar-price-amount {
+      display: block;
+      font-size: var(--font-size-5xl);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--color-primary);
     }
-    .ar-tablewrap th,
-    .ar-tablewrap td {
-      text-align: left;
-      padding: var(--spacing-md);
-      vertical-align: top;
-    }
-    .ar-tablewrap thead th {
-      font-size: var(--font-size-xs);
+    .ar-price-period {
+      display: block;
+      margin-top: var(--spacing-xs);
+      font-size: var(--font-size-sm);
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--color-text-light);
-      border-bottom: 1px solid var(--color-gray-200);
-    }
-    .ar-tablewrap tbody tr + tr td {
-      border-top: 1px solid var(--color-gray-100);
-    }
-    .ar-tablewrap tbody td {
-      font-size: var(--font-size-sm);
-      line-height: 1.6;
-      color: var(--color-text-light);
-    }
-    .ar-tablewrap tbody td:first-child {
-      font-weight: 700;
-      color: var(--color-text);
-    }
-    .ar-tablewrap tbody td:last-child {
-      font-weight: 700;
-      color: var(--color-primary);
-      white-space: nowrap;
-    }
-    .ar-tablewrap tbody tr.ar-total td {
-      border-top: 2px solid var(--color-gray-200);
-      font-size: var(--font-size-base);
     }
 
     /* ---------- cta row ---------- */
@@ -479,12 +451,12 @@
         </div>
         <div class="service-card">
           <div class="service-icon">&#128176;</div>
-          <h3>Costs Almost Nothing to Run</h3>
-          <p>The ongoing bill is the messages themselves and a phone number.</p>
+          <h3>One Flat Monthly Price</h3>
+          <p>Fifty dollars covers the number, the messages, and us keeping an eye on it.</p>
           <ul class="feature-list">
             <li>No per-user fees</li>
             <li>No message caps or overage charges</li>
-            <li>Pay-as-you-go, cancel anytime</li>
+            <li>The bill does not move when you get busy</li>
           </ul>
         </div>
         <div class="service-card">
@@ -499,12 +471,12 @@
         </div>
         <div class="service-card">
           <div class="service-icon">&#128273;</div>
-          <h3>You Own It</h3>
-          <p>This is not a subscription that can raise its price or disappear on you.</p>
+          <h3>Nothing to Lock You In</h3>
+          <p>Your calendar and your client list stay yours. Leave whenever you like.</p>
           <ul class="feature-list">
-            <li>Runs on your own accounts</li>
-            <li>The monthly cost goes to the carriers, not a middleman</li>
-            <li>No contract and no lock-in</li>
+            <li>Built on the Google Calendar you already own</li>
+            <li>Your appointment data stays in your account</li>
+            <li>No contract and no cancellation fee</li>
           </ul>
         </div>
       </div>
@@ -538,48 +510,27 @@
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <h2>About $4 a Month to Run</h2>
-        <p>Once it is built, this is the whole ongoing bill at a typical volume of 50 to 75 appointments a month.</p>
+        <h2>$50 a Month, Everything Included</h2>
+        <p>One flat price covers the phone number, every message, and someone actually watching that it all still works.</p>
       </div>
-      <div class="ar-tablewrap">
-        <table>
-          <thead>
-            <tr>
-              <th scope="col">What You Pay For</th>
-              <th scope="col">Who Provides It</th>
-              <th scope="col">Cost</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Local phone number</td>
-              <td>Twilio</td>
-              <td>$1.15/mo</td>
-            </tr>
-            <tr>
-              <td>Text messages (around 300/mo)</td>
-              <td>Twilio</td>
-              <td>about $2.40/mo</td>
-            </tr>
-            <tr>
-              <td>Calendar connection</td>
-              <td>Google Calendar API</td>
-              <td>Free</td>
-            </tr>
-            <tr>
-              <td>Automation layer</td>
-              <td>Cloudflare</td>
-              <td>Free</td>
-            </tr>
-            <tr class="ar-total">
-              <td>Typical monthly total</td>
-              <td>Paid directly by you</td>
-              <td>about $4/mo</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="ar-panel">
+        <div class="ar-price">
+          <span class="ar-price-amount">$50</span>
+          <span class="ar-price-period">per month, everything included</span>
+        </div>
+        <ul class="feature-list">
+          <li>Your local phone number</li>
+          <li>All of your messages, in and out</li>
+          <li>Monitoring, so a silent failure does not go unnoticed</li>
+          <li>Fixes when Google or the carriers change something</li>
+          <li>Message wording and timing changed whenever you ask</li>
+          <li>New staff calendars added as your team grows</li>
+          <li>10DLC and TCPA compliance kept current</li>
+          <li>No per-user fees, no message caps, no contract</li>
+        </ul>
       </div>
-      <p class="ar-note">No per-user fees. No message caps. No contract. The build itself is a one-time setup fee that depends on how many calendars and staff you need, so we quote it per business. If you are already working with us on <a href="gbp-management.html">Google Business Profile management</a> or the <a href="review-engine.html">Review Engine</a>, this drops in alongside them.</p>
+      <p class="ar-note">Why monitoring is the part that matters: this kind of system fails quietly. Google rotates the connection to your calendar every few days, and the carriers periodically re-review who is allowed to send. When something lapses, the texts simply stop, and most businesses do not notice until the no-shows come back. Watching for that is what the monthly covers.</p>
+      <p class="ar-note">The build itself is a separate one-time setup fee that depends on how many calendars and staff you need, so we quote it per business. If you are already working with us on <a href="gbp-management.html">Google Business Profile management</a> or the <a href="review-engine.html">Review Engine</a>, this drops in alongside them.</p>
     </div>
   </section>
 
