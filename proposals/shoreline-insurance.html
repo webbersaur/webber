@@ -568,6 +568,31 @@
     font-weight: 600;
     color: var(--dark);
   }
+
+  /* Print tightening: keep each section on a single page */
+  @media print {
+    @page { size: letter; margin: 0.35in; }
+    .page { padding: 22px 26px; }
+    .section-intro { font-size: 0.98rem; margin-bottom: 20px; }
+    h2 { font-size: 1.55rem; }
+    h3 { margin-top: 16px; font-size: 1.05rem; }
+    .divider { margin: 10px 0 18px 0; }
+    p { margin-bottom: 11px; }
+    .issue-card { padding: 15px 18px; margin-bottom: 12px; }
+    .audit-table th, .audit-table td { padding: 8px 11px; }
+    .audit-table { margin-bottom: 18px; }
+    .workflow-step { margin-bottom: 9px; }
+    .snapshot-grid { margin-bottom: 16px; }
+    .snapshot-card { padding: 12px; }
+    .compliance-grid { grid-template-columns: repeat(4, 1fr); gap: 7px; margin-bottom: 18px; }
+    .compliance-item { padding: 8px 9px; font-size: 0.72rem; }
+    .timeline-item { margin-bottom: 13px; }
+    .package { padding: 26px; }
+    .package ul li { margin-bottom: 6px; }
+    .cta-section { padding: 28px; margin-top: 24px; }
+    .page, .issue-card, .timeline-item, .workflow-step, .package,
+    .audit-table tr, .cta-section { break-inside: avoid; }
+  }
 </style>
 </head>
 <body>
