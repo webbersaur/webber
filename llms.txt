@@ -37,6 +37,9 @@ Individual property listing pages built for real estate agents, designed to show
 ### Review Engine
 An automated Google review request service. The business owner BCCs one private address on the invoice, quote, or confirmation email they were already sending, and the engine reads the customer's name and address off that message and sends a three-email review request in the owner's name and branding: the ask at +2 hours, a nudge at +48 hours, and a final note at +7 days. There is never a fourth. The sequence stops the moment the customer clicks, unsubscribes, or leaves a review, and every email carries a private feedback link that routes an unhappy customer to the owner instead of to Google. No app, no dashboard, no contract. Reported monthly as four numbers: Captured, Sent, Clicked, Posted. Built for trades, home services, appointment-based practices, and real estate agents - anyone who finishes a job and emails a bill.
 
+### Text Appointment Reminders
+A two-way SMS appointment reminder and confirmation system that runs on top of the Google Calendar a business already keeps. Staff add an appointment with the client's phone number in the description; the client is texted from a local number, reminded 24 hours and 2 hours before, and replies C to confirm or R to reschedule. The reply is answered automatically, written back onto the calendar event as [CONFIRMED] in green or [RESCHEDULE] in yellow, and pushed to the staff member who owns that appointment. Duplicate events across shared calendars only text the client once, sending is restricted to business hours, and STOP opts a number out permanently. Includes 10DLC brand and campaign registration and TCPA compliance setup. Runs for about $4 a month at typical volume with no per-user fees and no contract. Built for insurance, dental and medical practices, salons, law firms, and home services - any business that runs on booked appointments.
+
 ## Portfolio
 
 Webbersaurus has designed websites for businesses including:
@@ -72,4 +75,5 @@ Webbersaurus has designed websites for businesses including:
 - [Daily Specials](https://www.webbersaurus.com/daily-specials)
 - [Listing Pages for Realtors](https://www.webbersaurus.com/realtors)
 - [Review Engine](https://www.webbersaurus.com/review-engine)
+- [Text Appointment Reminders](https://www.webbersaurus.com/appointment-reminders)
 - [Contact](https://www.webbersaurus.com/contact)

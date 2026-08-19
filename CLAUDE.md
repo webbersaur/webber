@@ -17,7 +17,7 @@ Deployed via Vercel. Platform config lives in `vercel.json` (clean URLs, redirec
 
 ## Architecture
 
-**Pages:** HTML files in root. Public/indexable: `index.html`, `about-us.html`, `portfolio.html`, `reviews.html`, `contact.html`, `services.html`, `seo.html`, `gbp-management.html`, `social-media-marketing.html`, `change-portal.html`, `daily-specials.html`, `realtors.html`, `affiliate.html`, `case-study.html`, `case-study-rollin-dough.html`, `local-partners.html`, `review-engine.html`.
+**Pages:** HTML files in root. Public/indexable: `index.html`, `about-us.html`, `portfolio.html`, `reviews.html`, `contact.html`, `services.html`, `seo.html`, `gbp-management.html`, `social-media-marketing.html`, `change-portal.html`, `daily-specials.html`, `realtors.html`, `affiliate.html`, `case-study.html`, `case-study-rollin-dough.html`, `local-partners.html`, `review-engine.html`, `appointment-reminders.html`.
 
 `review-engine.html` replaced the retired `rate-your-experience.html` (301 in `vercel.json`). Its copy is ported from the master at `../review-engine/src/onepager-client.html` (the no-pricing variant) - edit the copy there first so the two don't drift, then re-port. The separate `review-engine` repo deploys its own `noindex` one-pagers for sales outreach; this page is the public, indexable version.
 

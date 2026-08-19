@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Automated text appointment reminders and confirmations that run off the Google Calendar your team already uses. Clients reply C to confirm or R to reschedule. About $4 a month to operate.">
+  <title>Text Appointment Reminders &amp; Confirmations | Webbersaurus</title>
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.webbersaurus.com/appointment-reminders">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.webbersaurus.com/appointment-reminders">
+  <meta property="og:title" content="Text Appointment Reminders | Webbersaurus">
+  <meta property="og:description" content="Your team keeps using Google Calendar. Clients get a text, reply C to confirm or R to reschedule, and the calendar updates itself. About $4 a month to run.">
+  <meta property="og:image" content="https://www.webbersaurus.com/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Webbersaurus">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://www.webbersaurus.com/appointment-reminders">
+  <meta name="twitter:title" content="Text Appointment Reminders | Webbersaurus">
+  <meta name="twitter:description" content="Your team keeps using Google Calendar. Clients get a text, reply C to confirm or R to reschedule, and the calendar updates itself. About $4 a month to run.">
+  <meta name="twitter:image" content="https://www.webbersaurus.com/images/og-image.jpg">
+
+  <!-- Additional SEO -->
+  <meta name="robots" content="index, follow">
+
+  <!-- Schema.org Service markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Text Appointment Reminders",
+    "description": "A two-way SMS appointment reminder and confirmation system built on top of the Google Calendar a business already uses. When staff add an appointment, the client is texted from a local number, reminded 24 hours and 2 hours ahead, and can reply C to confirm or R to reschedule. The reply writes back to the calendar event and notifies the staff member who owns that appointment.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "@id": "https://www.webbersaurus.com/#business",
+      "name": "Webbersaurus",
+      "telephone": "+1-203-530-7396",
+      "email": "chrishauman@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Branford",
+        "addressRegion": "CT",
+        "addressCountry": "US"
+      }
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "Connecticut"
+    },
+    "serviceType": "Appointment Reminder System",
+    "url": "https://www.webbersaurus.com/appointment-reminders"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: var(--spacing-md) 0 0;
+      text-align: left;
+    }
+    .feature-list li {
+      position: relative;
+      padding-left: var(--spacing-lg);
+      margin-bottom: var(--spacing-sm);
+      color: var(--color-text-light);
+    }
+    .feature-list li::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      color: var(--color-primary);
+      font-weight: 700;
+    }
+    .hero-cta {
+      display: flex;
+      gap: var(--spacing-md);
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: var(--spacing-lg);
+    }
+    .step-number {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto var(--spacing-md);
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+      color: var(--color-white);
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--font-size-xl);
+      font-weight: 700;
+    }
+
+    /* ---------- balanced 2x2 grid for four-card rows ---------- */
+    .ar-grid-4 {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ---------- sample text thread ---------- */
+    .ar-thread {
+      max-width: 480px;
+      margin: 0 auto;
+      background: var(--color-white);
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      padding: var(--spacing-lg);
+    }
+    .ar-msg {
+      margin-bottom: var(--spacing-lg);
+    }
+    .ar-msg:last-child {
+      margin-bottom: 0;
+    }
+    .ar-msg-label {
+      display: block;
+      font-size: var(--font-size-xs);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-text-light);
+      margin-bottom: var(--spacing-xs);
+    }
+    .ar-bubble {
+      display: inline-block;
+      max-width: 85%;
+      padding: var(--spacing-md);
+      border-radius: var(--radius-lg);
+      font-size: var(--font-size-sm);
+      line-height: 1.6;
+    }
+    .ar-msg-out .ar-bubble {
+      background: var(--color-gray-100);
+      color: var(--color-text);
+      border-bottom-left-radius: var(--radius-sm);
+    }
+    .ar-msg-in {
+      text-align: right;
+    }
+    .ar-msg-in .ar-bubble {
+      background: var(--color-primary);
+      color: var(--color-white);
+      border-bottom-right-radius: var(--radius-sm);
+      text-align: left;
+      font-weight: 700;
+    }
+
+    /* ---------- compliance panel ---------- */
+    .ar-panel {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--color-white);
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      padding: var(--spacing-xl);
+    }
+    .ar-panel .feature-list {
+      columns: 2;
+      column-gap: var(--spacing-xl);
+      margin-top: 0;
+    }
+    .ar-panel .feature-list li {
+      break-inside: avoid;
+    }
+    .ar-note {
+      max-width: 800px;
+      margin: var(--spacing-lg) auto 0;
+      text-align: center;
+      font-size: var(--font-size-sm);
+      color: var(--color-text-light);
+    }
+
+    /* ---------- cost table ---------- */
+    .ar-tablewrap {
+      max-width: 800px;
+      margin: 0 auto;
+      overflow-x: auto;
+      background: var(--color-white);
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      -webkit-overflow-scrolling: touch;
+    }
+    .ar-tablewrap table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 34rem;
+    }
+    .ar-tablewrap th,
+    .ar-tablewrap td {
+      text-align: left;
+      padding: var(--spacing-md);
+      vertical-align: top;
+    }
+    .ar-tablewrap thead th {
+      font-size: var(--font-size-xs);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-text-light);
+      border-bottom: 1px solid var(--color-gray-200);
+    }
+    .ar-tablewrap tbody tr + tr td {
+      border-top: 1px solid var(--color-gray-100);
+    }
+    .ar-tablewrap tbody td {
+      font-size: var(--font-size-sm);
+      line-height: 1.6;
+      color: var(--color-text-light);
+    }
+    .ar-tablewrap tbody td:first-child {
+      font-weight: 700;
+      color: var(--color-text);
+    }
+    .ar-tablewrap tbody td:last-child {
+      font-weight: 700;
+      color: var(--color-primary);
+      white-space: nowrap;
+    }
+    .ar-tablewrap tbody tr.ar-total td {
+      border-top: 2px solid var(--color-gray-200);
+      font-size: var(--font-size-base);
+    }
+
+    /* ---------- cta row ---------- */
+    .ar-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-xl);
+    }
+    .ar-cta-row .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+    }
+
+    @media (max-width: 768px) {
+      .ar-panel .feature-list {
+        columns: 1;
+      }
+      .ar-grid-4 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="inner-page">
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/WebbersaurusW.png" alt="Webbersaurus" class="logo-img" width="200" height="200">
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about-us.html" class="nav-link">About</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="reviews.html" class="nav-link">Reviews</a>
+        <div class="nav-dropdown">
+          <a href="services.html" class="nav-link nav-dropdown-toggle">Services</a>
+          <div class="nav-dropdown-menu">
+            <a href="seo.html">Search Engine Optimization</a>
+            <a href="gbp-management.html">Google Business Profile</a>
+            <a href="social-media-marketing.html">Social Media Marketing</a>
+            <a href="change-portal.html">Change Portal</a>
+            <a href="daily-specials.html">Daily Specials</a>
+            <a href="review-engine.html">Review Engine</a>
+            <a href="appointment-reminders.html">Appointment Reminders</a>
+            <a href="realtors.html">Listing Pages for Realtors</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <span class="nav-link nav-dropdown-toggle">Case Studies</span>
+          <div class="nav-dropdown-menu">
+            <a href="case-study.html">Michael's Trattoria</a>
+            <a href="case-study-rollin-dough.html">Rollin Dough</a>
+          </div>
+        </div>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Text Appointment Reminders</h1>
+      <p>If your business runs on appointments, every no-show is an hour you cannot sell twice. Your clients get a text, they reply with one letter, and your calendar tells you who is actually coming.</p>
+      <div class="hero-cta">
+        <a href="#how-it-works" class="btn btn-primary">See How It Works</a>
+        <a href="contact.html" class="btn btn-secondary">Talk to Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Three Problems Every Appointment Business Has</h2>
+        <p>Insurance, dental, salon, law, home services - it is the same story in every appointment-driven business.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">&#128197;</div>
+          <h3>Empty Chairs</h3>
+          <p>A missed appointment is not just a gap in the day. It is a slot you could have given to someone else, and you found out too late to fill it. In seasonal businesses, a client who does not show may miss their window entirely.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">&#128222;</div>
+          <h3>Reminder Calls Nobody Wants to Make</h3>
+          <p>Calling every client the day before takes real time out of every afternoon, and most of it goes into voicemail boxes that may never get checked. That is time you are not spending with the clients who did show up.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">&#10067;</div>
+          <h3>No Idea Who Is Coming</h3>
+          <p>Without confirmations you find out whether a client is coming when they walk in, or when they do not. There is no way to plan the day, and no chance to offer the slot to someone on your waiting list.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section" id="how-it-works" style="background: var(--color-gray-50);">
+    <div class="container">
+      <div class="section-header">
+        <h2>How It Works</h2>
+        <p>Your team keeps using the Google Calendar they already use. The only new step is typing the client's phone number into the appointment description.</p>
+      </div>
+      <div class="services-grid ar-grid-4">
+        <div class="service-card">
+          <div class="step-number">1</div>
+          <h3>Someone Books an Appointment</h3>
+          <p>Any staff member adds it to their own Google Calendar, exactly the way they do today, with the client's phone number in the description. No new app, no new login, no separate dashboard to keep up with.</p>
+        </div>
+        <div class="service-card">
+          <div class="step-number">2</div>
+          <h3>The Client Gets a Text</h3>
+          <p>Within moments, the client receives a message from your local number confirming the date, time, and address. If the same appointment sits on more than one calendar, the system spots the duplicate and still sends only one text.</p>
+        </div>
+        <div class="service-card">
+          <div class="step-number">3</div>
+          <h3>Reminders Go Out Automatically</h3>
+          <p>A reminder goes out 24 hours before the appointment, and a second one 2 hours before if you want it. Both invite the client to confirm or reschedule. You do not have to remember anything.</p>
+        </div>
+        <div class="service-card">
+          <div class="step-number">4</div>
+          <h3>They Reply, Your Calendar Updates</h3>
+          <p>The client replies C to confirm or R to reschedule. The system answers them, retitles the calendar event so you can see the status at a glance, and notifies the staff member who owns that appointment.</p>
+        </div>
+      </div>
+      <p class="ar-note"><strong>One requirement worth stating up front:</strong> this is built on Google Calendar. If your team schedules in Outlook, in Calendly, or inside a practice management system like Jane or Dentrix, it will not work as described. Call us anyway and we will tell you honestly whether there is a version that fits, but we would rather you knew that here than on the phone.</p>
+    </div>
+  </section>
+
+  <!-- Sample Conversation -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>What the Client Actually Sees</h2>
+        <p>Short, plain, and from a number with your area code. Nobody has to download anything or click a link.</p>
+      </div>
+      <div class="ar-thread">
+        <div class="ar-msg ar-msg-out">
+          <span class="ar-msg-label">Automatic - when the appointment is booked</span>
+          <span class="ar-bubble">Hi Sarah, your appointment with Harbor Point Dental is confirmed for Tues 3/31 at 2:00 PM at 12 Main St, Branford. Reply C to confirm or R to reschedule. Questions? Call (203) 555-0100</span>
+        </div>
+        <div class="ar-msg ar-msg-out">
+          <span class="ar-msg-label">Automatic - 24 hours before</span>
+          <span class="ar-bubble">Reminder: You have an appointment at Harbor Point Dental tomorrow (Tues 3/31) at 2:00 PM. Reply C to confirm or R to reschedule.</span>
+        </div>
+        <div class="ar-msg ar-msg-in">
+          <span class="ar-msg-label">The client replies</span>
+          <span class="ar-bubble">C</span>
+        </div>
+        <div class="ar-msg ar-msg-out">
+          <span class="ar-msg-label">Automatic response</span>
+          <span class="ar-bubble">Thanks, Sarah! Your appointment is confirmed. See you Tuesday at 2:00 PM.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scenarios -->
+  <section class="section" style="background: var(--color-gray-50);">
+    <div class="container">
+      <div class="section-header">
+        <h2>What Happens When...</h2>
+        <p>Every reply has a defined outcome, and every outcome ends with the right person knowing about it.</p>
+      </div>
+      <div class="services-grid ar-grid-4">
+        <div class="service-card">
+          <div class="service-icon">&#9989;</div>
+          <h3>They Reply "C"</h3>
+          <p>The system thanks the client, marks the calendar event <strong>[CONFIRMED]</strong> in green, and sends you a notification. You know they are coming, and you can see it on your calendar without opening anything else.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">&#128260;</div>
+          <h3>They Reply "R"</h3>
+          <p>The system tells the client you will be in touch, marks the event <strong>[RESCHEDULE]</strong> in yellow, and alerts you with their name and number. You call them back when you have a minute, and the slot is free to offer to someone else.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">&#128172;</div>
+          <h3>They Do Not Reply</h3>
+          <p>They still got the reminder. A few hours later you get a quiet heads-up that there was no response, so you can decide whether to follow up by phone or simply wait and see.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">&#128683;</div>
+          <h3>They Text "STOP"</h3>
+          <p>That client is opted out immediately and permanently, which is what the law requires. You are told about it so you know to go back to phone calls for that one person.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why This Approach -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why We Build It This Way</h2>
+        <p>There are plenty of reminder services. Most of them ask you to change how you work and charge you per person for the privilege.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">&#128198;</div>
+          <h3>Zero Workflow Changes</h3>
+          <p>The system reads the calendar you already keep.</p>
+          <ul class="feature-list">
+            <li>No new app to install</li>
+            <li>No new login for anyone</li>
+            <li>One new habit: phone number in the description</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">&#128101;</div>
+          <h3>Built for a Team</h3>
+          <p>Each staff calendar is watched on its own, so notifications land with the right person.</p>
+          <ul class="feature-list">
+            <li>Replies go to whoever owns the appointment</li>
+            <li>Shared events do not double-text the client</li>
+            <li>Add staff later without a per-seat fee</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">&#128172;</div>
+          <h3>Genuinely Two-Way</h3>
+          <p>Most reminder tools only broadcast. This one listens and acts on what comes back.</p>
+          <ul class="feature-list">
+            <li>Replies are read and answered automatically</li>
+            <li>Status is written back onto the calendar</li>
+            <li>You are notified the moment it happens</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">&#128176;</div>
+          <h3>Costs Almost Nothing to Run</h3>
+          <p>The ongoing bill is the messages themselves and a phone number.</p>
+          <ul class="feature-list">
+            <li>No per-user fees</li>
+            <li>No message caps or overage charges</li>
+            <li>Pay-as-you-go, cancel anytime</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">&#128205;</div>
+          <h3>A Real Local Number</h3>
+          <p>Texts come from a number with your area code, not an anonymous short code.</p>
+          <ul class="feature-list">
+            <li>Looks like a message from your office</li>
+            <li>Clients can save it as a contact</li>
+            <li>Replies come back to the same number</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">&#128273;</div>
+          <h3>You Own It</h3>
+          <p>This is not a subscription that can raise its price or disappear on you.</p>
+          <ul class="feature-list">
+            <li>Runs on your own accounts</li>
+            <li>The monthly cost goes to the carriers, not a middleman</li>
+            <li>No contract and no lock-in</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compliance -->
+  <section class="section" style="background: var(--color-gray-50);">
+    <div class="container">
+      <div class="section-header">
+        <h2>The Compliance Part, Handled</h2>
+        <p>Business texting is regulated by the TCPA and by the carriers themselves. We build the rules in from day one so you never have to think about them.</p>
+      </div>
+      <div class="ar-panel">
+        <ul class="feature-list">
+          <li>Automatic STOP and UNSUBSCRIBE handling</li>
+          <li>Opt-out language in the messages that require it</li>
+          <li>10DLC brand registration with the carriers</li>
+          <li>10DLC campaign registration for appointment reminders</li>
+          <li>Transactional messages only, never marketing blasts</li>
+          <li>Sending restricted to your business hours</li>
+          <li>Consent records kept for every number</li>
+          <li>Messages queued, not dropped, if they fall outside hours</li>
+        </ul>
+      </div>
+      <p class="ar-note">Since 2024 every US carrier requires businesses to register before they can send text messages reliably. We file that registration on day one and build the rest of the system while it clears, because carrier approval currently takes 10 to 15 business days and it is the longest part of the process. All we need from you is your EIN and basic business details.</p>
+    </div>
+  </section>
+
+  <!-- Operating Cost -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>About $4 a Month to Run</h2>
+        <p>Once it is built, this is the whole ongoing bill at a typical volume of 50 to 75 appointments a month.</p>
+      </div>
+      <div class="ar-tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">What You Pay For</th>
+              <th scope="col">Who Provides It</th>
+              <th scope="col">Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Local phone number</td>
+              <td>Twilio</td>
+              <td>$1.15/mo</td>
+            </tr>
+            <tr>
+              <td>Text messages (around 300/mo)</td>
+              <td>Twilio</td>
+              <td>about $2.40/mo</td>
+            </tr>
+            <tr>
+              <td>Calendar connection</td>
+              <td>Google Calendar API</td>
+              <td>Free</td>
+            </tr>
+            <tr>
+              <td>Automation layer</td>
+              <td>Cloudflare</td>
+              <td>Free</td>
+            </tr>
+            <tr class="ar-total">
+              <td>Typical monthly total</td>
+              <td>Paid directly by you</td>
+              <td>about $4/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="ar-note">No per-user fees. No message caps. No contract. The build itself is a one-time setup fee that depends on how many calendars and staff you need, so we quote it per business. If you are already working with us on <a href="gbp-management.html">Google Business Profile management</a> or the <a href="review-engine.html">Review Engine</a>, this drops in alongside them.</p>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta">
+    <div class="container">
+      <h2>Stop Making Reminder Calls</h2>
+      <p>Happy to walk you through it on a quick call, or to tell you straight out that it is not right for your business. No pressure either way.</p>
+      <div class="ar-cta-row">
+        <a href="tel:203-530-7396" class="btn">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          Call 203.530.7396
+        </a>
+        <a href="https://calendly.com/chrishauman/15min" target="_blank" rel="noopener noreferrer" class="btn">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>
+          Schedule a Call
+        </a>
+        <a href="mailto:chrishauman@gmail.com" class="btn">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          Email Us
+        </a>
+      </div>
+      <a href="contact.html" class="btn btn-large">Get Started</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: var(--spacing-md);">
+            <a href="index.html" style="flex-shrink: 0;">
+              <img loading="lazy" decoding="async" src="images/dinowords.png" alt="Webbersaurus" width="160" height="123" style="max-width: 160px;">
+            </a>
+            <p style="margin: 0;">Proudly serving the Shoreline community and beyond since 2007.</p>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="affiliate.html">Affiliate Program</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="contact.html">Web Development</a></li>
+            <li><a href="seo.html">Search Engine Optimization</a></li>
+            <li><a href="gbp-management.html">Google Business Profile Mgt</a></li>
+            <li><a href="social-media-marketing.html">Social Media Marketing</a></li>
+            <li><a href="change-portal.html">Change Portal</a></li>
+            <li><a href="daily-specials.html">Daily Specials</a></li>
+            <li><a href="review-engine.html">Review Engine</a></li>
+            <li><a href="appointment-reminders.html">Appointment Reminders</a></li>
+            <li><a href="realtors.html">Listing Pages for Realtors</a></li>
+            <li><a href="contact.html">Website Maintenance</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:203-530-7396">203.530.7396</a></li>
+            <li><a href="mailto:chrishauman@gmail.com">chrishauman@gmail.com</a></li>
+            <li>Branford, CT</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Webbersaurus. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
