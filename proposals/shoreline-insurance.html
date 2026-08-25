@@ -311,6 +311,23 @@
     margin-bottom: 16px;
   }
 
+  .package .price .price-was {
+    text-decoration: line-through;
+    color: var(--text-light);
+    font-weight: 700;
+    margin-right: 6px;
+  }
+
+  .package .price-note {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-top: -8px;
+    margin-bottom: 16px;
+  }
+
   .package .price span {
     font-size: 0.85rem;
     font-weight: 500;
@@ -604,7 +621,7 @@
   <h1>HIPAA-Compliant<br>Document Signing System</h1>
   <h2>Prepared for Shoreline Insurance Services</h2>
   <div class="cover-meta">
-    <strong>Prepared for:</strong> Steven Cudgma, Insurance Specialist<br>
+    <strong>Prepared for:</strong> Steve Cudgma, Insurance Specialist<br>
     <strong>Prepared by:</strong> Chris Hauman, Webbersaurus Digital Agency<br>
     <strong>Date:</strong> August 19, 2026<br>
     <strong>Location:</strong> Branford, Connecticut
@@ -649,51 +666,9 @@
   </p>
 </div>
 
-<!-- SECTION 2: THE PROBLEM -->
+<!-- SECTION 2: THE SOLUTION -->
 <div class="page page-break">
   <div class="section-number">Section 02</div>
-  <h2>The Current Process</h2>
-  <div class="divider"></div>
-  <p class="section-intro">
-    As a Medicare specialist you handle protected health information every day. Printing, mailing, faxing, and emailing forms creates both compliance exposure and friction that costs you time and enrollments.
-  </p>
-
-  <div class="issue-card critical">
-    <div class="issue-header">
-      <h4>PHI Moving Through Unsecured Channels</h4>
-      <span class="badge badge-red">Critical</span>
-    </div>
-    <p>Agents handling protected health information on behalf of Medicare carriers operate under business associate obligations that flow down through carrier and FMO agreements. Unencrypted email attachments, faxes, and paper forms in transit sit outside those obligations. The practical exposure is not an abstract federal penalty, it is a breach that runs back through your carrier contracts and puts your appointments at risk.</p>
-  </div>
-
-  <div class="issue-card medium">
-    <div class="issue-header">
-      <h4>No Tamper-Evident Audit Trail</h4>
-      <span class="badge badge-gray">Compliance Gap</span>
-    </div>
-    <p>A wet signature on a scanned page does not establish who signed, when they signed, or from where. If a carrier audits an SOA or a beneficiary disputes what was authorized, you need timestamped, tamper-evident proof. Filed paper and emailed PDFs do not provide it.</p>
-  </div>
-
-  <div class="issue-card high">
-    <div class="issue-header">
-      <h4>Turnaround Measured in Days</h4>
-      <span class="badge badge-yellow">High Impact</span>
-    </div>
-    <p>Mail out, wait, hope it comes back, follow up by phone, re-send the ones that got lost. Every step is manual and every step is a place the process stalls. During AEP that turnaround directly limits how many appointments you can run.</p>
-  </div>
-
-  <div class="issue-card medium">
-    <div class="issue-header">
-      <h4>Friction for the Client</h4>
-      <span class="badge badge-gray">Medium</span>
-    </div>
-    <p>Asking someone to print, sign, scan, and email a form back assumes they own a printer and a scanner and know how to use both. Many do not. The result is a phone call to walk them through it, or a drive to their kitchen table for a signature you could have collected in two minutes.</p>
-  </div>
-</div>
-
-<!-- SECTION 3: THE SOLUTION -->
-<div class="page page-break">
-  <div class="section-number">Section 03</div>
   <h2>The Solution</h2>
   <div class="divider"></div>
   <p class="section-intro">
@@ -784,9 +759,9 @@
   </div>
 </div>
 
-<!-- SECTION 4: PLATFORM CHOICE -->
+<!-- SECTION 3: PLATFORM CHOICE -->
 <div class="page page-break">
-  <div class="section-number">Section 04</div>
+  <div class="section-number">Section 03</div>
   <h2>Why Jotform Sign</h2>
   <div class="divider"></div>
   <p class="section-intro">
@@ -848,9 +823,9 @@
   </p>
 </div>
 
-<!-- SECTION 5: SCOPE -->
+<!-- SECTION 4: SCOPE -->
 <div class="page page-break">
-  <div class="section-number">Section 05</div>
+  <div class="section-number">Section 04</div>
   <h2>Scope and Deliverables</h2>
   <div class="divider"></div>
   <p class="section-intro">
@@ -898,9 +873,9 @@
 
 </div>
 
-<!-- SECTION 6: PRICING & TIMELINE -->
+<!-- SECTION 5: PRICING & TIMELINE -->
 <div class="page page-break">
-  <div class="section-number">Section 06</div>
+  <div class="section-number">Section 05</div>
   <h2>Pricing and Timeline</h2>
   <div class="divider"></div>
   <p class="section-intro">
@@ -911,7 +886,8 @@
     <div class="package recommended">
       <div class="rec-badge">Setup</div>
       <h4>HIPAA-Compliant Document Signing</h4>
-      <div class="price">$1,200 <span>flat fee</span></div>
+      <div class="price"><span class="price-was">$1,200</span> $1,000 <span>flat fee</span></div>
+      <div class="price-note">Good client discount applied</div>
       <ul>
         <li>Jotform Sign Gold account setup and HIPAA configuration</li>
         <li>BAA execution with Jotform</li>
