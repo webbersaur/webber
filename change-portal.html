@@ -179,9 +179,6 @@
       letter-spacing: 0.06em;
       color: var(--color-primary);
     }
-    .specials-photo-link {
-      display: block;
-    }
     .specials-card img {
       width: 100%;
       height: auto;
@@ -354,13 +351,11 @@
           </video>
         </div>
         <aside class="specials-card" id="specialsCard">
-          <p class="specials-eyebrow">Live on a real client site</p>
-          <h3>Today's Specials - The Courtyard, Old Saybrook</h3>
-          <a class="specials-photo-link" href="https://www.courtyardoldsaybrook.com/#specials" target="_blank" rel="noopener">
-            <img id="courtyardSpecials" alt="The Courtyard's specials board, updated today" src="images/courtyard-specials-board.webp" width="1200" height="405" loading="lazy" decoding="async">
-          </a>
+          <p class="specials-eyebrow">Straight from the board</p>
+          <h3>Today's Specials, From A Phone Photo</h3>
+          <img alt="A handwritten restaurant specials board, published to the website from a phone photo" src="images/courtyard-specials-board.webp" width="1200" height="405" loading="lazy" decoding="async">
           <p class="specials-note">&#9889; This one's set to <strong>auto-approve</strong> - snap a pic, confirm, and it's live. 2 steps, about 10 seconds.</p>
-          <p class="specials-caption">&#128247; Snapped on a phone and published through the Change Portal - updated by the kitchen each morning. <a class="specials-live" href="https://www.courtyardoldsaybrook.com/#specials" target="_blank" rel="noopener">See it live &rarr;</a></p>
+          <p class="specials-caption">&#128247; Snapped on a phone and published through the Change Portal. <a class="specials-live" href="daily-specials.html">See how daily specials work &rarr;</a></p>
         </aside>
       </div>
     </div>
@@ -571,24 +566,5 @@
   </footer>
 
   <script src="js/main.js"></script>
-
-  <!-- Live-fetch The Courtyard's current specials photo as proof the portal works -->
-  <script>
-    (function () {
-      var BASE = 'https://www.courtyardoldsaybrook.com/';
-      fetch(BASE, { mode: 'cors' })
-        .then(function (r) { return r.ok ? r.text() : Promise.reject(); })
-        .then(function (html) {
-          var doc = new DOMParser().parseFromString(html, 'text/html');
-          var img = doc.querySelector('#featured-photo img, .specials-photo img');
-          var src = img && img.getAttribute('src');
-          if (src) {
-            var url = src.indexOf('http') === 0 ? src : BASE + src.replace(/^\//, '');
-            document.getElementById('courtyardSpecials').src = url;
-          }
-        })
-        .catch(function () { /* keep the hardcoded fallback image already in the <img> */ });
-    })();
-  </script>
 </body>
 </html>
