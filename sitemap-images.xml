@@ -10,9 +10,9 @@
       <image:caption>Webbersaurus web development company logo</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://www.webbersaurus.com/images/portfolio/michaels-trattoria.webp</image:loc>
-      <image:title>Michael's Trattoria Website</image:title>
-      <image:caption>Website designed by Webbersaurus for Michael's Trattoria restaurant</image:caption>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/chapel-west.webp</image:loc>
+      <image:title>Chapel West Website</image:title>
+      <image:caption>Website designed by Webbersaurus for the Chapel West Special Services District in New Haven</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://www.webbersaurus.com/images/portfolio/a-bite-of-nutmeg.webp</image:loc>
@@ -44,6 +44,16 @@
   <!-- Portfolio page images -->
   <url>
     <loc>https://www.webbersaurus.com/portfolio</loc>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/chapel-west.webp</image:loc>
+      <image:title>Chapel West Website Design</image:title>
+      <image:caption>Website for the Chapel West Special Services District, a business district in New Haven, CT</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/michaels-trattoria.webp</image:loc>
+      <image:title>Michael's Trattoria Website Design</image:title>
+      <image:caption>Website designed by Webbersaurus for Michael's Trattoria restaurant</image:caption>
+    </image:image>
     <image:image>
       <image:loc>https://www.webbersaurus.com/images/portfolio/rivers-edge-home-center.webp</image:loc>
       <image:title>River's Edge Home Center Website Design</image:title>
