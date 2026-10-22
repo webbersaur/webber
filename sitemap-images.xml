@@ -165,4 +165,13 @@
       <image:caption>Custom website for LHB Development</image:caption>
     </image:image>
   </url>
+  <!-- GBP Management images -->
+  <url>
+    <loc>https://www.webbersaurus.com/gbp-management</loc>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/gbp-management-google-posts.webp</image:loc>
+      <image:title>Google Business Profile Management for Local Businesses</image:title>
+      <image:caption>Webbersaurus manages weekly Google Posts, review responses and photo uploads for Connecticut businesses</image:caption>
+    </image:image>
+  </url>
 </urlset>
