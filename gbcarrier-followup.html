@@ -384,7 +384,6 @@
           <input type="hidden" name="_subject" value="GB Carrier - Follow-Up Form Submitted">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="town_page_count" id="townPageCount" value="0">
           <input type="text" name="_honey" style="display:none">
 
           <!-- Who -->
@@ -448,76 +447,9 @@
             </div>
           </div>
 
-          <!-- Towns -->
-          <div class="form-block">
-            <span class="block-label">Step 2</span>
-            <h3>Which 15 towns get their own page?</h3>
-            <p>You listed 34 towns. Your site includes 15 town pages, so check the 15 that matter most for your residential work. <strong>Every town you listed still appears on the Service Area page at no charge</strong>, page or not. The farther towns are a long drive for homeowner jobs, so we suggest covering them on the Commercial side instead.</p>
-
-            <div class="town-head"><strong>Town pages</strong> <span class="town-count" id="townCount">0 of 15</span></div>
-            <div class="town-grid">
-              <div>
-                <span class="write-in-label">New Hampshire</span>
-                <div class="town-list">
-                  <label><input type="checkbox" name="town_pages[]" value="North Conway"> North Conway</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Conway"> Conway</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Intervale"> Intervale</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Bartlett"> Bartlett</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Jackson"> Jackson</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Glen"> Glen</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Madison"> Madison</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Tamworth"> Tamworth</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Ossipee"> Ossipee</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Freedom"> Freedom</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Albany"> Albany</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Chatham"> Chatham</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Eaton"> Eaton</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Effingham"> Effingham</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Sandwich"> Sandwich</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Moultonborough"> Moultonborough</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Wolfeboro"> Wolfeboro</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Gorham"> Gorham</label>
-                </div>
-              </div>
-              <div>
-                <span class="write-in-label">Maine</span>
-                <div class="town-list">
-                  <label><input type="checkbox" name="town_pages[]" value="Fryeburg"> Fryeburg</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Lovell"> Lovell</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Brownfield"> Brownfield</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Bridgton"> Bridgton</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Bethel"> Bethel</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Hiram"> Hiram</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Waterford"> Waterford</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Norway"> Norway</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Porter"> Porter</label>
-                </div>
-                <span class="write-in-label">Farther out (we suggest Commercial instead)</span>
-                <div class="town-list">
-                  <label><input type="checkbox" name="town_pages[]" value="Lincoln NH"> Lincoln, NH</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Franconia NH"> Franconia, NH</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Laconia NH"> Laconia, NH</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Rochester NH"> Rochester, NH</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Newry ME"> Newry, ME</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Windham ME"> Windham, ME</label>
-                  <label><input type="checkbox" name="town_pages[]" value="Portland ME"> Portland, ME</label>
-                </div>
-              </div>
-            </div>
-
-            <div class="wish-list" id="extrasBox" hidden>
-              <strong>Want pages for more than 15 towns?</strong> Each extra town page is $100, added to the final invoice. We won't build any extras until you confirm here.
-              <label style="display:flex; gap: var(--spacing-sm); align-items:flex-start; margin-top: var(--spacing-sm); font-weight: 700; cursor: pointer;">
-                <input type="checkbox" name="extra_towns_approved" id="extrasOk" value="Yes, I approve $100 per extra town page beyond 15, added to the final invoice" style="width:auto; margin-top: 0.3rem; accent-color: var(--color-primary);">
-                <span id="extrasText">Yes, I approve $100 per extra town page beyond 15, added to the final invoice.</span>
-              </label>
-              <p id="extrasError" style="display:none; color:#b8432a; font-weight:700; margin: var(--spacing-sm) 0 0;">You've checked more than 15 towns. Check the box above to approve the extras, or uncheck some towns.</p>
-            </div>
-          </div>
-
           <!-- Other services -->
           <div class="form-block">
-            <span class="block-label">Step 3</span>
+            <span class="block-label">Step 2</span>
             <h3>The other services you mentioned</h3>
             <p>The site is built around the 11 drywall, painting and carpentry services you checked. These four aren't part of those pages, so tell us how you'd like each one handled.</p>
             <span class="write-in-label">Plumbing, HVAC and heat pumps</span>
@@ -552,7 +484,7 @@
 
           <!-- How you work -->
           <div class="form-block">
-            <span class="block-label">Step 4</span>
+            <span class="block-label">Step 3</span>
             <h3>A few things the service pages need</h3>
             <p>We don't put a claim on your site until you've confirmed it. Each yes below lets us say it plainly.</p>
             <div class="form-group">
@@ -584,7 +516,7 @@
 
           <!-- Commercial projects -->
           <div class="form-block">
-            <span class="block-label">Step 5</span>
+            <span class="block-label">Step 4</span>
             <h3>Your best commercial jobs</h3>
             <p>This page is what gets you on builders' bid lists, so it's worth getting right. You named Commonwealth, Hutter Construction, William Coppersmith and a hotel you worked for directly. Give us 4 to 6 of your best jobs. Rough years are fine.</p>
             <div id="projectRows">
@@ -632,7 +564,7 @@
 
           <!-- Crew -->
           <div class="form-block">
-            <span class="block-label">Step 6</span>
+            <span class="block-label">Step 5</span>
             <h3>Your crew</h3>
             <p>You mentioned a unique employment structure, with 45 to 80 people paid each week, and temporary housing for crew. We'd like to describe it accurately on the About page. If it's easier to explain on the phone, just say so.</p>
             <div class="form-group">
@@ -657,7 +589,7 @@
 
           <!-- Photos -->
           <div class="form-block">
-            <span class="block-label">Step 7</span>
+            <span class="block-label">Step 6</span>
             <h3>Photos</h3>
             <p>We're using the photos from your Facebook page and your current website to start. The timber-frame house and boom truck shots are great. What we're missing is your commercial work. Phone photos are perfectly fine.</p>
             <div class="wish-list" style="margin: 0 0 var(--spacing-lg);">
@@ -693,7 +625,7 @@
 
           <!-- Certifications -->
           <div class="form-block">
-            <span class="block-label">Step 8</span>
+            <span class="block-label">Step 7</span>
             <h3>Certifications and insurance</h3>
             <p>Builders and homeowners look for these, and we want to show them accurately. Numbers are enough here. A photo or PDF of each certificate is even better: email it to chrishauman@gmail.com whenever is easy.</p>
             <div class="two-col">
@@ -718,7 +650,7 @@
 
           <!-- Namecheap -->
           <div class="form-block">
-            <span class="block-label">Step 9</span>
+            <span class="block-label">Step 8</span>
             <h3>Who manages your domain and hosting?</h3>
             <p>To launch, we need to work with whoever manages your Namecheap account. You mentioned it might be Kevin Noyes or the Chamber. Your email stays exactly where it is. We only change the website records. <strong>Please don't type any passwords here.</strong></p>
             <div class="two-col">
@@ -830,40 +762,6 @@
       var form = document.getElementById('followupForm');
       if (!form) return;
 
-      // Town page counter + extra-page approval
-      var counter = document.getElementById('townCount');
-      var hidden = document.getElementById('townPageCount');
-      var boxes = form.querySelectorAll('input[name="town_pages[]"]');
-      var extrasBox = document.getElementById('extrasBox');
-      var extrasOk = document.getElementById('extrasOk');
-      var extrasText = document.getElementById('extrasText');
-      var extrasError = document.getElementById('extrasError');
-      function count() {
-        var n = 0;
-        boxes.forEach(function (b) { if (b.checked) n++; });
-        return n;
-      }
-      function update() {
-        var n = count();
-        var extra = Math.max(0, n - 15);
-        hidden.value = n + (extra ? ' (' + extra + ' extra = $' + (extra * 100) + ')' : '');
-        counter.textContent = extra ? n + ' picked: ' + extra + ' extra at $100 each' : n + ' of 15';
-        counter.classList.toggle('full', n === 15);
-        counter.classList.toggle('over', extra > 0);
-        extrasBox.hidden = extra === 0;
-        if (extra) {
-          var line = 'Yes, I approve ' + extra + ' extra town page' + (extra > 1 ? 's' : '') + ' at $100 each ($' + (extra * 100) + '), added to the final invoice.';
-          extrasText.textContent = line;
-          extrasOk.value = line;
-        } else {
-          extrasOk.checked = false;
-        }
-        if (!extra || extrasOk.checked) extrasError.style.display = 'none';
-      }
-      boxes.forEach(function (b) { b.addEventListener('change', update); });
-      extrasOk.addEventListener('change', update);
-      update();
-
       // Add another commercial project row
       var rows = document.getElementById('projectRows');
       function addRow() {
@@ -891,11 +789,6 @@
       // Submit without leaving the page
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        if (count() > 15 && !extrasOk.checked) {
-          extrasError.style.display = '';
-          extrasBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          return;
-        }
         var btn = form.querySelector('button[type="submit"]');
         var original = btn.textContent;
         btn.disabled = true;
