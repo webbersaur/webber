@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<title>Rudy's Website Audit | Webbersaurus</title>
+<title>Rudy's Website Audit &amp; Proposal | Webbersaurus</title>
 <link rel="icon" href="/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Inter:wght@400;500;600;700;800&display=swap">
 <style>
   /* Layout: dark Webbersaurus band, snapshot strip, findings grouped by area with status chips, speed table, ordered plan; prints to letter */
   :root {
@@ -141,6 +141,69 @@
   @media (max-width: 640px) { .work { grid-template-columns: minmax(0, 1fr); } .btn { width: 100%; } }
   @media (prefers-reduced-motion: reduce) { .work a, .btn { transition: none; } .work a:hover, .btn:hover { transform: none; } }
   @media print { .work a { break-inside: avoid; } .btn { box-shadow: none; } }
+
+  /* Homepage concept: a fixed dark bar look in Rudy's logo teal, same in both themes */
+  .mock { --m-bg: #0e1416; --m-panel: #172124; --m-ink: #f3efe6; --m-soft: #b9c2c0; --m-teal: #23b3ad; --m-line: #2a3a3d; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--m-bg); color: var(--m-ink); box-shadow: 0 14px 40px rgba(10, 20, 22, .22); }
+  .mock .chrome { display: flex; align-items: center; gap: 6px; padding: 9px 12px; background: #e9e8ee; border-bottom: 1px solid #d6d5dc; }
+  .mock .chrome i { width: 10px; height: 10px; border-radius: 50%; background: #c9c8d0; display: block; }
+  .mock .chrome span { margin-left: 10px; flex: 1; min-width: 0; background: #fff; color: #55556b; font-size: 11.5px; border-radius: 6px; padding: 3px 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .mock nav { display: flex; align-items: center; gap: 18px; padding: 12px 22px; border-bottom: 1px solid var(--m-line); flex-wrap: wrap; }
+  .mock .brand { display: flex; align-items: center; gap: 10px; font-family: 'Alfa Slab One', Georgia, serif; font-size: 20px; letter-spacing: .04em; margin-right: auto; }
+  .mock .brand img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; object-position: 50% 30%; border: 2px solid var(--m-teal); }
+  .mock nav a { color: var(--m-soft); font-size: 12.5px; font-weight: 600; text-decoration: none; letter-spacing: .04em; text-transform: uppercase; }
+  .mock nav a.order { color: var(--m-bg); background: var(--m-teal); padding: 7px 14px; border-radius: 999px; }
+  .mock .hero { position: relative; min-height: 340px; display: flex; align-items: flex-end; background: url('/images/proposals/rudys/rudys-bar-taps.webp') center 40% / cover no-repeat; }
+  .mock .hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(14,20,22,.94) 0%, rgba(14,20,22,.72) 48%, rgba(14,20,22,.15) 100%); }
+  .mock .hero div { position: relative; padding: 34px 26px; max-width: 560px; }
+  .mock .kicker { color: var(--m-teal); font-size: 11.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 8px; }
+  .mock .hero h3 { font-family: 'Alfa Slab One', Georgia, serif; font-weight: 400; font-size: 34px; line-height: 1.08; margin: 0 0 12px; text-wrap: balance; }
+  .mock .hero p { color: var(--m-soft); margin: 0 0 18px; font-size: 14px; max-width: 46ch; }
+  .mock .btns { display: flex; gap: 10px; flex-wrap: wrap; }
+  .mock .btns span { font-size: 13px; font-weight: 700; padding: 10px 18px; border-radius: 999px; border: 2px solid var(--m-teal); }
+  .mock .btns span:first-child { background: var(--m-teal); color: var(--m-bg); }
+  .mock .strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); background: var(--m-panel); border-block: 1px solid var(--m-line); }
+  .mock .strip div { padding: 14px 22px; min-width: 0; }
+  .mock .strip div + div { border-left: 1px solid var(--m-line); }
+  .mock .strip b { display: block; font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--m-teal); margin-bottom: 2px; }
+  .mock .strip span { font-size: 13px; }
+  .mock .tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; padding: 18px 22px 22px; }
+  .mock .tiles figure { margin: 0; background: var(--m-panel); border: 1px solid var(--m-line); border-radius: 10px; overflow: hidden; min-width: 0; }
+  .mock .tiles img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .mock .tiles figcaption { padding: 10px 12px 12px; font-size: 12.5px; color: var(--m-soft); }
+  .mock .tiles figcaption b { display: block; color: var(--m-ink); font-family: 'Alfa Slab One', Georgia, serif; font-weight: 400; font-size: 15px; letter-spacing: .02em; margin-bottom: 2px; }
+  .mock-cap { font-size: 12.5px; color: var(--ink-soft); margin: 10px 0 0; text-align: center; }
+
+  .scope { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; }
+  .scope div { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; min-width: 0; }
+  .scope h3 { font-size: 14px; margin: 0 0 8px; }
+  .scope ul { margin: 0; padding-left: 0; list-style: none; display: grid; gap: 6px; }
+  .scope li { padding-left: 20px; position: relative; }
+  .scope li::before { content: "✓"; position: absolute; left: 0; color: var(--good); font-weight: 700; }
+
+  .prices { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 14px; align-items: start; }
+  .price-card { border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; background: var(--surface); min-width: 0; }
+  .price-card.main { border: 2px solid var(--orange); background: var(--bg); }
+  .price-card .tag { display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; color: var(--orange-ink); background: var(--warn-bg); margin-bottom: 8px; }
+  .price-card h3 { margin: 0 0 4px; font-size: 17px; }
+  .price-card .amt { font-size: 38px; font-weight: 800; letter-spacing: -.02em; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .price-card .amt small { font-size: 14px; font-weight: 600; color: var(--ink-soft); letter-spacing: 0; }
+  .price-card p { margin: 6px 0 0; color: var(--ink-soft); font-size: 13px; }
+  .price-card ul { margin: 10px 0 0; padding-left: 18px; display: grid; gap: 4px; font-size: 13px; }
+
+  .next { background: var(--band); color: var(--band-ink); border-radius: 14px; padding: 22px 24px; display: grid; gap: 6px; }
+  .next h2 { color: var(--band-ink); }
+  .next p { margin: 0; color: #c9c9d8; max-width: 70ch; }
+  .next strong { color: #fff; }
+
+  @media (max-width: 640px) {
+    .mock nav a:not(.order) { display: none; }
+    .mock .hero { min-height: 300px; }
+    .mock .hero::before { background: linear-gradient(0deg, rgba(14,20,22,.95) 15%, rgba(14,20,22,.55) 100%); }
+    .mock .hero h3 { font-size: 26px; }
+    .mock .strip, .mock .tiles, .scope, .prices { grid-template-columns: minmax(0, 1fr); }
+    .mock .strip div + div { border-left: 0; border-top: 1px solid var(--m-line); }
+  }
+  @media print { .mock, .price-card, .scope div, .next { break-inside: avoid; } .mock { box-shadow: none; } }
 </style>
 </head>
 <body>
@@ -156,7 +219,7 @@
   </header>
 
   <div class="title">
-    <p class="eyebrow">Website and search audit</p>
+    <p class="eyebrow">Website audit and proposal</p>
     <h1>Rudy's has the history. The website isn't telling Google, or your guests.</h1>
     <p class="lede">People have been going to Rudy's for decades, first on Elm Street and now at Chapel and Howe. But someone who finds you on Google today lands on a St. Patrick's Day menu, and other pages still have leftover template text, including a burger joint in Brooklyn and a phone number that doesn't work. We went through the site page by page, from the outside. Here's what we found, in plain terms.</p>
   </div>
@@ -251,6 +314,109 @@
   </section>
 
   <section>
+    <h2>A fresh look for Rudy's <small>Homepage concept</small></h2>
+    <div class="rule"></div>
+    <div class="mock" role="img" aria-label="Concept of a redesigned Rudy's home page: dark bar look in the teal of the Rudy's R logo, with the taps photo, menu and order buttons, address and hours, and photo tiles for frites, Belgian beer and the dining room">
+      <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><span>rudysnewhaven.com</span></div>
+      <nav aria-hidden="true">
+        <div class="brand"><img decoding="async" src="/images/proposals/rudys/rudys-r-logo.webp" alt="">RUDY'S</div>
+        <a>Menu</a><a>Drinks</a><a>Our Story</a><a>Visit</a><a class="order">Order Online</a>
+      </nav>
+      <div class="hero">
+        <div>
+          <p class="kicker">1227 Chapel Street · New Haven</p>
+          <h3>Belgian frites, Belgian beer and decades of New Haven stories.</h3>
+          <p>From the old Elm Street bar to the corner of Chapel and Howe, the memorabilia came with us. So did the frites.</p>
+          <div class="btns" aria-hidden="true"><span>See the Menu</span><span>Order on Grubhub</span></div>
+        </div>
+      </div>
+      <div class="strip">
+        <div><b>Visit</b><span>1227 Chapel St, New Haven</span></div>
+        <div><b>Hours</b><span>Daily 11:30am to 1am, 2am Fri &amp; Sat</span></div>
+        <div><b>Call</b><span>(203) 865-1242</span></div>
+      </div>
+      <div class="tiles">
+        <figure><img decoding="async" src="/images/proposals/rudys/rudys-belgian-frites.webp" alt="Belgian frites in a paper cone with sauce"><figcaption><b>The Frites</b>Hand-cut, with a long list of house sauces.</figcaption></figure>
+        <figure><img decoding="async" src="/images/proposals/rudys/rudys-kwak-beer.webp" alt="Kwak Belgian beer in its wooden stand at the bar"><figcaption><b>On Draft</b>Belgian ales and local favorites.</figcaption></figure>
+        <figure><img decoding="async" src="/images/proposals/rudys/rudys-dining-room.webp" alt="Rudy's dining room with reclaimed wood walls"><figcaption><b>Our Story</b>The bar New Haven grew up in.</figcaption></figure>
+      </div>
+    </div>
+    <p class="mock-cap">Concept using your own photos and logo. The final design is built inside your existing Squarespace account.</p>
+  </section>
+
+  <section>
+    <h2>What's included <small>One price, on Squarespace</small></h2>
+    <div class="rule"></div>
+    <div class="scope">
+      <div>
+        <h3>Fix everything in this audit</h3>
+        <ul>
+          <li>Make the real home page the home page</li>
+          <li>Remove the template pages and forward their old addresses</li>
+          <li>One real menu at <code>/menu</code></li>
+          <li>One set of hours and one phone number, everywhere</li>
+          <li>Google titles, descriptions and headlines on every page</li>
+          <li>Restaurant details for Google maps and "near me" searches</li>
+          <li>Real photo descriptions and a proper share preview</li>
+          <li>Fix the footer email link</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Refresh the design</h3>
+        <ul>
+          <li>New look built around the Rudy's R logo: colors, fonts, header</li>
+          <li>Redesigned home page with photos, hours and order buttons up top</li>
+          <li>An "Our Story" section with the Elm Street history</li>
+          <li>Grubhub order button in the main menu</li>
+          <li>Cleaner menu, draft, bottles and cans and wine pages</li>
+          <li>Checked and tuned on phones, where most guests look you up</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">You keep your Squarespace account and plan exactly as they are. Squarespace's own subscription stays separate and isn't part of this price.</p>
+  </section>
+
+  <section>
+    <h2>Pricing</h2>
+    <div class="rule"></div>
+    <div class="prices">
+      <div class="price-card main">
+        <span class="tag">The project</span>
+        <h3>Squarespace Fix + Design Refresh</h3>
+        <div class="amt">$1,500 <small>one time</small></div>
+        <p>Everything in "What's included" above, done in your current Squarespace site.</p>
+      </div>
+      <div class="price-card">
+        <span class="tag">Optional add-on</span>
+        <h3>Google Business Profile Management</h3>
+        <div class="amt">$100 <small>/ month</small></div>
+        <ul>
+          <li>Reply to new Google reviews every week</li>
+          <li>Fresh photos of food, drinks and the bar</li>
+          <li>Google Posts for specials and events</li>
+          <li>Hours and holiday updates</li>
+          <li>Monthly performance report</li>
+        </ul>
+        <p>Completely optional. The website project stands on its own.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Timeline <small>About two weeks</small></h2>
+    <div class="rule"></div>
+    <div class="plan">
+      <ol>
+        <li><strong>Access.</strong> You add us as a contributor in Squarespace and confirm your current hours.</li>
+        <li><strong>Week 1: fixes.</strong> Template cleanup, forwarding, menu, Google titles and business details.</li>
+        <li><strong>Week 2: design.</strong> New look, home page and Our Story, built and checked on phones.</li>
+        <li><strong>Review.</strong> You look it over and we make your changes.</li>
+        <li><strong>Launch.</strong> It goes live, and we ask Google to recrawl the site.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
     <h2>Restaurant sites we've built <small>Here in Connecticut</small></h2>
     <div class="rule"></div>
     <div class="work">
@@ -271,6 +437,12 @@
       <a class="btn" href="/portfolio">See our full portfolio</a>
       <a class="sub" href="/case-study">Read how we rebuilt Michael's Trattoria</a>
     </div>
+  </section>
+
+  <section class="next">
+    <h2>Ready to get started?</h2>
+    <p>Reply or call and we'll set up a time. To kick off, you'll add <strong>chrishauman@gmail.com</strong> as a contributor in your Squarespace account. We'll walk you through it, and it takes about a minute.</p>
+    <p><strong>Chris Hauman</strong> &nbsp;·&nbsp; 203.530.7396 &nbsp;·&nbsp; chrishauman@gmail.com</p>
   </section>
 
   <footer>
