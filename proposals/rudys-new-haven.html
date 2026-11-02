@@ -204,6 +204,16 @@
     .mock .strip div + div { border-left: 0; border-top: 1px solid var(--m-line); }
   }
   @media print { .mock, .price-card, .scope div, .next { break-inside: avoid; } .mock { box-shadow: none; } }
+  .urgent { background: var(--bad-bg); border: 1px solid var(--bad); border-radius: 14px; padding: 18px 20px 20px; }
+  .urgent h2 { color: var(--bad); margin-bottom: 12px; }
+  .urgent h2 small { color: var(--ink-soft); }
+  .urgent-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .urgent-grid div { background: var(--bg); border-radius: 10px; padding: 12px 14px; min-width: 0; }
+  .urgent-grid b { display: block; font-size: 14.5px; margin-bottom: 3px; }
+  .urgent-grid b::before { content: "!"; display: inline-grid; place-items: center; width: 18px; height: 18px; margin-right: 8px; border-radius: 50%; background: var(--bad); color: var(--bg); font-size: 12px; font-weight: 800; vertical-align: 1px; }
+  .urgent-grid p { margin: 0; color: var(--ink-soft); font-size: 13px; }
+  @media (max-width: 640px) { .urgent-grid { grid-template-columns: minmax(0, 1fr); } }
+  @media print { .urgent { break-inside: avoid; } }
   .audit-intro { margin-top: 44px; padding-top: 26px; border-top: 2px solid var(--line); }
   h2.big { display: block; font-size: 24px; line-height: 1.2; font-weight: 800; margin: 0 0 10px; text-wrap: balance; }
 </style>
@@ -225,6 +235,16 @@
     <h1>A fresh look for Rudy's, built on the Squarespace site you already have.</h1>
     <p class="lede">When we spoke, it seemed like you wanted to stick with Squarespace, so I built this proposal around that. Below is a first look at how your home page could feel, what we'd fix and refresh, and the price. After that is the audit of your current site, with everything that's holding it back on Google.</p>
   </div>
+
+  <section class="urgent" aria-labelledby="urgent-h">
+    <h2 id="urgent-h">Needs attention now <small>Live on your site today</small></h2>
+    <div class="urgent-grid">
+      <div><b>Wrong phone number</b><p>Your Contact page lists <strong>(512) 555-0110</strong>, a fake number from the website template. Anyone who calls it won't reach you.</p></div>
+      <div><b>"Best Burger in Brooklyn"</b><p>A leftover template page with that headline is still live at <code>rudysnewhaven.com/home</code>, where Google can find it.</p></div>
+      <div><b>Home page is a St. Patrick's menu</b><p>Your web address opens on the parade special, with no address, hours or phone number.</p></div>
+      <div><b>Google can't tell what Rudy's is</b><p>No page has a search description, a main headline or the business details Google uses for maps. Your real home page is hidden at <code>/welcome</code>.</p></div>
+    </div>
+  </section>
 
   <section>
     <h2>The new look <small>Homepage concept</small></h2>
