@@ -10,6 +10,11 @@
       <image:caption>Webbersaurus web development company logo</image:caption>
     </image:image>
     <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/big-joes-subs.webp</image:loc>
+      <image:title>Big Joe's Subs Website</image:title>
+      <image:caption>Website designed by Webbersaurus for Big Joe's Subs, a breakfast and sub shop in New Smyrna Beach, FL</image:caption>
+    </image:image>
+    <image:image>
       <image:loc>https://www.webbersaurus.com/images/portfolio/chapel-west.webp</image:loc>
       <image:title>Chapel West Website</image:title>
       <image:caption>Website designed by Webbersaurus for the Chapel West Special Services District in New Haven</image:caption>
@@ -18,11 +23,6 @@
       <image:loc>https://www.webbersaurus.com/images/portfolio/a-bite-of-nutmeg.webp</image:loc>
       <image:title>A Bite of Nutmeg Website</image:title>
       <image:caption>Website designed by Webbersaurus for A Bite of Nutmeg</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.webbersaurus.com/images/portfolio/rivers-edge-home-center.webp</image:loc>
-      <image:title>River's Edge Home Center Website</image:title>
-      <image:caption>Website designed by Webbersaurus for River's Edge Home Center in Haddam, CT</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://www.webbersaurus.com/images/og-image.png</image:loc>
@@ -44,6 +44,11 @@
   <!-- Portfolio page images -->
   <url>
     <loc>https://www.webbersaurus.com/portfolio</loc>
+    <image:image>
+      <image:loc>https://www.webbersaurus.com/images/portfolio/big-joes-subs.webp</image:loc>
+      <image:title>Big Joe's Subs Website</image:title>
+      <image:caption>Website designed by Webbersaurus for Big Joe's Subs, a breakfast and sub shop in New Smyrna Beach, FL</image:caption>
+    </image:image>
     <image:image>
       <image:loc>https://www.webbersaurus.com/images/portfolio/chapel-west.webp</image:loc>
       <image:title>Chapel West Website Design</image:title>
